@@ -22,7 +22,7 @@ struct ViewFactory {
 extension ViewFactory {
 
     func make<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
-        CCLazyView(build: content)
+        LazyView(build: content)
     }
 }
 
@@ -66,7 +66,7 @@ enum ViewType {
     case main
 }
 
-public struct CCLazyView<Content: View>: View {
+public struct LazyView<Content: View>: View {
     private let build: () -> Content
 
     public init(@ViewBuilder build: @escaping () -> Content) {
