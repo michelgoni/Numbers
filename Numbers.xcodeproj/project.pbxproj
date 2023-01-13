@@ -51,7 +51,6 @@
 		B4F91B59296D7143008F011A /* FavoriteiconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */; };
 		B4F91B5B296D72C3008F011A /* IsfavoriteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */; };
 		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
-		B4F91B61296DB9B2008F011A /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B60296DB9B2008F011A /* UserDefaults+.swift */; };
 		B4F91B63296EF41F008F011A /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B62296EF41F008F011A /* Sequence+.swift */; };
 		B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */; };
 		B4FCD3F92970207100768861 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F82970207100768861 /* URL+.swift */; };
@@ -120,7 +119,6 @@
 		B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteiconViewModel.swift; sourceTree = "<group>"; };
 		B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsfavoriteNumberUseCase.swift; sourceTree = "<group>"; };
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
-		B4F91B60296DB9B2008F011A /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		B4F91B62296EF41F008F011A /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
 		B4FCD3F82970207100768861 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
@@ -372,7 +370,6 @@
 				B44D33312958DE400026CFF4 /* Publisher+.swift */,
 				B405E529296594C00045DAFF /* AwaitPublisher.swift */,
 				B405E5392965F6310045DAFF /* View+.swift */,
-				B4F91B60296DB9B2008F011A /* UserDefaults+.swift */,
 				B4F91B62296EF41F008F011A /* Sequence+.swift */,
 				B4FCD3F82970207100768861 /* URL+.swift */,
 			);
@@ -545,7 +542,6 @@
 			files = (
 				B447833729545D8A006FC0EC /* NumbersAssembly.swift in Sources */,
 				B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */,
-				B4F91B61296DB9B2008F011A /* UserDefaults+.swift in Sources */,
 				B4EE915329575DA800BB45A3 /* AnyViewModel.swift in Sources */,
 				B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */,
 				B4FF870E29647FB2007067A3 /* AlertView.swift in Sources */,
