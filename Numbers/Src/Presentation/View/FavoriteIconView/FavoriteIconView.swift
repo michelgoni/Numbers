@@ -32,7 +32,6 @@ struct FavoriteIconView: View {
     }
 
     var body: some View {
-
         HStack {
             Spacer()
             ZStack {
@@ -49,10 +48,12 @@ struct FavoriteIconView: View {
                 .show(!isLoading)
                 ProgressView()
                     .show(isLoading)
-                .onReceive(favoriteIconViewModel.viewState, perform: viewState)
-                .onAppear {
-                    favoriteIconViewModel.trigger(.isFavorite(number.numberValue))
-                }
+                    .onReceive(favoriteIconViewModel.viewState, perform: viewState)
+                    .onAppear {
+                        favoriteIconViewModel.trigger(
+                            .isFavorite(number.numberValue)
+                        )
+                    }
             }
         }
     }
