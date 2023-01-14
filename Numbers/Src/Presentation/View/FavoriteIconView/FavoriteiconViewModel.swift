@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 final class FavoriteIconViewModel: ViewModel {
-    @Inject private var favoritesUseCase: IsfavoriteNumberUseCaseType
+    @Inject var favoritesUseCase: IsfavoriteNumberUseCaseType
 
     @Published var state: State
 

@@ -9,8 +9,15 @@ import Foundation
 
 @propertyWrapper
 struct Inject<Component> {
-    let wrappedValue: Component
-    init() {
-        self.wrappedValue = Resolver.shared.resolve(Component.self)
+
+    var component: Component
+
+    init(){
+        self.component = Resolver.shared.resolve(Component.self)
+    }
+
+    public var wrappedValue: Component {
+        get { return component}
+        mutating set { component = newValue }
     }
 }

@@ -13,7 +13,7 @@ protocol IsfavoriteNumberUseCaseType {
 }
 
 final class IsfavoriteNumberUseCase: IsfavoriteNumberUseCaseType {
-    @Inject private var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute(_ number: String) -> Bool {
         repository.isFavorite(number)

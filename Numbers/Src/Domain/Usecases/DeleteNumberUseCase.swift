@@ -13,7 +13,7 @@ protocol DeleteFavoriteNumberUseCaseType {
 }
 
 final class DeleteFavoriteNumberUseCase: DeleteFavoriteNumberUseCaseType {
-    @Inject private var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute(_ data: NumberEntity) -> ResponsePublisher<[NumberEntity]> {
          repository.delete(data)

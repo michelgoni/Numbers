@@ -13,7 +13,7 @@ protocol FetchNumberUseCaseType {
 }
 
 final class FetchNumberUseCase: FetchNumberUseCaseType {
-    @Inject private var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute(_ number: String) -> ResponsePublisher<[NumberEntity]> {
         repository.fetchNumber(number)

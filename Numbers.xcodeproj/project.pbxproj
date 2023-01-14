@@ -25,6 +25,7 @@
 		B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97802973120B007AC2A6 /* ViewFactory.swift */; };
 		B40E97852973126F007AC2A6 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97842973126F007AC2A6 /* LazyView.swift */; };
 		B40E9787297312AA007AC2A6 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9786297312AA007AC2A6 /* Inject.swift */; };
+		B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */; };
 		B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */; };
 		B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */; };
 		B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */; };
@@ -97,6 +98,7 @@
 		B40E97802973120B007AC2A6 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		B40E97842973126F007AC2A6 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		B40E9786297312AA007AC2A6 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
+		B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssemblerTest.swift; sourceTree = "<group>"; };
 		B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberUseCase.swift; sourceTree = "<group>"; };
 		B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNumberUseCase.swift; sourceTree = "<group>"; };
 		B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoriteNumberUseCase.swift; sourceTree = "<group>"; };
@@ -195,6 +197,14 @@
 				B4B06E3B295F4CE200B25094 /* ModifiableViewState.swift */,
 			);
 			path = ModifiableViewState;
+			sourceTree = "<group>";
+		};
+		B40E9788297319AC007AC2A6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		B432F56F295F3B39007F6518 /* NumbersView */ = {
@@ -429,6 +439,7 @@
 		B4ABD3FC2971E8D300A781D9 /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
+				B40E9788297319AC007AC2A6 /* Test */,
 				B447833629545D8A006FC0EC /* Resolver.swift */,
 				B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */,
 				B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */,
@@ -647,6 +658,7 @@
 				B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */,
 				B405E526296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift in Sources */,
 				B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */,
+				B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */,
 				B405E52F2965A8AC0045DAFF /* FavoritesUseCaseTest.swift in Sources */,
 				B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */,
 				B405E5312965A9840045DAFF /* SaveFavoritesUseCaseTest.swift in Sources */,

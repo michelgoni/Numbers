@@ -10,10 +10,10 @@ import Foundation
 
 
 final class FavoritesViewModel: ViewModel {
-    @Inject private var isFavoriteUseCase: IsfavoriteNumberUseCaseType
-    @Inject private var favoritesUseCase: FavoritesNumberUseCaseType
-    @Inject private var saveFavoritesUseCase: SaveFavoriteNumberUseCaseType
-    @Inject private var deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType
+    @Inject var isFavoriteUseCase: IsfavoriteNumberUseCaseType
+    @Inject var favoritesUseCase: FavoritesNumberUseCaseType
+    @Inject var saveFavoritesUseCase: SaveFavoriteNumberUseCaseType
+    @Inject var deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType
     @Published var state = State()
 
     private lazy var cancellables = Set<AnyCancellable>()

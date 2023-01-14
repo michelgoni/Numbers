@@ -8,7 +8,6 @@
 import Foundation
 import Swinject
 
-
 class Resolver {
     static let shared = Resolver()
 

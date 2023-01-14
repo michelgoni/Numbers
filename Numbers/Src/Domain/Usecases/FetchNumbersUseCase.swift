@@ -16,8 +16,7 @@ protocol FetchNumbersUseCaseType {
 
 final class FetchNumbersUseCase: FetchNumbersUseCaseType {
 
-//    @Injected(\.numbersProvider) var repository: NumberRepositoryType
-    @Inject private var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute() -> ResponsePublisher<[NumberEntity]> {
         repository.fetchNumbers()

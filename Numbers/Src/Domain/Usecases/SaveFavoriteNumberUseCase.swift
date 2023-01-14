@@ -13,7 +13,7 @@ protocol SaveFavoriteNumberUseCaseType {
 }
 
 final class SaveFavoriteNumberUseCase: SaveFavoriteNumberUseCaseType {
-    @Inject private var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute(_ data: NumberEntity) throws {
         try repository.saveNumber(data)
