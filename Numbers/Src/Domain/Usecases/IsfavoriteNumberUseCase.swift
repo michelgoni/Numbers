@@ -13,21 +13,10 @@ protocol IsfavoriteNumberUseCaseType {
 }
 
 final class IsfavoriteNumberUseCase: IsfavoriteNumberUseCaseType {
-    @Injected(\.numbersProvider) var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute(_ number: String) -> Bool {
         repository.isFavorite(number)
     }
 }
 
-
-private struct IsfavoriteNumberUseCaseKey: InjectionKey {
-    static var currentValue: IsfavoriteNumberUseCaseType = IsfavoriteNumberUseCase()
-}
-
-extension InjectedValues {
-    var isfavoriteNumberUseCase: IsfavoriteNumberUseCaseType {
-        get { Self[IsfavoriteNumberUseCaseKey.self] }
-        set { Self[IsfavoriteNumberUseCaseKey.self] = newValue }
-    }
-}

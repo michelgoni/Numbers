@@ -13,8 +13,9 @@ import SwiftUI
 final class NumbersRepository: NumberRepositoryType {
 
     @AppStorage("") private var savedNumbers = Data()
-    @Injected(\.remoteDS) var remoteDS: RemoteDSType
-    @Injected(\.localDS) var localDS: UserDefaultsDataSourceType
+
+    @Inject var localDS: UserDefaultsDataSourceType
+    @Inject var remoteDS: RemoteDSType
 
     private lazy var cancellables = Set<AnyCancellable>()
 
@@ -103,16 +104,3 @@ final class NumbersRepository: NumberRepositoryType {
         return true
     }
 }
-
-
-private struct NumberRepositoryKey: InjectionKey {
-    static var currentValue: NumberRepositoryType = NumbersRepository()
-}
-
-extension InjectedValues {
-    var numbersProvider: NumberRepositoryType {
-        get { Self[NumberRepositoryKey.self] }
-        set { Self[NumberRepositoryKey.self] = newValue }
-    }
-}
-

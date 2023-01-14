@@ -19,7 +19,7 @@ final class SaveFavoritesUseCaseTest: XCTestCase {
     override func setUp() {
         super.setUp()
         sut = SaveFavoriteNumberUseCase()
-        sut.repository = repositoryMock
+//        sut.repository = repositoryMock
     }
 
     override func tearDown() {

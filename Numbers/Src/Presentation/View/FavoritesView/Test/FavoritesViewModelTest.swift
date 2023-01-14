@@ -179,7 +179,7 @@ class DeleteFavoriteUsecaseMock: DeleteFavoriteNumberUseCaseType {
 
 }
 
-class FetchFavoritesUseCaseMock: FetchFavoritesNumberUseCaseType {
+class FetchFavoritesUseCaseMock: FavoritesNumberUseCaseType {
     var returnValue: Numbers.ResponsePublisher<[Numbers.NumberEntity]>!
     func execute() -> Numbers.ResponsePublisher<[Numbers.NumberEntity]> {
         returnValue.eraseToAnyPublisher()

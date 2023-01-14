@@ -13,20 +13,10 @@ protocol FetchNumberUseCaseType {
 }
 
 final class FetchNumberUseCase: FetchNumberUseCaseType {
-    @Injected(\.numbersProvider) var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute(_ number: String) -> ResponsePublisher<[NumberEntity]> {
         repository.fetchNumber(number)
     }
 }
 
-private struct NumberUseCaseKey: InjectionKey {
-    static var currentValue: FetchNumberUseCaseType = FetchNumberUseCase()
-}
-
-extension InjectedValues {
-    var numberUseCase: FetchNumberUseCaseType {
-        get { Self[NumberUseCaseKey.self] }
-        set { Self[NumberUseCaseKey.self] = newValue }
-    }
-}

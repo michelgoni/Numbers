@@ -18,6 +18,14 @@
 		B405E53A2965F6310045DAFF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5392965F6310045DAFF /* View+.swift */; };
 		B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53D2965FC600045DAFF /* EmptyView.swift */; };
 		B405E5402965FEE70045DAFF /* FetchNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */; };
+		B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */; };
+		B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */; };
+		B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */; };
+		B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977E297311D0007AC2A6 /* DependencyProvider.swift */; };
+		B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97802973120B007AC2A6 /* ViewFactory.swift */; };
+		B40E97852973126F007AC2A6 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97842973126F007AC2A6 /* LazyView.swift */; };
+		B40E9787297312AA007AC2A6 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9786297312AA007AC2A6 /* Inject.swift */; };
+		B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */; };
 		B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */; };
 		B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */; };
 		B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */; };
@@ -29,19 +37,19 @@
 		B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447832B29545715006FC0EC /* NumbersRepositoryType.swift */; };
 		B447832E29545B0F006FC0EC /* NumbersRepositoryImplm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447832D29545B0F006FC0EC /* NumbersRepositoryImplm.swift */; };
 		B447833429545C27006FC0EC /* FetchNumbersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447833329545C27006FC0EC /* FetchNumbersUseCase.swift */; };
-		B447833729545D8A006FC0EC /* NumbersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447833629545D8A006FC0EC /* NumbersAssembly.swift */; };
+		B447833729545D8A006FC0EC /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447833629545D8A006FC0EC /* Resolver.swift */; };
 		B44783782954819E006FC0EC /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783772954819E006FC0EC /* Appdelegate.swift */; };
 		B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837A295481EE006FC0EC /* Scenedelegate.swift */; };
 		B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837C295482EE006FC0EC /* AppCoordinator.swift */; };
-		B447837F2954BB95006FC0EC /* InjectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837E2954BB95006FC0EC /* InjectedValues.swift */; };
 		B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783832954BF0F006FC0EC /* RemoteDS.swift */; };
 		B44783862954C446006FC0EC /* NumbersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783852954C446006FC0EC /* NumbersError.swift */; };
 		B44C5B8C296C3E89008DB54C /* OnAppearOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44C5B8B296C3E89008DB54C /* OnAppearOnce.swift */; };
 		B44D33322958DE400026CFF4 /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D33312958DE400026CFF4 /* Publisher+.swift */; };
 		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
-		B480D39B29705E19002AA1B2 /* DeleteNumberStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480D39A29705E19002AA1B2 /* DeleteNumberStateUseCase.swift */; };
 		B497B856295A57130057237A /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B497B855295A57130057237A /* NumberRow.swift */; };
 		B4A294FD295E19D40067FB54 /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A294FC295E19D40067FB54 /* TitleModifier.swift */; };
+		B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABD3F92971A6F100A781D9 /* Swinject */; };
+		B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */; };
 		B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B06E39295F498800B25094 /* FavoriteRow.swift */; };
 		B4B06E3C295F4CE200B25094 /* ModifiableViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B06E3B295F4CE200B25094 /* ModifiableViewState.swift */; };
 		B4EE915329575DA800BB45A3 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE915229575DA800BB45A3 /* AnyViewModel.swift */; };
@@ -83,6 +91,14 @@
 		B405E5392965F6310045DAFF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		B405E53D2965FC600045DAFF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumberUseCase.swift; sourceTree = "<group>"; };
+		B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
+		B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceAssembly.swift; sourceTree = "<group>"; };
+		B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServiceAssembly.swift; sourceTree = "<group>"; };
+		B40E977E297311D0007AC2A6 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
+		B40E97802973120B007AC2A6 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		B40E97842973126F007AC2A6 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		B40E9786297312AA007AC2A6 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
+		B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssemblerTest.swift; sourceTree = "<group>"; };
 		B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberUseCase.swift; sourceTree = "<group>"; };
 		B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNumberUseCase.swift; sourceTree = "<group>"; };
 		B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoriteNumberUseCase.swift; sourceTree = "<group>"; };
@@ -96,20 +112,19 @@
 		B447832B29545715006FC0EC /* NumbersRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersRepositoryType.swift; sourceTree = "<group>"; };
 		B447832D29545B0F006FC0EC /* NumbersRepositoryImplm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersRepositoryImplm.swift; sourceTree = "<group>"; };
 		B447833329545C27006FC0EC /* FetchNumbersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumbersUseCase.swift; sourceTree = "<group>"; };
-		B447833629545D8A006FC0EC /* NumbersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssembly.swift; sourceTree = "<group>"; };
+		B447833629545D8A006FC0EC /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		B44783772954819E006FC0EC /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
 		B447837A295481EE006FC0EC /* Scenedelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenedelegate.swift; sourceTree = "<group>"; };
 		B447837C295482EE006FC0EC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		B447837E2954BB95006FC0EC /* InjectedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedValues.swift; sourceTree = "<group>"; };
 		B44783832954BF0F006FC0EC /* RemoteDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDS.swift; sourceTree = "<group>"; };
 		B44783852954C446006FC0EC /* NumbersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersError.swift; sourceTree = "<group>"; };
 		B44783872954C5F1006FC0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B44C5B8B296C3E89008DB54C /* OnAppearOnce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAppearOnce.swift; sourceTree = "<group>"; };
 		B44D33312958DE400026CFF4 /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
 		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
-		B480D39A29705E19002AA1B2 /* DeleteNumberStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberStateUseCase.swift; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 		B4A294FC295E19D40067FB54 /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
+		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
 		B4B06E39295F498800B25094 /* FavoriteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRow.swift; sourceTree = "<group>"; };
 		B4B06E3B295F4CE200B25094 /* ModifiableViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiableViewState.swift; sourceTree = "<group>"; };
 		B4EE915229575DA800BB45A3 /* AnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModel.swift; sourceTree = "<group>"; };
@@ -134,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +182,31 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		B40E978229731240007AC2A6 /* ViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				B40E97802973120B007AC2A6 /* ViewFactory.swift */,
+				B40E97842973126F007AC2A6 /* LazyView.swift */,
+			);
+			path = ViewFactory;
+			sourceTree = "<group>";
+		};
+		B40E978329731250007AC2A6 /* ModifiableViewState */ = {
+			isa = PBXGroup;
+			children = (
+				B4B06E3B295F4CE200B25094 /* ModifiableViewState.swift */,
+			);
+			path = ModifiableViewState;
+			sourceTree = "<group>";
+		};
+		B40E9788297319AC007AC2A6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		B432F56F295F3B39007F6518 /* NumbersView */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +221,6 @@
 		B432F570295F3B66007F6518 /* Injector */ = {
 			isa = PBXGroup;
 			children = (
-				B447837E2954BB95006FC0EC /* InjectedValues.swift */,
 			);
 			path = Injector;
 			sourceTree = "<group>";
@@ -236,10 +276,10 @@
 		B447831E295449D4006FC0EC /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				B4ABD3FC2971E8D300A781D9 /* Assembler */,
 				B44D33302958DE320026CFF4 /* Extensions */,
 				B447833529545CDC006FC0EC /* Presentation */,
 				B4478329295454F5006FC0EC /* Domain */,
-				B447833629545D8A006FC0EC /* NumbersAssembly.swift */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -301,7 +341,6 @@
 				B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */,
 				B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */,
 				B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */,
-				B480D39A29705E19002AA1B2 /* DeleteNumberStateUseCase.swift */,
 				B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */,
 			);
 			path = Usecases;
@@ -320,7 +359,8 @@
 		B4478379295481D1006FC0EC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B4B06E3B295F4CE200B25094 /* ModifiableViewState.swift */,
+				B40E978229731240007AC2A6 /* ViewFactory */,
+				B40E978329731250007AC2A6 /* ModifiableViewState */,
 				B497AED8296C65C000524C99 /* CustomViews */,
 				B44D5006295C4CE90013BC65 /* Viewmodifiers */,
 				B44783812954BEA7006FC0EC /* Main */,
@@ -396,6 +436,21 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		B4ABD3FC2971E8D300A781D9 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				B40E9788297319AC007AC2A6 /* Test */,
+				B447833629545D8A006FC0EC /* Resolver.swift */,
+				B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */,
+				B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */,
+				B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */,
+				B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */,
+				B40E977E297311D0007AC2A6 /* DependencyProvider.swift */,
+				B40E9786297312AA007AC2A6 /* Inject.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
 		B4F62A1F29570FD700CDC792 /* AnyViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +511,9 @@
 			dependencies = (
 			);
 			name = Numbers;
+			packageProductDependencies = (
+				B4ABD3F92971A6F100A781D9 /* Swinject */,
+			);
 			productName = Numbers;
 			productReference = B44782F0295448C8006FC0EC /* Numbers.app */;
 			productType = "com.apple.product-type.application";
@@ -506,6 +564,9 @@
 				Base,
 			);
 			mainGroup = B44782E7295448C8006FC0EC;
+			packageReferences = (
+				B4ABD3F82971A6F100A781D9 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = B44782F1295448C8006FC0EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -540,10 +601,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B447833729545D8A006FC0EC /* NumbersAssembly.swift in Sources */,
+				B447833729545D8A006FC0EC /* Resolver.swift in Sources */,
 				B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */,
+				B40E97852973126F007AC2A6 /* LazyView.swift in Sources */,
 				B4EE915329575DA800BB45A3 /* AnyViewModel.swift in Sources */,
 				B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */,
+				B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */,
 				B4FF870E29647FB2007067A3 /* AlertView.swift in Sources */,
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
 				B4B06E3C295F4CE200B25094 /* ModifiableViewState.swift in Sources */,
@@ -556,13 +619,16 @@
 				B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */,
 				B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */,
 				B4F91B63296EF41F008F011A /* Sequence+.swift in Sources */,
+				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
 				B497B856295A57130057237A /* NumberRow.swift in Sources */,
 				B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */,
 				B44C5B8C296C3E89008DB54C /* OnAppearOnce.swift in Sources */,
 				B405E53A2965F6310045DAFF /* View+.swift in Sources */,
+				B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */,
 				B4A294FD295E19D40067FB54 /* TitleModifier.swift in Sources */,
 				B447832E29545B0F006FC0EC /* NumbersRepositoryImplm.swift in Sources */,
 				B44D33322958DE400026CFF4 /* Publisher+.swift in Sources */,
+				B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */,
 				B4204780295BA31500C32192 /* NumberEntitity.swift in Sources */,
 				B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */,
 				B405E5402965FEE70045DAFF /* FetchNumberUseCase.swift in Sources */,
@@ -572,13 +638,14 @@
 				B4FF871029648461007067A3 /* AlertViewModfier.swift in Sources */,
 				B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */,
 				B432F573295F3BB0007F6518 /* FavoritesView.swift in Sources */,
-				B447837F2954BB95006FC0EC /* InjectedValues.swift in Sources */,
 				B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */,
+				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
+				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
 				B4FCD3F92970207100768861 /* URL+.swift in Sources */,
+				B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */,
 				B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */,
 				B4FF87142964AA62007067A3 /* UserDefaultsDataSourceType.swift in Sources */,
 				B4F91B5B296D72C3008F011A /* IsfavoriteNumberUseCase.swift in Sources */,
-				B480D39B29705E19002AA1B2 /* DeleteNumberStateUseCase.swift in Sources */,
 				B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,6 +658,7 @@
 				B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */,
 				B405E526296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift in Sources */,
 				B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */,
+				B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */,
 				B405E52F2965A8AC0045DAFF /* FavoritesUseCaseTest.swift in Sources */,
 				B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */,
 				B405E5312965A9840045DAFF /* SaveFavoritesUseCaseTest.swift in Sources */,
@@ -856,6 +924,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4ABD3F82971A6F100A781D9 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4ABD3F92971A6F100A781D9 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4ABD3F82971A6F100A781D9 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B44782E8295448C8006FC0EC /* Project object */;
 }

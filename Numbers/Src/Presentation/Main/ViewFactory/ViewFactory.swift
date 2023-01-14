@@ -1,8 +1,8 @@
 //
-//  NumbersAssembly.swift
+//  ViewFactory.swift
 //  Numbers
 //
-//  Created by Michel Goñi on 22/12/22.
+//  Created by Michel Goñi on 14/1/23.
 //
 
 import Foundation
@@ -22,14 +22,14 @@ struct ViewFactory {
 extension ViewFactory {
 
     func make<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
-        CCLazyView(build: content)
+        LazyView(build: content)
     }
 }
 
 
 extension ViewFactory {
     func view(_ type: ViewType) -> some View {
-        
+
         make {
             switch type {
             case .main:
@@ -64,17 +64,4 @@ extension ViewFactory {
 
 enum ViewType {
     case main
-}
-
-public struct CCLazyView<Content: View>: View {
-    private let build: () -> Content
-
-    public init(@ViewBuilder build: @escaping () -> Content) {
-        self.build = build
-    }
-
-    public var body: some View {
-        build()
-    }
-
 }

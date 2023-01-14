@@ -16,7 +16,7 @@ protocol FetchNumbersUseCaseType {
 
 final class FetchNumbersUseCase: FetchNumbersUseCaseType {
 
-    @Injected(\.numbersProvider) var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute() -> ResponsePublisher<[NumberEntity]> {
         repository.fetchNumbers()
@@ -24,16 +24,5 @@ final class FetchNumbersUseCase: FetchNumbersUseCaseType {
 
     func execute() async throws -> [NumberEntity] {
         try await repository.fetchNumbersAsync()
-    }
-}
-
-private struct NumberUseCaseKey: InjectionKey {
-    static var currentValue: FetchNumbersUseCaseType = FetchNumbersUseCase()
-}
-
-extension InjectedValues {
-    var numbersUseCase: FetchNumbersUseCaseType {
-        get { Self[NumberUseCaseKey.self] }
-        set { Self[NumberUseCaseKey.self] = newValue }
     }
 }

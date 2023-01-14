@@ -13,20 +13,10 @@ protocol DeleteFavoriteNumberUseCaseType {
 }
 
 final class DeleteFavoriteNumberUseCase: DeleteFavoriteNumberUseCaseType {
-    @Injected(\.numbersProvider) var repository: NumberRepositoryType
+    @Inject var repository: NumberRepositoryType
 
     func execute(_ data: NumberEntity) -> ResponsePublisher<[NumberEntity]> {
          repository.delete(data)
     }
 }
 
-private struct DeleteFavoriteNumberUseCaseKey: InjectionKey {
-    static var currentValue: DeleteFavoriteNumberUseCaseType = DeleteFavoriteNumberUseCase()
-}
-
-extension InjectedValues {
-    var deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType {
-        get { Self[DeleteFavoriteNumberUseCaseKey.self] }
-        set { Self[DeleteFavoriteNumberUseCaseKey.self] = newValue }
-    }
-}
