@@ -88,13 +88,13 @@ extension UserDefaultDataSource {
     }
 }
 
-private struct UserDefaultDataSourceKey: InjectionKey {
-    static var currentValue: UserDefaultsDataSourceType = UserDefaultDataSource(userDefaults: UserDefaults.standard)
-}
-
-extension InjectedValues {
-    var localDS: UserDefaultsDataSourceType {
-        get { Self[UserDefaultDataSourceKey.self] }
-        set { Self[UserDefaultDataSourceKey.self] = newValue }
-    }
-}
+//private struct UserDefaultDataSourceKey: InjectionKey {
+//    static var currentValue: UserDefaultsDataSourceType = UserDefaultDataSource(userDefaults: UserDefaults.standard)
+//}
+//
+//extension InjectedValues {
+//    var localDS: UserDefaultsDataSourceType {
+//        get { Self[UserDefaultDataSourceKey.self] }
+//        set { Self[UserDefaultDataSourceKey.self] = newValue }
+//    }
+//}

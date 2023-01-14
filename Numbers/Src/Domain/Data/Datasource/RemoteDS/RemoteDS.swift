@@ -66,14 +66,14 @@ final class RemoteDSImpl: RemoteDSType {
     }
 }
 
-private struct RemoteDSKey: InjectionKey {
-    static var currentValue: RemoteDSType = RemoteDSImpl()
-}
-
-
-extension InjectedValues {
-    var remoteDS: RemoteDSType {
-        get { Self[RemoteDSKey.self] }
-        set { Self[RemoteDSKey.self] = newValue }
-    }
-}
+//private struct RemoteDSKey: InjectionKey {
+//    static var currentValue: RemoteDSType = RemoteDSImpl()
+//}
+//
+//
+//extension InjectedValues {
+//    var remoteDS: RemoteDSType {
+//        get { Self[RemoteDSKey.self] }
+//        set { Self[RemoteDSKey.self] = newValue }
+//    }
+//}

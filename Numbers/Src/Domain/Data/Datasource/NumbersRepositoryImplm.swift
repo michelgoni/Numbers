@@ -13,8 +13,11 @@ import SwiftUI
 final class NumbersRepository: NumberRepositoryType {
 
     @AppStorage("") private var savedNumbers = Data()
-    @Injected(\.remoteDS) var remoteDS: RemoteDSType
-    @Injected(\.localDS) var localDS: UserDefaultsDataSourceType
+//    @Injected(\.remoteDS) var remoteDS: RemoteDSType
+//    @Injected(\.localDS) var localDS: UserDefaultsDataSourceType
+
+    @Inject private var localDS: UserDefaultsDataSourceType
+    @Inject private var apiDS: RemoteDSType
 
     private lazy var cancellables = Set<AnyCancellable>()
 
@@ -24,7 +27,7 @@ final class NumbersRepository: NumberRepositoryType {
 
     func fetchNumber(_ number: String) -> ResponsePublisher<[NumberEntity]> {
 
-        return remoteDS.fetchNumbers([number])
+        return apiDS.fetchNumbers([number])
             .map { arrayData in
                 return arrayData.map {
                     let numberFact = String(decoding: $0, as: UTF8.self)
@@ -43,7 +46,7 @@ final class NumbersRepository: NumberRepositoryType {
             .map{ _ in Int.random(in: 1 ... 99) }))
             .map {String($0)}
 
-        return try await remoteDS.fetchNumbersAsync(numberArray).map({
+        return try await apiDS.fetchNumbersAsync(numberArray).map({
             let numberFact = String(decoding: $0, as: UTF8.self)
             let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
             return NumberEntity(
@@ -59,7 +62,7 @@ final class NumbersRepository: NumberRepositoryType {
             .map{ _ in Int.random(in: 1 ... 99) }))
             .map {String($0)}
 
-        return remoteDS.fetchNumbers(numberArray.sorted())
+        return apiDS.fetchNumbers(numberArray.sorted())
             .map { arrayData in
                 return arrayData.map {
                     let numberFact = String(decoding: $0, as: UTF8.self)
@@ -105,14 +108,14 @@ final class NumbersRepository: NumberRepositoryType {
 }
 
 
-private struct NumberRepositoryKey: InjectionKey {
-    static var currentValue: NumberRepositoryType = NumbersRepository()
-}
-
-extension InjectedValues {
-    var numbersProvider: NumberRepositoryType {
-        get { Self[NumberRepositoryKey.self] }
-        set { Self[NumberRepositoryKey.self] = newValue }
-    }
-}
+//private struct NumberRepositoryKey: InjectionKey {
+//    static var currentValue: NumberRepositoryType = NumbersRepository()
+//}
+//
+//extension InjectedValues {
+//    var numbersProvider: NumberRepositoryType {
+//        get { Self[NumberRepositoryKey.self] }
+//        set { Self[NumberRepositoryKey.self] = newValue }
+//    }
+//}
 

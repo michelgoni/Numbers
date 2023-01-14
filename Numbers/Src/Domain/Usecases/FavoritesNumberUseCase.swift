@@ -7,26 +7,15 @@
 
 import Foundation
 
-protocol FetchFavoritesNumberUseCaseType {
+protocol FavoritesNumberUseCaseType {
     func execute() -> ResponsePublisher<[NumberEntity]>
 }
 
-final class FavoritesNumberUseCase: FetchFavoritesNumberUseCaseType {
-    @Injected(\.numbersProvider) var repository: NumberRepositoryType
+final class FavoritesNumberUseCase: FavoritesNumberUseCaseType {
+    @Inject var repository: NumberRepositoryType
 
     func execute() -> ResponsePublisher<[NumberEntity]> {
         repository.fetchSavedNumbers()
     }
 }
 
-
-private struct FavoritesUseCaseKey: InjectionKey {
-    static var currentValue: FetchFavoritesNumberUseCaseType = FavoritesNumberUseCase()
-}
-
-extension InjectedValues {
-    var favoritesUseCase: FetchFavoritesNumberUseCaseType {
-        get { Self[FavoritesUseCaseKey.self] }
-        set { Self[FavoritesUseCaseKey.self] = newValue }
-    }
-}

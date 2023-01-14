@@ -13,7 +13,7 @@ final class FavoritesUseCaseTest: XCTestCase, AwaitPublisher {
 
     private var cancellables = Set<AnyCancellable>()
     var sut: FavoritesNumberUseCase!
-    private var repositoryMock = NumbersRepositoryMock()
+    var repositoryMock = NumbersRepositoryMock()
 
     override func setUp() {
         super.setUp()

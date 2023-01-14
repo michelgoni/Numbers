@@ -9,8 +9,8 @@ import Combine
 import Foundation
 
 final class NumbersViewModel: ViewModel {
-    @Injected(\.numbersUseCase) var numbersUseCase: FetchNumbersUseCaseType
-    @Injected(\.numberUseCase) var numberUseCase: FetchNumberUseCaseType
+    @Inject private var numbersUseCase: FetchNumbersUseCaseType
+    @Inject private var numberUseCase: FetchNumberUseCaseType
     @Published var state = State()
 
     private lazy var cancellables = Set<AnyCancellable>()
