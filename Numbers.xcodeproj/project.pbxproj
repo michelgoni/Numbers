@@ -218,13 +218,6 @@
 			path = NumbersView;
 			sourceTree = "<group>";
 		};
-		B432F570295F3B66007F6518 /* Injector */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Injector;
-			sourceTree = "<group>";
-		};
 		B432F571295F3B86007F6518 /* FavoritesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,7 +317,6 @@
 		B447833129545BD6006FC0EC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				B432F570295F3B66007F6518 /* Injector */,
 				B44D332B2958DD480026CFF4 /* Error */,
 				B447832F29545B6F006FC0EC /* Entities */,
 				B447832B29545715006FC0EC /* NumbersRepositoryType.swift */,
