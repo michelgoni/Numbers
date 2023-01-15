@@ -28,6 +28,7 @@ struct NumberRow: View {
         self.number = number
     }
     var body: some View {
+        
         VStack {
             HStack {
                 Text(number.numberValue)

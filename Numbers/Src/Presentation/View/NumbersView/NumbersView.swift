@@ -22,13 +22,14 @@ struct NumbersView: View {
     private typealias ViewModel = AnyViewModel<NumbersViewModel.Input, NumbersViewModel.State>
     @EnvironmentObject private var viewModel: ViewModel
     @State private var alert = AlertView()
-    @State var isHideLoader: Bool = true
+    @State private var isHideLoader: Bool = true
     @State private var searchText = ""
-    @State private var isHalfSheet = true
+    @State private var isShowingSheet = false
 
     var body: some View {
         NavigationStack {
             ZStack(alignment: .center) {
+
                 VStack {
                     List(viewModel.numbers) {
                         NumberRow(number: $0)
@@ -41,10 +42,17 @@ struct NumbersView: View {
                     .listStyle(.inset)
 
                     Button("See the number of the day!") {
-
+                        isShowingSheet.toggle()
                     }
+                    .show(!viewModel.numbers.isEmpty)
                     .buttonStyle(PrimaryButton())
                     .padding([.bottom, .leading, .trailing], .padding)
+                    .sheet(isPresented: $isShowingSheet) {
+                        RandomNumberView()
+                            .showDismissButton()
+                            .presentationDetents([.medium, .large])
+
+                    }
                     .modifier(
                         TitleModifier(
                             title: .favoriteTitle)
