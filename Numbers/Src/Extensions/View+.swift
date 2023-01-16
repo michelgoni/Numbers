@@ -21,9 +21,6 @@ extension View {
         modifier(ShowModifier(active: condition))
     }
 
-    func showDismissButton() -> some View {
-        self.modifier(DismissButtonModifier())
-    }
 
     @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
         switch shouldHide {

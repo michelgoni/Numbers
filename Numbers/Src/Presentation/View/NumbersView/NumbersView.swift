@@ -49,7 +49,6 @@ struct NumbersView: View {
                     .padding([.bottom, .leading, .trailing], .padding)
                     .sheet(isPresented: $isShowingSheet) {
                         RandomNumberView()
-                            .showDismissButton()
                             .presentationDetents([.medium, .large])
 
                     }

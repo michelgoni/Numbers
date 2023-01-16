@@ -12,7 +12,9 @@ struct RandomNumberProgressView: View {
     @State private var scale = 1.0
 
     var body: some View {
+        
         ZStack {
+
             Circle()
                 .stroke(lineWidth: 20.0)
                 .opacity(0.3)

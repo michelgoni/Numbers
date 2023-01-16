@@ -10,6 +10,8 @@ import SwiftUI
 private extension CGFloat {
     static let cornerRadius = 16.0
     static let systemSizeFont = 20.0
+    static let isPressedTrue = 0.95
+    static let isPressedFalse = 1.0
 }
 
 struct PrimaryButton: ButtonStyle {
@@ -29,6 +31,6 @@ struct PrimaryButton: ButtonStyle {
                     cornerRadius: .cornerRadius,
                     style: .continuous)
             )
-            .scaleEffect(configuration.isPressed ? 0.95: 1)
+            .scaleEffect(configuration.isPressed ? .isPressedTrue : .isPressedFalse)
     }
 }

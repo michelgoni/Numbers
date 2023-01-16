@@ -28,13 +28,13 @@
 		B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */; };
 		B410385629746570001CED69 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410385529746570001CED69 /* PrimaryButton.swift */; };
 		B41038642974804C001CED69 /* RandomNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41038632974804C001CED69 /* RandomNumberView.swift */; };
-		B410386629748160001CED69 /* DismissViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410386529748160001CED69 /* DismissViewModifier.swift */; };
 		B410386829748485001CED69 /* RandomNumberProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410386729748485001CED69 /* RandomNumberProgressView.swift */; };
 		B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */; };
 		B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */; };
 		B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */; };
 		B4204780295BA31500C32192 /* NumberEntitity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420477F295BA31500C32192 /* NumberEntitity.swift */; };
 		B432F573295F3BB0007F6518 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B432F572295F3BB0007F6518 /* FavoritesView.swift */; };
+		B43608FE29755F4500FB3FB9 /* StepperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43608FD29755F4500FB3FB9 /* StepperButton.swift */; };
 		B44782F6295448C8006FC0EC /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44782F5295448C8006FC0EC /* NumbersView.swift */; };
 		B44782F8295448CA006FC0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782F7295448CA006FC0EC /* Assets.xcassets */; };
 		B44782FB295448CA006FC0EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782FA295448CA006FC0EC /* Preview Assets.xcassets */; };
@@ -105,13 +105,13 @@
 		B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssemblerTest.swift; sourceTree = "<group>"; };
 		B410385529746570001CED69 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		B41038632974804C001CED69 /* RandomNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberView.swift; sourceTree = "<group>"; };
-		B410386529748160001CED69 /* DismissViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissViewModifier.swift; sourceTree = "<group>"; };
 		B410386729748485001CED69 /* RandomNumberProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberProgressView.swift; sourceTree = "<group>"; };
 		B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberUseCase.swift; sourceTree = "<group>"; };
 		B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNumberUseCase.swift; sourceTree = "<group>"; };
 		B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoriteNumberUseCase.swift; sourceTree = "<group>"; };
 		B420477F295BA31500C32192 /* NumberEntitity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEntitity.swift; sourceTree = "<group>"; };
 		B432F572295F3BB0007F6518 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		B43608FD29755F4500FB3FB9 /* StepperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperButton.swift; sourceTree = "<group>"; };
 		B44782F0295448C8006FC0EC /* Numbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44782F5295448C8006FC0EC /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
 		B44782F7295448CA006FC0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -432,7 +432,6 @@
 				B4A294FC295E19D40067FB54 /* TitleModifier.swift */,
 				B4FF870F29648461007067A3 /* AlertViewModfier.swift */,
 				B44C5B8B296C3E89008DB54C /* OnAppearOnce.swift */,
-				B410386529748160001CED69 /* DismissViewModifier.swift */,
 			);
 			path = Viewmodifiers;
 			sourceTree = "<group>";
@@ -444,6 +443,7 @@
 				B405E5372965F4CE0045DAFF /* LoaderView.swift */,
 				B4FF870D29647FB2007067A3 /* AlertView.swift */,
 				B410386729748485001CED69 /* RandomNumberProgressView.swift */,
+				B43608FD29755F4500FB3FB9 /* StepperButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -627,7 +627,6 @@
 				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
 				B447833429545C27006FC0EC /* FetchNumbersUseCase.swift in Sources */,
 				B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */,
-				B410386629748160001CED69 /* DismissViewModifier.swift in Sources */,
 				B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */,
 				B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */,
 				B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */,
@@ -657,6 +656,7 @@
 				B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */,
 				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
 				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
+				B43608FE29755F4500FB3FB9 /* StepperButton.swift in Sources */,
 				B4FCD3F92970207100768861 /* URL+.swift in Sources */,
 				B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */,
 				B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */,
