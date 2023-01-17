@@ -31,7 +31,7 @@ extension RandomNumberViewModel {
     }
 
     enum ViewState {
-        case error
+        case loaded
         case loading
     }
 }
@@ -39,10 +39,12 @@ extension RandomNumberViewModel {
 extension RandomNumberViewModel {
 @MainActor
     func trigger(_ input: Input) {
+        self.state.viewState.send(.loading)
         switch input {
         case .randomNumber:
             Task {
                 self.state.number = try await randomNumberUsecase.execute()
+                self.state.viewState.send(.loaded)
             }
         case .plus:
             Task {
@@ -51,6 +53,7 @@ extension RandomNumberViewModel {
                         intNumber > .zero else { return }
                 intNumber += 1
                 self.state.number = try await plusNumberUsecase.execute(String(intNumber))
+                self.state.viewState.send(.loaded)
             }
         case .minus:
             Task {
@@ -59,6 +62,7 @@ extension RandomNumberViewModel {
                       intNumber > .zero else { return }
                 intNumber -= 1
                 self.state.number = try await plusNumberUsecase.execute(String(intNumber))
+                self.state.viewState.send(.loaded)
             }
 
         }

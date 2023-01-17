@@ -9,12 +9,17 @@ import SwiftUI
 
 struct RandomNumberProgressView: View {
     @Binding var progress: Float
+    @Binding private var isLoading: Bool
     @State private var scale = 1.0
+
+    init(isLoading: Binding<Bool>, progress: Binding<Float>) {
+        self._isLoading = isLoading
+        self._progress = progress
+    }
 
     var body: some View {
         
         ZStack {
-
             Circle()
                 .stroke(lineWidth: 20.0)
                 .opacity(0.3)
@@ -28,9 +33,16 @@ struct RandomNumberProgressView: View {
                     .foregroundColor(Color.red)
                     .rotationEffect(Angle(degrees: 270.0))
                     .animation(.linear(duration: 1), value: scale)
-            Text(String(format: "%.0f", min(self.progress, 1)*100.0))
-                .font(.largeTitle)
-                .bold()
+            ZStack {
+                Text(String(format: "%.0f", min(self.progress, 1)*100.0))
+                    .font(.largeTitle)
+                    .bold()
+                    .show(!isLoading)
+                ProgressView()
+                    .show(isLoading)
+                    .tint(.purple)
+                    .foregroundColor(.green)
+            }
         }
     }
 }

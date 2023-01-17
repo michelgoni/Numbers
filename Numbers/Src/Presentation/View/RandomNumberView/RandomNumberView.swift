@@ -16,6 +16,7 @@ private extension String {
 struct RandomNumberView: View {
     private typealias ViewModel = AnyViewModel<RandomNumberViewModel.Input, RandomNumberViewModel.State>
     @State var progressValue: Float = 0.0
+    @State var isLoading: Bool = true
     @EnvironmentObject private var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
@@ -36,6 +37,7 @@ struct RandomNumberView: View {
                     viewModel.trigger(.minus)
                 }, imageName: .minusCircle)
                 RandomNumberProgressView(
+                    isLoading: self.$isLoading,
                     progress: self.$progressValue)
                     .frame(width: 150.0,
                            height: 150.0)
@@ -45,12 +47,13 @@ struct RandomNumberView: View {
                 }, imageName: .plusCircle)
 
             }
-
             Text(verbatim: viewModel.number?.numberFact ?? "0")
                 .font(.headline)
                 .padding()
+
             Spacer()
         }
+        .onReceive(viewModel.viewState, perform: viewState)
         .onAppear {[weak viewModel] in
             viewModel?.trigger(.randomNumber)
         }
@@ -60,8 +63,26 @@ struct RandomNumberView: View {
         }
     }
 }
+
+private extension RandomNumberView {
+
+    func viewState(_ state: RandomNumberViewModel.ViewState?) {
+        switch state {
+        case .loaded:
+            self.isLoading = false
+        case .loading:
+            self.isLoading = true
+        default: break
+        }
+    }
+}
 struct RandomNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomNumberView()
+        RandomNumberView(isLoading: false)
+            .environmentObject(
+                AnyViewModel(
+                    RandomNumberViewModel()
+                )
+            )
     }
 }

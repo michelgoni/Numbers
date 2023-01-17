@@ -25,7 +25,7 @@ struct NumbersView: View {
     @State private var isHideLoader: Bool = true
     @State private var searchText = ""
     @State private var isShowingSheet = false
-
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .center) {
@@ -54,9 +54,10 @@ struct NumbersView: View {
                                     RandomNumberViewModel()
                                 )
                             )
-                            .presentationDetents([.medium, .large])
-
+                            .presentationDetents([.fraction(0.6)])
+                            .presentationDragIndicator(.hidden)
                     }
+
                     .modifier(
                         TitleModifier(
                             title: .favoriteTitle)
@@ -85,6 +86,7 @@ struct NumbersView: View {
     func runSearch() {
         viewModel.trigger(.singleNumber(searchText))
     }
+    
 }
 
 private extension NumbersView {
