@@ -37,7 +37,6 @@ extension FavoriteIconViewModel {
 
         case .modifyNumber where self.state.favoriteNumber == true:
             self.state.favoriteNumber.toggle()
-            
             self.state.viewState.send(.none)
         case .modifyNumber where self.state.favoriteNumber == false:
             self.state.favoriteNumber.toggle()

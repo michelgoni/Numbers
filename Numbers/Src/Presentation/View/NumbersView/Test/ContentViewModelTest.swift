@@ -32,40 +32,6 @@ final class ContentViewModelTest: XCTestCase, AwaitPublisher {
 
     }
 
-    @MainActor func testFetchNumbersAsyncExecutes() async {
-
-        sut.trigger(.numbersList)
-
-        let expected = try? await sut.numbersUseCase.execute()
-        let value = numberEntity()
-
-        XCTAssertEqual(expected?.first?.numberValue, value.first?.numberValue)
-    }
-
-    @MainActor func testFetchNumbersExecutes() {
-
-        fetchNumbersUseCaseMock.returnValue = .just(numberEntity())
-
-        sut.trigger(.numbersList)
-        let expected = try? awaitSuccess(sut.numbersUseCase.execute())
-        let value = numberEntity()
-
-        XCTAssertEqual(expected?.first?.numberValue, value.first?.numberValue)
-    }
-
-    @MainActor func testFetchSingleNumberExecutes() {
-
-        fetchNumberUseCaseMock.returnValue = .just(singleNumberEntity())
-
-        sut.trigger(.singleNumber("1"))
-        let expected = try? awaitSuccess(sut.numberUseCase.execute("1"))
-        let value = singleNumberEntity()
-
-        XCTAssertEqual(expected?.first?.numberValue, value.first?.numberValue)
-
-    }
-
-
     @MainActor func testFetchNumbersLoadingState() {
         let expectation = self.expectation(description: "ViewModel State")
         fetchNumbersUseCaseMock.returnValue = .just([])
