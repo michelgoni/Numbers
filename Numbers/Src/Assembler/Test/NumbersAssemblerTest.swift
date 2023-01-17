@@ -25,14 +25,19 @@ final class NumbersAssemblerTest: XCTestCase {
         XCTAssertNotNil(sut.container.resolve(FavoritesNumberUseCaseType.self))
         XCTAssertNotNil(sut.container.resolve(SaveFavoriteNumberUseCaseType.self))
         XCTAssertNotNil(sut.container.resolve(IsfavoriteNumberUseCaseType.self))
+        XCTAssertNotNil(sut.container.resolve(FetchWithOperationNumberUseCaseType.self))
+        XCTAssertNotNil(sut.container.resolve(FetchRandomNumberUseCaseType.self))
+
     }
 
     func testRegisterRepository() {
         XCTAssertNotNil(sut.container.resolve(NumberRepositoryType.self))
+        XCTAssertNotNil(sut.container.resolve(NumberWithOperationRepositoryType.self))
     }
 
     func testRegisterRemoteService() {
         XCTAssertNotNil(sut.container.resolve(RemoteDSType.self))
+        XCTAssertNotNil(sut.container.resolve(RemoteDSRandomNumberType.self))
     }
 
     func testRegisterLocalService() {

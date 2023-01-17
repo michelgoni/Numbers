@@ -21,6 +21,7 @@ extension View {
         modifier(ShowModifier(active: condition))
     }
 
+
     @ViewBuilder func hidden(_ shouldHide: Bool) -> some View {
         switch shouldHide {
         case true: self.hidden()

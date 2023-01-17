@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NumberEntity: Identifiable, Codable {
+struct NumberEntity: Identifiable, Codable, Equatable {
     var id = UUID()
     var isFavorite: Bool
     var isPrime: Bool

@@ -42,6 +42,14 @@ private extension Container {
         register(IsfavoriteNumberUseCaseType.self) { resolver in
             IsfavoriteNumberUseCase()
         }
+
+        register(FetchRandomNumberUseCaseType.self) { resolver in
+            FetchRandomNumberUseCaseImplm()
+        }
+
+        register(FetchWithOperationNumberUseCaseType.self) { resolver in
+            FetchWithOperationNumberUseCase()
+        }
     }
 }
 

@@ -23,6 +23,10 @@ private extension Container {
         register(RemoteDSType.self) { resolver in
             RemoteDSImpl()
         }
+
+        register(RemoteDSRandomNumberType.self) { resolver in
+            RemoteDSRandomNumber()
+        }
     }
 }
 

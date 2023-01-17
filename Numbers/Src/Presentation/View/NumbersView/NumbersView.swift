@@ -8,6 +8,12 @@
 import Combine
 import SwiftUI
 
+private extension CGFloat {
+    static let padding = 12.0
+}
+
+
+
 private extension String {
     static let favoriteTitle = "Fun with numbers"
 }
@@ -16,25 +22,49 @@ struct NumbersView: View {
     private typealias ViewModel = AnyViewModel<NumbersViewModel.Input, NumbersViewModel.State>
     @EnvironmentObject private var viewModel: ViewModel
     @State private var alert = AlertView()
-    @State var isHideLoader: Bool = true
+    @State private var isHideLoader: Bool = true
     @State private var searchText = ""
-
+    @State private var isShowingSheet = false
+    
     var body: some View {
         NavigationStack {
-            VStack {
-                List(viewModel.numbers) {
-                    NumberRow(number: $0)
-                        .environmentObject(
-                            AnyViewModel(
-                                FavoritesViewModel()
+            ZStack(alignment: .center) {
+
+                VStack {
+                    List(viewModel.numbers) {
+                        NumberRow(number: $0)
+                            .environmentObject(
+                                AnyViewModel(
+                                    FavoritesViewModel()
+                                )
                             )
-                        )
+                    }
+                    .listStyle(.inset)
+
+                    Button("Choose a random number!") {
+                        isShowingSheet.toggle()
+                    }
+                    .show(!viewModel.numbers.isEmpty)
+                    .buttonStyle(PrimaryButton())
+                    .padding([.bottom, .leading, .trailing], .padding)
+                    .sheet(isPresented: $isShowingSheet) {
+                        RandomNumberView()
+                            .environmentObject(
+                                AnyViewModel(
+                                    RandomNumberViewModel()
+                                )
+                            )
+                            .presentationDetents([.fraction(0.6)])
+                            .presentationDragIndicator(.hidden)
+                    }
+
+                    .modifier(
+                        TitleModifier(
+                            title: .favoriteTitle)
+                    )
                 }
-                .modifier(
-                    TitleModifier(
-                        title: .favoriteTitle)
-                )
             }
+
             .overlay(
                 LoaderView()
                 .show(isHideLoader)
@@ -45,6 +75,7 @@ struct NumbersView: View {
                 viewModel?.trigger(.numbersList)
             }
         }
+
         .searchable(text: $searchText)
         .onSubmit(of: .search, runSearch)
         .refreshable { [weak viewModel] in
@@ -55,6 +86,7 @@ struct NumbersView: View {
     func runSearch() {
         viewModel.trigger(.singleNumber(searchText))
     }
+    
 }
 
 private extension NumbersView {
@@ -85,3 +117,4 @@ struct ContentView_Previews: PreviewProvider {
             )
     }
 }
+

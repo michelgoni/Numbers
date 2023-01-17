@@ -23,5 +23,13 @@ private extension Container {
         register(NumberRepositoryType.self) { resolver in
             NumbersRepository()
         }
+
+        register(RandomNumberRepositoryType.self) { resolver in
+            RandomNumberRepositoryImplm()
+        }
+
+        register(NumberWithOperationRepositoryType.self) { resolver in
+            NumberWithOperationRepositoryImplm()
+        }
     }
 }
