@@ -14,7 +14,9 @@ private extension String {
 }
 
 struct RandomNumberView: View {
+    private typealias ViewModel = AnyViewModel<RandomNumberViewModel.Input, RandomNumberViewModel.State>
     @State var progressValue: Float = 0.0
+    @EnvironmentObject private var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
@@ -31,23 +33,31 @@ struct RandomNumberView: View {
             }
             HStack {
                 StepperButton(action: {
-
-                }, imageName: .plusCircle)
-                RandomNumberProgressView(progress: self.$progressValue)
+                    viewModel.trigger(.minus)
+                }, imageName: .minusCircle)
+                RandomNumberProgressView(
+                    progress: self.$progressValue)
                     .frame(width: 150.0,
                            height: 150.0)
                     .padding(60.0)
                 StepperButton(action: {
-
-                }, imageName: .minusCircle)
+                    viewModel.trigger(.plus)
+                }, imageName: .plusCircle)
 
             }
 
-            Text(verbatim: "Simple text for the result")
+            Text(verbatim: viewModel.number?.numberFact ?? "0")
                 .font(.headline)
+                .padding()
             Spacer()
         }
-
+        .onAppear {[weak viewModel] in
+            viewModel?.trigger(.randomNumber)
+        }
+        .onChange(of: viewModel.number) { newValue in
+            guard let number = newValue else { return }
+            self.progressValue = (number.numberValue as NSString).floatValue / 100.0
+        }
     }
 }
 struct RandomNumberView_Previews: PreviewProvider {

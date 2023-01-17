@@ -41,7 +41,7 @@ struct NumbersView: View {
                     }
                     .listStyle(.inset)
 
-                    Button("See the number of the day!") {
+                    Button("Choose a random number!") {
                         isShowingSheet.toggle()
                     }
                     .show(!viewModel.numbers.isEmpty)
@@ -49,6 +49,11 @@ struct NumbersView: View {
                     .padding([.bottom, .leading, .trailing], .padding)
                     .sheet(isPresented: $isShowingSheet) {
                         RandomNumberView()
+                            .environmentObject(
+                                AnyViewModel(
+                                    RandomNumberViewModel()
+                                )
+                            )
                             .presentationDetents([.medium, .large])
 
                     }
