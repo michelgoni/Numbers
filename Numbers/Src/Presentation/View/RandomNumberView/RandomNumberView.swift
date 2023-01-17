@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+private extension CGFloat {
+    static let randomNumberWidth = 150.0
+    static let randomNumberHeight = 150.0
+    static let randomNumberPadding = 60.0
+}
+
 private extension String {
     static let circleFill = "x.circle.fill"
     static let plusCircle = "plus.circle.fill"
@@ -39,19 +45,23 @@ struct RandomNumberView: View {
                 RandomNumberProgressView(
                     isLoading: self.$isLoading,
                     progress: self.$progressValue)
-                    .frame(width: 150.0,
-                           height: 150.0)
-                    .padding(60.0)
+                .frame(width: .randomNumberWidth,
+                       height: .randomNumberHeight)
+                .padding(.randomNumberPadding)
                 StepperButton(action: {
                     viewModel.trigger(.plus)
                 }, imageName: .plusCircle)
 
             }
-            Text(verbatim: viewModel.number?.numberFact ?? "0")
-                .font(.headline)
-                .padding()
+            ZStack {
+                Text(verbatim: viewModel.number?.numberFact ?? "0")
+                    .font(.headline)
+                    .padding()
+                    .show(!isLoading)
+                ProgressView().show(isLoading)
+                Spacer()
+            }
 
-            Spacer()
         }
         .onReceive(viewModel.viewState, perform: viewState)
         .onAppear {[weak viewModel] in
