@@ -59,6 +59,8 @@
 		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
 		B497B856295A57130057237A /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B497B855295A57130057237A /* NumberRow.swift */; };
 		B4A25C802976A41A008A7511 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C7F2976A41A008A7511 /* Int+.swift */; };
+		B4A25C852976C0D8008A7511 /* RandomNumberViewmodeltest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */; };
+		B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */; };
 		B4A294FD295E19D40067FB54 /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A294FC295E19D40067FB54 /* TitleModifier.swift */; };
 		B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABD3F92971A6F100A781D9 /* Swinject */; };
 		B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */; };
@@ -147,6 +149,8 @@
 		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 		B4A25C7F2976A41A008A7511 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
+		B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconViewmodelTest.swift; sourceTree = "<group>"; };
 		B4A294FC295E19D40067FB54 /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
 		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
 		B4B06E39295F498800B25094 /* FavoriteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRow.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 		B41038622974803C001CED69 /* RandomNumberView */ = {
 			isa = PBXGroup;
 			children = (
+				B4A25C832976C0BF008A7511 /* Test */,
 				B41038632974804C001CED69 /* RandomNumberView.swift */,
 				B436090F29758D7700FB3FB9 /* RandomNumberViewModel.swift */,
 			);
@@ -536,6 +541,22 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		B4A25C832976C0BF008A7511 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		B4A25C862976E884008A7511 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		B4ABD3FC2971E8D300A781D9 /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +591,7 @@
 		B4F91B57296D710D008F011A /* FavoriteIconView */ = {
 			isa = PBXGroup;
 			children = (
+				B4A25C862976E884008A7511 /* Test */,
 				B4F91B54296D6A39008F011A /* FavoriteIconView.swift */,
 				B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */,
 			);
@@ -769,7 +791,9 @@
 				B4FF87192964B6BD007067A3 /* NumbersRepositoryTest.swift in Sources */,
 				B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */,
 				B405E526296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift in Sources */,
+				B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */,
 				B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */,
+				B4A25C852976C0D8008A7511 /* RandomNumberViewmodeltest.swift in Sources */,
 				B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */,
 				B405E52F2965A8AC0045DAFF /* FavoritesUseCaseTest.swift in Sources */,
 				B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */,
