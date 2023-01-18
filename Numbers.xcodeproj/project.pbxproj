@@ -18,6 +18,7 @@
 		B405E53A2965F6310045DAFF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5392965F6310045DAFF /* View+.swift */; };
 		B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53D2965FC600045DAFF /* EmptyView.swift */; };
 		B405E5402965FEE70045DAFF /* FetchNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */; };
+		B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */; };
 		B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */; };
 		B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */; };
 		B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */; };
@@ -58,6 +59,7 @@
 		B44D33322958DE400026CFF4 /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D33312958DE400026CFF4 /* Publisher+.swift */; };
 		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
 		B497B856295A57130057237A /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B497B855295A57130057237A /* NumberRow.swift */; };
+		B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */; };
 		B4A25C802976A41A008A7511 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C7F2976A41A008A7511 /* Int+.swift */; };
 		B4A25C852976C0D8008A7511 /* RandomNumberViewmodeltest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */; };
 		B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */; };
@@ -105,6 +107,7 @@
 		B405E5392965F6310045DAFF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		B405E53D2965FC600045DAFF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumberUseCase.swift; sourceTree = "<group>"; };
+		B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberUseCaseTest.swift; sourceTree = "<group>"; };
 		B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceAssembly.swift; sourceTree = "<group>"; };
 		B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServiceAssembly.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 		B44D33312958DE400026CFF4 /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
 		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
+		B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryTest.swift; sourceTree = "<group>"; };
 		B4A25C7F2976A41A008A7511 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
 		B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconViewmodelTest.swift; sourceTree = "<group>"; };
@@ -195,8 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				B405E525296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift */,
-				B405E52E2965A8AC0045DAFF /* FavoritesUseCaseTest.swift */,
-				B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */,
 				B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */,
 			);
 			path = Test;
@@ -279,6 +281,7 @@
 		B436090029756CE100FB3FB9 /* Number */ = {
 			isa = PBXGroup;
 			children = (
+				B4FF87172964AD9C007067A3 /* Test */,
 				B4F91B5F296DB4AC008F011A /* LocalDS */,
 				B44783822954BEB2006FC0EC /* RemoteDS */,
 				B447832D29545B0F006FC0EC /* NumbersRepositoryImplm.swift */,
@@ -298,6 +301,7 @@
 		B436090429756E3900FB3FB9 /* RandomNumber */ = {
 			isa = PBXGroup;
 			children = (
+				B49D8FBE29783DC2008AF9E3 /* Test */,
 				B436090729756EA700FB3FB9 /* RemoteDS */,
 				B436090529756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift */,
 			);
@@ -315,6 +319,7 @@
 		B436090A29758C1800FB3FB9 /* FavoritesUseCase */ = {
 			isa = PBXGroup;
 			children = (
+				B49D8FB929783695008AF9E3 /* Test */,
 				B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */,
 				B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */,
 			);
@@ -324,6 +329,7 @@
 		B436090B29758C3400FB3FB9 /* NumbersUseCase */ = {
 			isa = PBXGroup;
 			children = (
+				B405E524296591B00045DAFF /* Test */,
 				B447833329545C27006FC0EC /* FetchNumbersUseCase.swift */,
 				B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */,
 				B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */,
@@ -335,6 +341,7 @@
 		B436090C29758C3F00FB3FB9 /* RandomNumberUseCase */ = {
 			isa = PBXGroup;
 			children = (
+				B49D8FB82977F695008AF9E3 /* Test */,
 				B436090D29758C7100FB3FB9 /* RandomNumberUseCase.swift */,
 				B43609112975B31500FB3FB9 /* FetchWithOperationNumberUseCase.swift */,
 			);
@@ -393,7 +400,6 @@
 			children = (
 				B436090429756E3900FB3FB9 /* RandomNumber */,
 				B436090029756CE100FB3FB9 /* Number */,
-				B4FF87172964AD9C007067A3 /* Test */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -440,7 +446,6 @@
 			children = (
 				B436090B29758C3400FB3FB9 /* NumbersUseCase */,
 				B436090C29758C3F00FB3FB9 /* RandomNumberUseCase */,
-				B405E524296591B00045DAFF /* Test */,
 				B436090A29758C1800FB3FB9 /* FavoritesUseCase */,
 			);
 			path = Usecases;
@@ -539,6 +544,31 @@
 				B43608FD29755F4500FB3FB9 /* StepperButton.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		B49D8FB82977F695008AF9E3 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		B49D8FB929783695008AF9E3 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */,
+				B405E52E2965A8AC0045DAFF /* FavoritesUseCaseTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		B49D8FBE29783DC2008AF9E3 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		B4A25C832976C0BF008A7511 /* Test */ = {
@@ -789,9 +819,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FF87192964B6BD007067A3 /* NumbersRepositoryTest.swift in Sources */,
+				B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */,
 				B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */,
 				B405E526296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift in Sources */,
 				B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */,
+				B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */,
 				B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */,
 				B4A25C852976C0D8008A7511 /* RandomNumberViewmodeltest.swift in Sources */,
 				B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */,

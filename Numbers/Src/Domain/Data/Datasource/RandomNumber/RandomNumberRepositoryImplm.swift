@@ -11,7 +11,7 @@ import Foundation
 final class RandomNumberRepositoryImplm: RandomNumberRepositoryType {
 
     @Inject var remoteDS: RemoteDSRandomNumberType
-    @Inject private var localDS: UserDefaultsDataSourceType
+    @Inject var localDS: UserDefaultsDataSourceType
 
     func fetchRandomNumber() async throws -> NumberEntity {
 
