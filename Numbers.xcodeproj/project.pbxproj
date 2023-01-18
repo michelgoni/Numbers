@@ -60,7 +60,7 @@
 		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
 		B497B856295A57130057237A /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B497B855295A57130057237A /* NumberRow.swift */; };
 		B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */; };
-		B4A25C802976A41A008A7511 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C7F2976A41A008A7511 /* Int+.swift */; };
+		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
 		B4A25C852976C0D8008A7511 /* RandomNumberViewmodeltest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */; };
 		B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */; };
 		B4A294FD295E19D40067FB54 /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A294FC295E19D40067FB54 /* TitleModifier.swift */; };
@@ -152,7 +152,6 @@
 		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 		B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryTest.swift; sourceTree = "<group>"; };
-		B4A25C7F2976A41A008A7511 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
 		B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconViewmodelTest.swift; sourceTree = "<group>"; };
 		B4A294FC295E19D40067FB54 /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
@@ -181,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */,
 				B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,7 +518,6 @@
 				B405E5392965F6310045DAFF /* View+.swift */,
 				B4F91B62296EF41F008F011A /* Sequence+.swift */,
 				B4FCD3F82970207100768861 /* URL+.swift */,
-				B4A25C7F2976A41A008A7511 /* Int+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -665,6 +664,7 @@
 			name = Numbers;
 			packageProductDependencies = (
 				B4ABD3F92971A6F100A781D9 /* Swinject */,
+				B49D8FC229784966008AF9E3 /* NumbersEx */,
 			);
 			productName = Numbers;
 			productReference = B44782F0295448C8006FC0EC /* Numbers.app */;
@@ -718,6 +718,7 @@
 			mainGroup = B44782E7295448C8006FC0EC;
 			packageReferences = (
 				B4ABD3F82971A6F100A781D9 /* XCRemoteSwiftPackageReference "Swinject" */,
+				B49D8FC129784966008AF9E3 /* XCRemoteSwiftPackageReference "NumbersEx" */,
 			);
 			productRefGroup = B44782F1295448C8006FC0EC /* Products */;
 			projectDirPath = "";
@@ -800,7 +801,6 @@
 				B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */,
 				B43609142975B34D00FB3FB9 /* NumberWithOperationRepositoryType.swift in Sources */,
 				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
-				B4A25C802976A41A008A7511 /* Int+.swift in Sources */,
 				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
 				B43608FE29755F4500FB3FB9 /* StepperButton.swift in Sources */,
 				B4FCD3F92970207100768861 /* URL+.swift in Sources */,
@@ -1094,6 +1094,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B49D8FC129784966008AF9E3 /* XCRemoteSwiftPackageReference "NumbersEx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/michelgoni/NumbersEx";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B4ABD3F82971A6F100A781D9 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -1105,6 +1113,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B49D8FC229784966008AF9E3 /* NumbersEx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49D8FC129784966008AF9E3 /* XCRemoteSwiftPackageReference "NumbersEx" */;
+			productName = NumbersEx;
+		};
 		B4ABD3F92971A6F100A781D9 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4ABD3F82971A6F100A781D9 /* XCRemoteSwiftPackageReference "Swinject" */;

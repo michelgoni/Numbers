@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "numbersex",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michelgoni/NumbersEx",
+      "state" : {
+        "branch" : "main",
+        "revision" : "95b81a5cdfd799f53ce1920b1e5c2da69d5077a1"
+      }
+    },
+    {
       "identity" : "swinject",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Swinject/Swinject.git",
