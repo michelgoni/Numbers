@@ -279,6 +279,7 @@
 		B436090029756CE100FB3FB9 /* Number */ = {
 			isa = PBXGroup;
 			children = (
+				B4FF87172964AD9C007067A3 /* Test */,
 				B4F91B5F296DB4AC008F011A /* LocalDS */,
 				B44783822954BEB2006FC0EC /* RemoteDS */,
 				B447832D29545B0F006FC0EC /* NumbersRepositoryImplm.swift */,
@@ -396,7 +397,6 @@
 			children = (
 				B436090429756E3900FB3FB9 /* RandomNumber */,
 				B436090029756CE100FB3FB9 /* Number */,
-				B4FF87172964AD9C007067A3 /* Test */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
