@@ -16,7 +16,6 @@ final class RandomNumberUseCaseTest: XCTestCase {
     private var sut: FetchRandomNumberUseCaseImplm!
     private var repositoryMock: RandomRepositoryMock!
 
-
     override func setUp() {
         super.setUp()
         sut = FetchRandomNumberUseCaseImplm()

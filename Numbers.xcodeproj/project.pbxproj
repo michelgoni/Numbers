@@ -197,8 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				B405E525296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift */,
-				B405E52E2965A8AC0045DAFF /* FavoritesUseCaseTest.swift */,
-				B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */,
 				B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */,
 			);
 			path = Test;
@@ -317,6 +315,7 @@
 		B436090A29758C1800FB3FB9 /* FavoritesUseCase */ = {
 			isa = PBXGroup;
 			children = (
+				B49D8FB929783695008AF9E3 /* Test */,
 				B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */,
 				B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */,
 			);
@@ -548,6 +547,15 @@
 			isa = PBXGroup;
 			children = (
 				B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		B49D8FB929783695008AF9E3 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */,
+				B405E52E2965A8AC0045DAFF /* FavoritesUseCaseTest.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
