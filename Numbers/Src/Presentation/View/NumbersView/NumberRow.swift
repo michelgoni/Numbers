@@ -28,6 +28,7 @@ struct NumberRow: View {
         self.number = number
     }
     var body: some View {
+        
         VStack {
             HStack {
                 Text(number.numberValue)
@@ -38,21 +39,23 @@ struct NumberRow: View {
             HStack {
                 primeButtonButton(number.isPrime)
                 Spacer()
-                FavoriteIconView(isLoading: $isLoading, number: State(initialValue: number))
-                    .frame(width: .width, height: .height)
-                    .environmentObject(
-                        AnyViewModel(
-                            FavoritesViewModel()
-                        )
+                FavoriteIconView(
+                    isLoading: $isLoading,
+                    number: State(initialValue: number)
+                )
+                .environmentObject(
+                    AnyViewModel(
+                        FavoritesViewModel()
                     )
-                    .environmentObject(
-                        AnyViewModel(
-                            FavoriteIconViewModel(isFavorite: number.isFavorite)
-                        )
+                )
+                .environmentObject(
+                    AnyViewModel(
+                        FavoriteIconViewModel(isFavorite: number.isFavorite)
                     )
+                )
 
             }
-           
+
             .padding()
         }
     }

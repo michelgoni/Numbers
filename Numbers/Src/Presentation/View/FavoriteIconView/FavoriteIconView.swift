@@ -18,21 +18,20 @@ private extension String {
 }
 
 struct FavoriteIconView: View {
-
+    
     @State var number: NumberEntity
     @Binding private var isLoading: Bool
     private typealias ViewModel = AnyViewModel<FavoritesViewModel.Input, FavoritesViewModel.State>
     private typealias IconViewModel = AnyViewModel<FavoriteIconViewModel.Input, FavoriteIconViewModel.State>
     @EnvironmentObject private var viewModel: ViewModel
     @EnvironmentObject private var favoriteIconViewModel: IconViewModel
-
+    
     init(isLoading: Binding<Bool>, number: State<NumberEntity>) {
         self._isLoading = isLoading
         self._number = number
     }
-
+    
     var body: some View {
-
         HStack {
             Spacer()
             ZStack {
@@ -49,14 +48,16 @@ struct FavoriteIconView: View {
                 .show(!isLoading)
                 ProgressView()
                     .show(isLoading)
-                .onReceive(favoriteIconViewModel.viewState, perform: viewState)
-                .onAppear {
-                    favoriteIconViewModel.trigger(.isFavorite(number.numberValue))
-                }
+                    .onReceive(favoriteIconViewModel.viewState, perform: viewState)
+                    .onAppear {
+                        favoriteIconViewModel.trigger(
+                            .isFavorite(number.numberValue)
+                        )
+                    }
             }
         }
     }
-
+    
 }
 
 private extension FavoriteIconView {

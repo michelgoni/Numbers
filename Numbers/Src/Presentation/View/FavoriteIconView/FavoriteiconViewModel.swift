@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 final class FavoriteIconViewModel: ViewModel {
-    @Injected(\.isfavoriteNumberUseCase) var favoritesUseCase: IsfavoriteNumberUseCaseType
+    @Inject var favoritesUseCase: IsfavoriteNumberUseCaseType
 
     @Published var state: State
 
@@ -37,7 +37,6 @@ extension FavoriteIconViewModel {
 
         case .modifyNumber where self.state.favoriteNumber == true:
             self.state.favoriteNumber.toggle()
-            
             self.state.viewState.send(.none)
         case .modifyNumber where self.state.favoriteNumber == false:
             self.state.favoriteNumber.toggle()
