@@ -5,7 +5,9 @@
 //  Created by Michel Goñi on 15/1/23.
 //
 
+import NumbersEx
 import SwiftUI
+
 
 private extension CGFloat {
     static let randomNumberWidth = 150.0

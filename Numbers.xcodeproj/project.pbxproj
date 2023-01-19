@@ -15,7 +15,6 @@
 		B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */; };
 		B405E5352965D0060045DAFF /* FavoritesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */; };
 		B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5372965F4CE0045DAFF /* LoaderView.swift */; };
-		B405E53A2965F6310045DAFF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5392965F6310045DAFF /* View+.swift */; };
 		B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53D2965FC600045DAFF /* EmptyView.swift */; };
 		B405E5402965FEE70045DAFF /* FetchNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */; };
 		B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */; };
@@ -55,9 +54,9 @@
 		B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837C295482EE006FC0EC /* AppCoordinator.swift */; };
 		B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783832954BF0F006FC0EC /* RemoteDS.swift */; };
 		B44783862954C446006FC0EC /* NumbersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783852954C446006FC0EC /* NumbersError.swift */; };
-		B44C5B8C296C3E89008DB54C /* OnAppearOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44C5B8B296C3E89008DB54C /* OnAppearOnce.swift */; };
 		B44D33322958DE400026CFF4 /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D33312958DE400026CFF4 /* Publisher+.swift */; };
 		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
+		B491B85329795EA600A49CBB /* ShowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B85229795EA600A49CBB /* ShowModifier.swift */; };
 		B497B856295A57130057237A /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B497B855295A57130057237A /* NumberRow.swift */; };
 		B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */; };
 		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
@@ -77,7 +76,6 @@
 		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
 		B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */; };
 		B4FF870E29647FB2007067A3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF870D29647FB2007067A3 /* AlertView.swift */; };
-		B4FF871029648461007067A3 /* AlertViewModfier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF870F29648461007067A3 /* AlertViewModfier.swift */; };
 		B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */; };
 		B4FF87142964AA62007067A3 /* UserDefaultsDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87132964AA62007067A3 /* UserDefaultsDataSourceType.swift */; };
 		B4FF87192964B6BD007067A3 /* NumbersRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87182964B6BD007067A3 /* NumbersRepositoryTest.swift */; };
@@ -102,7 +100,6 @@
 		B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumbersUseCaseTest.swift; sourceTree = "<group>"; };
 		B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTest.swift; sourceTree = "<group>"; };
 		B405E5372965F4CE0045DAFF /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
-		B405E5392965F6310045DAFF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		B405E53D2965FC600045DAFF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumberUseCase.swift; sourceTree = "<group>"; };
 		B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberUseCaseTest.swift; sourceTree = "<group>"; };
@@ -145,9 +142,9 @@
 		B44783832954BF0F006FC0EC /* RemoteDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDS.swift; sourceTree = "<group>"; };
 		B44783852954C446006FC0EC /* NumbersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersError.swift; sourceTree = "<group>"; };
 		B44783872954C5F1006FC0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		B44C5B8B296C3E89008DB54C /* OnAppearOnce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAppearOnce.swift; sourceTree = "<group>"; };
 		B44D33312958DE400026CFF4 /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
 		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
+		B491B85229795EA600A49CBB /* ShowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowModifier.swift; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 		B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryTest.swift; sourceTree = "<group>"; };
 		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
@@ -165,7 +162,6 @@
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
 		B4FF870D29647FB2007067A3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		B4FF870F29648461007067A3 /* AlertViewModfier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModfier.swift; sourceTree = "<group>"; };
 		B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDefaultDataSourceTest.swift; sourceTree = "<group>"; };
 		B4FF87132964AA62007067A3 /* UserDefaultsDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataSourceType.swift; sourceTree = "<group>"; };
 		B4FF87182964B6BD007067A3 /* NumbersRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersRepositoryTest.swift; sourceTree = "<group>"; };
@@ -511,7 +507,6 @@
 			children = (
 				B44D33312958DE400026CFF4 /* Publisher+.swift */,
 				B405E529296594C00045DAFF /* AwaitPublisher.swift */,
-				B405E5392965F6310045DAFF /* View+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -521,8 +516,7 @@
 			children = (
 				B44D5007295C4D010013BC65 /* NewNumberModifier.swift */,
 				B4A294FC295E19D40067FB54 /* TitleModifier.swift */,
-				B4FF870F29648461007067A3 /* AlertViewModfier.swift */,
-				B44C5B8B296C3E89008DB54C /* OnAppearOnce.swift */,
+				B491B85229795EA600A49CBB /* ShowModifier.swift */,
 			);
 			path = Viewmodifiers;
 			sourceTree = "<group>";
@@ -749,6 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B447833729545D8A006FC0EC /* Resolver.swift in Sources */,
+				B491B85329795EA600A49CBB /* ShowModifier.swift in Sources */,
 				B436090929756EBF00FB3FB9 /* RemoteDSRandomNumber.swift in Sources */,
 				B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */,
 				B40E97852973126F007AC2A6 /* LazyView.swift in Sources */,
@@ -770,10 +765,8 @@
 				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
 				B497B856295A57130057237A /* NumberRow.swift in Sources */,
 				B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */,
-				B44C5B8C296C3E89008DB54C /* OnAppearOnce.swift in Sources */,
 				B41038642974804C001CED69 /* RandomNumberView.swift in Sources */,
 				B436090629756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift in Sources */,
-				B405E53A2965F6310045DAFF /* View+.swift in Sources */,
 				B410385629746570001CED69 /* PrimaryButton.swift in Sources */,
 				B436090E29758C7100FB3FB9 /* RandomNumberUseCase.swift in Sources */,
 				B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */,
@@ -788,7 +781,6 @@
 				B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */,
 				B4F91B55296D6A39008F011A /* FavoriteIconView.swift in Sources */,
 				B410386829748485001CED69 /* RandomNumberProgressView.swift in Sources */,
-				B4FF871029648461007067A3 /* AlertViewModfier.swift in Sources */,
 				B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */,
 				B432F573295F3BB0007F6518 /* FavoritesView.swift in Sources */,
 				B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */,
