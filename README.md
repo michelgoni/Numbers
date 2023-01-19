@@ -16,7 +16,7 @@ Using a MVVM archtitecture, I´ve followed clean Architecture principles:
 Each layer has its own test implementation 🤟
 
 ### TODO
-
+- [x] Use SPM as depdendency manager
 - [ ] UI testing
 - [x] Viewmodel testing
 - [ ] Modularization
