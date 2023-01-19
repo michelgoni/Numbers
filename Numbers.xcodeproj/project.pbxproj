@@ -56,6 +56,9 @@
 		B44783862954C446006FC0EC /* NumbersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783852954C446006FC0EC /* NumbersError.swift */; };
 		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
 		B491B85329795EA600A49CBB /* ShowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B85229795EA600A49CBB /* ShowModifier.swift */; };
+		B491B86129798E2200A49CBB /* FeatureIcon in Frameworks */ = {isa = PBXBuildFile; productRef = B491B86029798E2200A49CBB /* FeatureIcon */; };
+		B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = B491B863297990EB00A49CBB /* FeatureNumbersView */; };
+		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
 		B497B856295A57130057237A /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B497B855295A57130057237A /* NumberRow.swift */; };
 		B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */; };
 		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
@@ -143,6 +146,9 @@
 		B44783872954C5F1006FC0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
 		B491B85229795EA600A49CBB /* ShowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowModifier.swift; sourceTree = "<group>"; };
+		B491B85E29798DBA00A49CBB /* FeatureIcon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureIcon; sourceTree = "<group>"; };
+		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
+		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FeatureFavorites; path = Features/FeatureFavorites; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 		B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryTest.swift; sourceTree = "<group>"; };
 		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
@@ -171,6 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */,
+				B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */,
+				B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */,
+				B491B86129798E2200A49CBB /* FeatureIcon in Frameworks */,
 				B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +350,11 @@
 		B44782E7295448C8006FC0EC = {
 			isa = PBXGroup;
 			children = (
+				B491B8652979911200A49CBB /* FeatureFavorites */,
+				B491B85F29798DF900A49CBB /* Features */,
 				B44782F2295448C8006FC0EC /* Numbers */,
 				B44782F1295448C8006FC0EC /* Products */,
+				B491B8552979887C00A49CBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -518,6 +530,22 @@
 			path = Viewmodifiers;
 			sourceTree = "<group>";
 		};
+		B491B8552979887C00A49CBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B491B85F29798DF900A49CBB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B491B862297990D300A49CBB /* FeatureNumbersView */,
+				B491B85E29798DBA00A49CBB /* FeatureIcon */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		B497AED8296C65C000524C99 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +678,9 @@
 			packageProductDependencies = (
 				B4ABD3F92971A6F100A781D9 /* Swinject */,
 				B49D8FC229784966008AF9E3 /* NumbersEx */,
+				B491B86029798E2200A49CBB /* FeatureIcon */,
+				B491B863297990EB00A49CBB /* FeatureNumbersView */,
+				B491B8662979911C00A49CBB /* FeatureFavorites */,
 			);
 			productName = Numbers;
 			productReference = B44782F0295448C8006FC0EC /* Numbers.app */;
@@ -1093,6 +1124,18 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B491B86029798E2200A49CBB /* FeatureIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeatureIcon;
+		};
+		B491B863297990EB00A49CBB /* FeatureNumbersView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeatureNumbersView;
+		};
+		B491B8662979911C00A49CBB /* FeatureFavorites */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeatureFavorites;
+		};
 		B49D8FC229784966008AF9E3 /* NumbersEx */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B49D8FC129784966008AF9E3 /* XCRemoteSwiftPackageReference "NumbersEx" */;
