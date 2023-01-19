@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NumbersEx
 
 private extension String {
     static let favoriteTitle = "Saved favorites"
