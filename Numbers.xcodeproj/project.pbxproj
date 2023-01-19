@@ -75,9 +75,7 @@
 		B4F91B59296D7143008F011A /* FavoriteiconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */; };
 		B4F91B5B296D72C3008F011A /* IsfavoriteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */; };
 		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
-		B4F91B63296EF41F008F011A /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B62296EF41F008F011A /* Sequence+.swift */; };
 		B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */; };
-		B4FCD3F92970207100768861 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F82970207100768861 /* URL+.swift */; };
 		B4FF870E29647FB2007067A3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF870D29647FB2007067A3 /* AlertView.swift */; };
 		B4FF871029648461007067A3 /* AlertViewModfier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF870F29648461007067A3 /* AlertViewModfier.swift */; };
 		B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */; };
@@ -165,9 +163,7 @@
 		B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteiconViewModel.swift; sourceTree = "<group>"; };
 		B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsfavoriteNumberUseCase.swift; sourceTree = "<group>"; };
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
-		B4F91B62296EF41F008F011A /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
-		B4FCD3F82970207100768861 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		B4FF870D29647FB2007067A3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		B4FF870F29648461007067A3 /* AlertViewModfier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModfier.swift; sourceTree = "<group>"; };
 		B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDefaultDataSourceTest.swift; sourceTree = "<group>"; };
@@ -516,8 +512,6 @@
 				B44D33312958DE400026CFF4 /* Publisher+.swift */,
 				B405E529296594C00045DAFF /* AwaitPublisher.swift */,
 				B405E5392965F6310045DAFF /* View+.swift */,
-				B4F91B62296EF41F008F011A /* Sequence+.swift */,
-				B4FCD3F82970207100768861 /* URL+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -773,7 +767,6 @@
 				B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */,
 				B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */,
 				B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */,
-				B4F91B63296EF41F008F011A /* Sequence+.swift in Sources */,
 				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
 				B497B856295A57130057237A /* NumberRow.swift in Sources */,
 				B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */,
@@ -803,7 +796,6 @@
 				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
 				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
 				B43608FE29755F4500FB3FB9 /* StepperButton.swift in Sources */,
-				B4FCD3F92970207100768861 /* URL+.swift in Sources */,
 				B43609122975B31500FB3FB9 /* FetchWithOperationNumberUseCase.swift in Sources */,
 				B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */,
 				B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */,
