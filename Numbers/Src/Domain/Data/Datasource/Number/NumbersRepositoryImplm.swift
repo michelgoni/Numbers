@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import NumbersEx
 import SwiftUI
 
 final class NumbersRepository: NumberRepositoryType {
@@ -32,7 +33,7 @@ final class NumbersRepository: NumberRepositoryType {
                     let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
                     return NumberEntity(
                         isFavorite: self.localDS.isFavorite(numberFact.split(separator: Character(" ")).first?.description ?? ""),
-                        isPrime: self.isPrime(number: Int(number) ?? .zero),
+                        isPrime: Int(number)?.isPrime ?? false,
                         numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
                         numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " ") )}
             }
@@ -49,7 +50,7 @@ final class NumbersRepository: NumberRepositoryType {
             let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
             return NumberEntity(
                 isFavorite: self.localDS.isFavorite(numberFact.split(separator: Character(" ")).first?.description ?? ""),
-                isPrime: self.isPrime(number: Int(number) ?? .zero),
+                isPrime: Int(number)?.isPrime ?? false,
                 numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
                 numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "))
         })
@@ -67,7 +68,7 @@ final class NumbersRepository: NumberRepositoryType {
                     let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
                     return NumberEntity(
                         isFavorite: self.localDS.isFavorite(numberFact.split(separator: Character(" ")).first?.description ?? ""),
-                        isPrime: self.isPrime(number: Int(number) ?? .zero),
+                        isPrime: Int(number)?.isPrime ?? false,
                         numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
                         numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " ")
                     )
@@ -91,17 +92,6 @@ final class NumbersRepository: NumberRepositoryType {
         } catch {
             throw error
         }
-    }
-
-    // MARK: - Private
-    private func isPrime(number: Int) -> Bool {
-        guard number >= 2 else { return false }
-        for i in 2 ..< number {
-            if number % i == 0 {
-                return false
-            }
-        }
-        return true
     }
 }
 

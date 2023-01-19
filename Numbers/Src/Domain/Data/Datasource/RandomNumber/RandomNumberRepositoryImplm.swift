@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import NumbersEx
 
 final class RandomNumberRepositoryImplm: RandomNumberRepositoryType {
 
