@@ -148,7 +148,7 @@
 		B491B85229795EA600A49CBB /* ShowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowModifier.swift; sourceTree = "<group>"; };
 		B491B85E29798DBA00A49CBB /* FeatureIcon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureIcon; sourceTree = "<group>"; };
 		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
-		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FeatureFavorites; path = Features/FeatureFavorites; sourceTree = "<group>"; };
+		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 		B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryTest.swift; sourceTree = "<group>"; };
 		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
@@ -350,7 +350,6 @@
 		B44782E7295448C8006FC0EC = {
 			isa = PBXGroup;
 			children = (
-				B491B8652979911200A49CBB /* FeatureFavorites */,
 				B491B85F29798DF900A49CBB /* Features */,
 				B44782F2295448C8006FC0EC /* Numbers */,
 				B44782F1295448C8006FC0EC /* Products */,
@@ -540,6 +539,7 @@
 		B491B85F29798DF900A49CBB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B491B8652979911200A49CBB /* FeatureFavorites */,
 				B491B862297990D300A49CBB /* FeatureNumbersView */,
 				B491B85E29798DBA00A49CBB /* FeatureIcon */,
 			);

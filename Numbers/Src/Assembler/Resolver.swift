@@ -8,12 +8,12 @@
 import Foundation
 import Swinject
 
-class Resolver {
-    static let shared = Resolver()
+public class Resolver {
+    public static let shared = Resolver()
 
     private var dependencyProvider = DependencyProvider()
 
-    func resolve<T>(_ type: T.Type) -> T {
+    public func resolve<T>(_ type: T.Type) -> T {
         dependencyProvider.container.resolve(T.self)!
     }
 

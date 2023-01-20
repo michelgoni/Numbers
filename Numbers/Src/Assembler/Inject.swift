@@ -8,11 +8,11 @@
 import Foundation
 
 @propertyWrapper
-struct Inject<Component> {
+public struct Inject<Component> {
 
-    var component: Component
+    public var component: Component
 
-    init(){
+    public init(){
         self.component = Resolver.shared.resolve(Component.self)
     }
 
