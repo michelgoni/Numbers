@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import NumbersEx
 
 
 final class FavoritesViewModel: ViewModel {

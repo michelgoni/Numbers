@@ -69,7 +69,6 @@
 		B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */; };
 		B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B06E39295F498800B25094 /* FavoriteRow.swift */; };
 		B4B06E3C295F4CE200B25094 /* ModifiableViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B06E3B295F4CE200B25094 /* ModifiableViewState.swift */; };
-		B4EE915329575DA800BB45A3 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE915229575DA800BB45A3 /* AnyViewModel.swift */; };
 		B4EE915529575ECD00BB45A3 /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE915429575ECD00BB45A3 /* NumbersViewModel.swift */; };
 		B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */; };
 		B4F91B55296D6A39008F011A /* FavoriteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B54296D6A39008F011A /* FavoriteIconView.swift */; };
@@ -157,7 +156,6 @@
 		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
 		B4B06E39295F498800B25094 /* FavoriteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRow.swift; sourceTree = "<group>"; };
 		B4B06E3B295F4CE200B25094 /* ModifiableViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiableViewState.swift; sourceTree = "<group>"; };
-		B4EE915229575DA800BB45A3 /* AnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModel.swift; sourceTree = "<group>"; };
 		B4EE915429575ECD00BB45A3 /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
 		B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		B4F91B54296D6A39008F011A /* FavoriteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconView.swift; sourceTree = "<group>"; };
@@ -455,7 +453,6 @@
 		B447833529545CDC006FC0EC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B4F62A1F29570FD700CDC792 /* AnyViewModel */,
 				B4478379295481D1006FC0EC /* Main */,
 				B44783802954BC93006FC0EC /* View */,
 			);
@@ -614,14 +611,6 @@
 			path = Assembler;
 			sourceTree = "<group>";
 		};
-		B4F62A1F29570FD700CDC792 /* AnyViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				B4EE915229575DA800BB45A3 /* AnyViewModel.swift */,
-			);
-			path = AnyViewModel;
-			sourceTree = "<group>";
-		};
 		B4F91B56296D7104008F011A /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,7 +764,6 @@
 				B436090929756EBF00FB3FB9 /* RemoteDSRandomNumber.swift in Sources */,
 				B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */,
 				B40E97852973126F007AC2A6 /* LazyView.swift in Sources */,
-				B4EE915329575DA800BB45A3 /* AnyViewModel.swift in Sources */,
 				B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */,
 				B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */,
 				B436091029758D7700FB3FB9 /* RandomNumberViewModel.swift in Sources */,
