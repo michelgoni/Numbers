@@ -5,6 +5,7 @@
 //  Created by Michel Goñi on 30/12/22.
 //
 
+import NumbersEx
 import SwiftUI
 
 private extension CGFloat {
