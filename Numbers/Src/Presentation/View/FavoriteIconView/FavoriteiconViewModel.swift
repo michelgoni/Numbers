@@ -8,6 +8,7 @@
 
 import Combine
 import Foundation
+import NumbersEx
 
 final class FavoriteIconViewModel: ViewModel {
     @Inject var favoritesUseCase: IsfavoriteNumberUseCaseType
