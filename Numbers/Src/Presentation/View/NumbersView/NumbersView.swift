@@ -71,8 +71,8 @@ struct NumbersView: View {
             )
             .onReceive(viewModel.viewState, perform: viewState)
             .initializeAlert(alert)
-            .onAppearOnce{ [weak viewModel] in
-                viewModel?.trigger(.numbersList)
+            .onAppearOnce{ 
+//                viewModel?.trigger(.numbersList)
             }
         }
 

@@ -7,18 +7,18 @@
 
 import Combine
 
-class ModifiableViewState<ViewState> {
+public class ModifiableViewState<ViewState> {
     lazy var state = { PassthroughSubject<ViewState?, Never>() }()
 
     public init() {}
 }
 
-protocol ModifiableStateData {
+public protocol ModifiableStateData {
     associatedtype ViewState
     var modifiableView: ModifiableViewState<ViewState> { get }
 }
 
-extension ModifiableStateData {
+public extension ModifiableStateData {
     var viewState: PassthroughSubject<ViewState?, Never> {
         get { modifiableView.state }
         set { modifiableView.state = newValue }
