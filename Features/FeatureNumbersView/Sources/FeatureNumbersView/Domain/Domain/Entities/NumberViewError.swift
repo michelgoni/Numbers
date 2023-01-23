@@ -8,7 +8,9 @@
 import Foundation
 
 enum NumberViewError: Error {
-    case decodingLocalNumberError
-    case wrongStatusCode
     case badResponse(String)
+    case decodingLocalNumberError
+    case wronDependency(String)
+    case wrongStatusCode
+
 }

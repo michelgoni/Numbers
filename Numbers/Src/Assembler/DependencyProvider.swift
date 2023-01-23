@@ -24,3 +24,16 @@ class DependencyProvider {
         )
     }
 }
+
+public class Injector {
+    public static let shared = Injector()
+    private lazy var assembler = Assembler()
+    private lazy var container = assembler.resolver as? Container
+    private lazy var resolver = container?.synchronize()
+
+    private init() {}
+
+    func apply(_ assemblies: [Assembly]) {
+        assembler.apply(assemblies: assemblies)
+    }
+}

@@ -42,6 +42,7 @@
 		B436091029758D7700FB3FB9 /* RandomNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436090F29758D7700FB3FB9 /* RandomNumberViewModel.swift */; };
 		B43609122975B31500FB3FB9 /* FetchWithOperationNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43609112975B31500FB3FB9 /* FetchWithOperationNumberUseCase.swift */; };
 		B43609142975B34D00FB3FB9 /* NumberWithOperationRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43609132975B34D00FB3FB9 /* NumberWithOperationRepositoryType.swift */; };
+		B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */; };
 		B44782F6295448C8006FC0EC /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44782F5295448C8006FC0EC /* NumbersView.swift */; };
 		B44782F8295448CA006FC0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782F7295448CA006FC0EC /* Assets.xcassets */; };
 		B44782FB295448CA006FC0EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782FA295448CA006FC0EC /* Preview Assets.xcassets */; };
@@ -128,6 +129,7 @@
 		B436090F29758D7700FB3FB9 /* RandomNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewModel.swift; sourceTree = "<group>"; };
 		B43609112975B31500FB3FB9 /* FetchWithOperationNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWithOperationNumberUseCase.swift; sourceTree = "<group>"; };
 		B43609132975B34D00FB3FB9 /* NumberWithOperationRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberWithOperationRepositoryType.swift; sourceTree = "<group>"; };
+		B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssemblies.swift; sourceTree = "<group>"; };
 		B44782F0295448C8006FC0EC /* Numbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44782F5295448C8006FC0EC /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
 		B44782F7295448CA006FC0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				B44783772954819E006FC0EC /* Appdelegate.swift */,
 				B447837A295481EE006FC0EC /* Scenedelegate.swift */,
 				B447837C295482EE006FC0EC /* AppCoordinator.swift */,
+				B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				B497B856295A57130057237A /* NumberRow.swift in Sources */,
 				B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */,
 				B41038642974804C001CED69 /* RandomNumberView.swift in Sources */,
+				B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */,
 				B436090629756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift in Sources */,
 				B410385629746570001CED69 /* PrimaryButton.swift in Sources */,
 				B436090E29758C7100FB3FB9 /* RandomNumberUseCase.swift in Sources */,
