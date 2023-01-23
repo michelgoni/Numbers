@@ -9,5 +9,6 @@ import Foundation
 
 protocol NumberRepositoryType {
     func fetchNumbers()  async throws -> [NumberRowViewEntity]
+    func fetchNumber(_ number: String)  async throws -> NumberRowViewEntity
 }
 

@@ -34,4 +34,14 @@ final class NumberRepositoryImplm: NumberRepositoryType {
             }
     }
 
+    func fetchNumber(_ number: String)  async throws -> NumberRowViewEntity {
+        let value = try await remoteDS.fetchNumber(number)
+        let numberFact = String(decoding: value, as: UTF8.self)
+        let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
+        return NumberRowViewEntity(numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
+                                   numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
+                                   isPrime: Int(number)?.isPrime ?? false)
+
+    }
+
 }

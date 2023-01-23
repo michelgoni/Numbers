@@ -13,7 +13,6 @@ private extension CGFloat {
     static let padding = 12.0
 }
 
-
 private extension String {
     static let favoriteTitle = "Fun with numbers"
 }
@@ -73,7 +72,7 @@ struct NumbersView: View {
     }
 
     func runSearch() {
-//        viewModel.trigger(.singleNumber(searchText))
+        viewModel.trigger(.searchNumber(searchText))
     }
 
 }
@@ -101,7 +100,7 @@ struct ContentView_Previews: PreviewProvider {
         NumbersView()
             .environmentObject(
                 AnyViewModel(
-                    NumbersViewModel(numbersUseCase: FetchNumbersUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())))
+                    NumbersViewModel(numbersUseCase: FetchNumbersUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())), numberUseCase: FetchNumberUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())))
                 )
             )
     }

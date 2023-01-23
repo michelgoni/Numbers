@@ -13,10 +13,12 @@ final class NumbersViewModel: ViewModel {
 
     @Published var state = State()
     private var numbersUseCase: FetchNumbersUseCaseType
+    private var numberUseCase: FetchNumberUseCaseType
     private lazy var cancellables = Set<AnyCancellable>()
 
-    init(numbersUseCase: FetchNumbersUseCaseType) {
+    init(numbersUseCase: FetchNumbersUseCaseType, numberUseCase: FetchNumberUseCaseType) {
         self.numbersUseCase = numbersUseCase
+        self.numberUseCase = numberUseCase
 
     }
 }
@@ -35,6 +37,17 @@ extension NumbersViewModel {
                     self.state.viewState.send(.error)
                 }
             }
+        case .searchNumber(let number):
+            state.viewState.send(.loading)
+            Task {
+                do {
+                    self.state.numbers = []
+                    self.state.numbers.append(try await numberUseCase.execute(number))
+                    self.state.viewState.send(.none)
+                } catch {
+                    self.state.viewState.send(.error)
+                }
+            }
         }
     }
 }
@@ -43,6 +56,7 @@ extension NumbersViewModel {
 
     enum Input {
         case numbersList
+        case searchNumber(String)
 
     }
 

@@ -15,6 +15,7 @@ private extension Int {
 protocol FetchNumberRemoteDSType {
     var urlSession: URLSession { get }
     func fetchNumbers(_ numbers: [String]) async throws -> [Data]
+    func fetchNumber(_ number: String) async throws -> Data
 }
 
 final class FetchNumberRemoteDSImplm: FetchNumberRemoteDSType {
@@ -39,6 +40,22 @@ final class FetchNumberRemoteDSImplm: FetchNumberRemoteDSType {
             } catch {
                 throw NumberViewError.badResponse(error.localizedDescription)
             }
+        }
+    }
+
+    func fetchNumber(_ number: String) async throws -> Data {
+        do {
+            let (data, response) = try await URLSession.shared
+                .data(from: URL(string: "http://numbersapi.com/\(number)/trivia")!)
+            guard
+                let httpResponse = response as? HTTPURLResponse,
+                    httpResponse.statusCode == .okCode
+            else {
+                throw NumberViewError.wrongStatusCode
+            }
+            return data
+        } catch {
+            throw NumberViewError.badResponse(error.localizedDescription)
         }
     }
 
