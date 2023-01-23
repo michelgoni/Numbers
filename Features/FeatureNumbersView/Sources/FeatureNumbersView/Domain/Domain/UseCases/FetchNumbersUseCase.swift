@@ -7,20 +7,20 @@
 
 import Foundation
 
-protocol FetchNumbersUseCaseType {
+public protocol FetchNumbersUseCaseType {
 
     func execute() async throws -> [NumberRowViewEntity]
 }
 
-final class FetchNumbersUseCase: FetchNumbersUseCaseType {
+public final class FetchNumbersUseCase: FetchNumbersUseCaseType {
 
     private var repository: NumberRepositoryType
 
-    init(repository: NumberRepositoryType) {
+    public init(repository: NumberRepositoryType) {
         self.repository = repository
     }
 
-    func execute() async throws -> [NumberRowViewEntity] {
+    public func execute() async throws -> [NumberRowViewEntity] {
         try await repository.fetchNumbers()
     }
 }

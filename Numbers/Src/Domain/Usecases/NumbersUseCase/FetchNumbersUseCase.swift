@@ -1,28 +1,28 @@
+////
+////  FetchNumbersUseCase.swift
+////  Numbers
+////
+////  Created by Michel Goñi on 22/12/22.
+////
 //
-//  FetchNumbersUseCase.swift
-//  Numbers
+//import Combine
+//import Foundation
 //
-//  Created by Michel Goñi on 22/12/22.
+//protocol FetchNumbersUseCaseType {
 //
-
-import Combine
-import Foundation
-
-protocol FetchNumbersUseCaseType {
-
-    func execute() -> ResponsePublisher<[NumberEntity]>
-    func execute() async throws -> [NumberEntity]
-}
-
-final class FetchNumbersUseCase: FetchNumbersUseCaseType {
-
-    @Inject var repository: NumberRepositoryType
-
-    func execute() -> ResponsePublisher<[NumberEntity]> {
-        repository.fetchNumbers()
-    }
-
-    func execute() async throws -> [NumberEntity] {
-        try await repository.fetchNumbersAsync()
-    }
-}
+//    func execute() -> ResponsePublisher<[NumberEntity]>
+//    func execute() async throws -> [NumberEntity]
+//}
+//
+//final class FetchNumbersUseCase: FetchNumbersUseCaseType {
+//
+//    @Inject var repository: NumberRepositoryType
+//
+//    func execute() -> ResponsePublisher<[NumberEntity]> {
+//        repository.fetchNumbers()
+//    }
+//
+//    func execute() async throws -> [NumberEntity] {
+//        try await repository.fetchNumbersAsync()
+//    }
+//}

@@ -37,3 +37,9 @@ public class Injector {
         assembler.apply(assemblies: assemblies)
     }
 }
+
+public extension Injector {
+    func get<Service>(_ service: Service.Type) -> Service? {
+        resolver?.resolve(service)
+    }
+}

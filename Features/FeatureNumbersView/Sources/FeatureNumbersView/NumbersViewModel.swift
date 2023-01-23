@@ -9,14 +9,14 @@ import Combine
 import Foundation
 import NumbersEx
 
-final class NumbersViewModel: ViewModel {
+final public class NumbersViewModel: ViewModel {
 
-    @Published var state = State()
-    private var numbersUseCase: FetchNumbersUseCaseType
-    private var numberUseCase: FetchNumberUseCaseType
+     @Published public var state = State()
+    public var numbersUseCase: FetchNumbersUseCaseType?
+    public var numberUseCase: FetchNumberUseCaseType?
     private lazy var cancellables = Set<AnyCancellable>()
 
-    init(numbersUseCase: FetchNumbersUseCaseType, numberUseCase: FetchNumberUseCaseType) {
+    public init(numbersUseCase: FetchNumbersUseCaseType?, numberUseCase: FetchNumberUseCaseType?) {
         self.numbersUseCase = numbersUseCase
         self.numberUseCase = numberUseCase
 
@@ -24,12 +24,13 @@ final class NumbersViewModel: ViewModel {
 }
 
 extension NumbersViewModel {
-    @MainActor func trigger(_ input: Input) {
+    @MainActor public func trigger(_ input: Input) {
         switch input {
         case .numbersList:
             state.viewState.send(.loading)
             Task {
                 do {
+                    guard let numbersUseCase = numbersUseCase else { return }
                     let value = try await numbersUseCase.execute()
                     self.state.numbers = value
                     self.state.viewState.send(.none)
@@ -41,6 +42,7 @@ extension NumbersViewModel {
             state.viewState.send(.loading)
             Task {
                 do {
+                    guard let numberUseCase = numberUseCase else { return }
                     self.state.numbers = []
                     self.state.numbers.append(try await numberUseCase.execute(number))
                     self.state.viewState.send(.none)
@@ -54,18 +56,18 @@ extension NumbersViewModel {
 
 extension NumbersViewModel {
 
-    enum Input {
+    public enum Input {
         case numbersList
         case searchNumber(String)
 
     }
 
-    struct State: ModifiableStateData {
+    public struct State: ModifiableStateData {
         var numbers = [NumberRowViewEntity]()
-        var modifiableView = ModifiableViewState<ViewState>()
+        public var modifiableView = ModifiableViewState<ViewState>()
     }
 
-    enum ViewState {
+    public enum ViewState {
         case error
         case loading
     }

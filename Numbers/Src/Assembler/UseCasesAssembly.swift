@@ -20,13 +20,13 @@ struct UseCasesAssembly: Assembly {
 private extension Container {
 
     func registerUseCases() {
-        register(FetchNumbersUseCaseType.self) { resolver in
-            FetchNumbersUseCase()
-        }
+//        register(FetchNumbersUseCaseType.self) { resolver in
+//            FetchNumbersUseCase()
+//        }
 
-        register(FetchNumberUseCaseType.self) { resolver in
-            FetchNumberUseCase()
-        }
+//        register(FetchNumberUseCaseType.self) { resolver in
+//            FetchNumberUseCase()
+//        }
 
         register(DeleteFavoriteNumberUseCaseType.self) { resolver in
             DeleteFavoriteNumberUseCase()

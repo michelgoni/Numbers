@@ -17,15 +17,21 @@ private extension String {
     static let favoriteTitle = "Fun with numbers"
 }
 
-struct NumbersView: View {
-    private typealias ViewModel = AnyViewModel<NumbersViewModel.Input, NumbersViewModel.State>
-    @EnvironmentObject private var viewModel: ViewModel
+public struct NumbersView: View {
+
+    public typealias ViewModel = AnyViewModel<NumbersViewModel.Input, NumbersViewModel.State>
+    @ObservedObject public var viewModel: ViewModel
     @State private var alert = AlertView()
     @State private var isHideLoader: Bool = true
     @State private var searchText = ""
     @State private var isShowingSheet = false
 
-    var body: some View {
+    public init(viewModel: ViewModel) {
+
+        self.viewModel = viewModel
+    }
+
+    public var body: some View {
         NavigationStack {
             ZStack(alignment: .center) {
 
@@ -95,16 +101,16 @@ private extension NumbersView {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NumbersView()
-            .environmentObject(
-                AnyViewModel(
-                    NumbersViewModel(numbersUseCase: FetchNumbersUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())), numberUseCase: FetchNumberUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())))
-                )
-            )
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NumbersView()
+//            .environmentObject(
+//                AnyViewModel(
+//                    NumbersViewModel(numbersUseCase: FetchNumbersUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())), numberUseCase: FetchNumberUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())))
+//                )
+//            )
+//    }
+//}
 
 
 

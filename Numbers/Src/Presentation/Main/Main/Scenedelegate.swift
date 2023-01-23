@@ -11,10 +11,12 @@ import SwiftUI
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let coordinator = AppCoordinator()
+    private let coordinator = AppCoordinator()
+    private var injector: Injector { .shared }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
+        injector.apply(assemblies)
         coordinator.start(with: UIWindow(windowScene: scene))
         print("SceneDelegate is connected!")
     }

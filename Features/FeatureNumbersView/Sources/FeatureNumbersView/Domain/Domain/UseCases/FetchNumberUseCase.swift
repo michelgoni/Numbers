@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol FetchNumberUseCaseType {
+public protocol FetchNumberUseCaseType {
 
     func execute(_ number: String) async throws -> NumberRowViewEntity
 }
 
-final class FetchNumberUseCase: FetchNumberUseCaseType {
+public final class FetchNumberUseCase: FetchNumberUseCaseType {
 
     private var repository: NumberRepositoryType
 
@@ -20,7 +20,7 @@ final class FetchNumberUseCase: FetchNumberUseCaseType {
         self.repository = repository
     }
 
-    func execute(_ number: String) async throws -> NumberRowViewEntity {
+    public func execute(_ number: String) async throws -> NumberRowViewEntity {
         try await repository.fetchNumber(number)
     }
 }

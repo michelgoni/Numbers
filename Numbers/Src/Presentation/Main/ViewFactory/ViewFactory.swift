@@ -7,7 +7,9 @@
 
 import Foundation
 import NumbersEx
+import FeatureNumbersView
 import SwiftUI
+import Swinject
 
 private extension String {
     static let numbersImage = "list.number"
@@ -16,8 +18,9 @@ private extension String {
 
 
 struct ViewFactory {
-
+    var injector: Injector { .shared }
     init() {}
+
 }
 
 extension ViewFactory {
@@ -32,34 +35,53 @@ extension ViewFactory {
     func view(_ type: ViewType) -> some View {
 
         make {
-            switch type {
-            case .main:
-                TabView {
-                    NumbersView()
-                        .environmentObject(
-                            AnyViewModel(
-                                NumbersViewModel()
-                            )
-                        )
-                        .tabItem {
-                            Label("Numbers",
-                                  systemImage:. numbersImage)
-                        }
-
-                    FavoritesView()
-                        .environmentObject(
-                            AnyViewModel(
-                                FavoritesViewModel()
-                            )
-                        )
-                        .tabItem {
-                            Label("Saved Numbers",
-                                  systemImage: .favsImage)
-                        }
+            TabView {
+                NumbersView(
+                    viewModel: AnyViewModel(
+                        NumbersViewModel(
+                            numbersUseCase: injector.get(FetchNumbersUseCaseType.self),
+                            numberUseCase: injector.get(FetchNumberUseCaseType.self))
+                    )
+                )
+                .tabItem {
+                    Label("Numbers",
+                          systemImage:. numbersImage)
                 }
             }
-
         }
+
+//
+//        make {
+//
+//            TabView {
+//                NumbersView(
+//                    viewModel: AnyViewModel(
+//                        NumbersViewModel(
+//                            numbersUseCase: injector.get(
+//                                FetchNumbersUseCaseType.self),
+//                            numberUseCase: injector.get(FetchNumberUseCaseType.self)
+//                        )
+//                    )
+//                )
+//                .tabItem {
+//                    Label("Numbers",
+//                          systemImage:. numbersImage)
+//                }
+//
+//
+//                //                    FavoritesView()
+//                //                        .environmentObject(
+//                //                            AnyViewModel(
+//                //                                FavoritesViewModel()
+//                //                            )
+//                //                        )
+//                //                        .tabItem {
+//                //                            Label("Saved Numbers",
+//                //                                  systemImage: .favsImage)
+//                //                        }
+//            }
+//
+//        }
     }
 }
 
