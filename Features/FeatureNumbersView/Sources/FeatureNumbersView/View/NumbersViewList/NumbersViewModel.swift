@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import NumbersEx
+import Shared
 
 final public class NumbersViewModel: ViewModel {
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Shared
 
 protocol FetchNumberLocalDSType {
     func fetchSavedNumbers() throws -> [NumberRowViewEntity]

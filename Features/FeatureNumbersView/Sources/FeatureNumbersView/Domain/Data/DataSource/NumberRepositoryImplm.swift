@@ -7,6 +7,7 @@
 
 import Foundation
 import NumbersEx
+import Shared
 
 final class NumberRepositoryImplm: NumberRepositoryType {
     private var localDS: FetchNumberLocalDSType?

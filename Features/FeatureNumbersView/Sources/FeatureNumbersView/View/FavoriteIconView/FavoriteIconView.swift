@@ -8,6 +8,7 @@
 import Foundation
 import NumbersEx
 import SwiftUI
+import Shared
 
 private extension Double {
     static let waitUntiFavoriteIsHandled = 0.5

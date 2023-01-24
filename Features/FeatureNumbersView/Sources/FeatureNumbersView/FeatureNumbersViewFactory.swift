@@ -8,6 +8,7 @@
 import NumbersUI
 import NumbersEx
 import SwiftUI
+import Shared
 
 
 extension ViewFactory {

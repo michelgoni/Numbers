@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Shared
 
 public protocol DeleteFavoriteNumberUseCaseType {
 
@@ -23,7 +24,7 @@ public final class DeleteFavoriteNumberUseCase: DeleteFavoriteNumberUseCaseType 
 
 
     public func execute(_ data: NumberRowViewEntity) async throws -> [NumberRowViewEntity] {
-        [NumberRowViewEntity(numberValue: "", numberFact: "", isPrime: false)]
+        []
     }
 }
 

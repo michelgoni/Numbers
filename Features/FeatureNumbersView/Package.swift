@@ -16,7 +16,8 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
          .package(url: "https://github.com/michelgoni/NumbersEx", branch: "main"),
          .package(url: "https://github.com/michelgoni/NumbersInjector", branch: "main"),
-         .package(url: "https://github.com/michelgoni/NumbersUI", branch: "main")
+         .package(url: "https://github.com/michelgoni/NumbersUI", branch: "main"),
+         .package(name: "Shared", path: "../Shared")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -24,7 +25,8 @@ let package = Package(
         .target(
             name: "FeatureNumbersView",
             dependencies: [ .product(name: "NumbersInjector", package: "NumbersInjector"),
-                            .product(name: "NumbersUI", package: "NumbersUI")]),
+                            .product(name: "NumbersUI", package: "NumbersUI"),
+                            .product(name: "Shared", package: "Shared")]),
         .testTarget(
             name: "FeatureNumbersViewTests",
             dependencies: ["FeatureNumbersView"]),

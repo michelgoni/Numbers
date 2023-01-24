@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Shared
 
 public protocol NumberRepositoryType {
     func fetchNumbers()  async throws -> [NumberRowViewEntity]

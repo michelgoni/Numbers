@@ -8,6 +8,7 @@ import Foundation
 import NumbersEx
 import NumbersUI
 import SwiftUI
+import Shared
 
 private extension CGFloat {
     static let width = 30.0

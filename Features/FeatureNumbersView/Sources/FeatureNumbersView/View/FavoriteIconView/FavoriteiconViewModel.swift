@@ -9,6 +9,7 @@
 import Combine
 import Foundation
 import NumbersEx
+import Shared
 
 public final class FavoriteIconViewModel: ViewModel {
     private var favoritesUseCase: IsfavoriteNumberUseCaseType?

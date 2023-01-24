@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import NumbersEx
+import Shared
 
 
 final class NumberRowViewModel: ViewModel {

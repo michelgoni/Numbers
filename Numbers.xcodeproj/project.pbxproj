@@ -124,6 +124,7 @@
 		B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconViewmodelTest.swift; sourceTree = "<group>"; };
 		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
 		B4B06E39295F498800B25094 /* FavoriteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRow.swift; sourceTree = "<group>"; };
+		B4BAF071298068F300FF05A0 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = ../Shared; sourceTree = "<group>"; };
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
 		B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDefaultDataSourceTest.swift; sourceTree = "<group>"; };
@@ -289,6 +290,7 @@
 		B44782E7295448C8006FC0EC = {
 			isa = PBXGroup;
 			children = (
+				B4BAF06A2980682E00FF05A0 /* Packages */,
 				B491B85F29798DF900A49CBB /* Features */,
 				B44782F2295448C8006FC0EC /* Numbers */,
 				B44782F1295448C8006FC0EC /* Products */,
@@ -545,6 +547,14 @@
 				B40E9786297312AA007AC2A6 /* Inject.swift */,
 			);
 			path = Assembler;
+			sourceTree = "<group>";
+		};
+		B4BAF06A2980682E00FF05A0 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B4BAF071298068F300FF05A0 /* Shared */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		B4F91B56296D7104008F011A /* Test */ = {

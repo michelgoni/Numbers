@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct NumberRowViewEntity: Codable, Identifiable {
-    public var id = UUID()
-    let numberValue: String
-    let numberFact: String
-    let isPrime: Bool
-}
+//struct NumberRowViewEntity: Codable, Identifiable {
+//    public var id = UUID()
+//    let numberValue: String
+//    let numberFact: String
+//    let isPrime: Bool
+//}
