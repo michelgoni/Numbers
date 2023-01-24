@@ -63,6 +63,16 @@ extension Container {
                 )
             )
         }.inObjectScope(.container)
+
+        register(IsfavoriteNumberUseCaseType.self.self) { resolver in
+            IsfavoriteNumberUseCase(
+                repository: NumberRepositoryImplm(
+                    localDS: resolver.resolve(
+                        FetchNumberLocalDSType.self),
+                    remoteDS: resolver.resolve(FetchNumberRemoteDSType.self)
+                )
+            )
+        }.inObjectScope(.container)
     }
 
     func registerRepository() {

@@ -37,23 +37,6 @@ public extension ViewFactory {
         }
 
 //
-//        make {
-//
-//            TabView {
-//                NumbersView(
-//                    viewModel: AnyViewModel(
-//                        NumbersViewModel(
-//                            numbersUseCase: injector.get(
-//                                FetchNumbersUseCaseType.self),
-//                            numberUseCase: injector.get(FetchNumberUseCaseType.self)
-//                        )
-//                    )
-//                )
-//                .tabItem {
-//                    Label("Numbers",
-//                          systemImage:. numbersImage)
-//                }
-//
 //
 //                //                    FavoritesView()
 //                //                        .environmentObject(

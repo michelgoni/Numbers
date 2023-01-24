@@ -6,6 +6,7 @@
 //
 import Foundation
 import NumbersEx
+import NumbersUI
 import SwiftUI
 
 private extension CGFloat {
@@ -19,15 +20,14 @@ private extension String {
 }
 
 struct NumberRow: View {
-    public typealias ViewModel = AnyViewModel<NumberRowViewModel.Input, NumberRowViewModel.State>
-    @ObservedObject public var viewModel: ViewModel
     @State private var isLoading: Bool
+    @Environment(\.viewFactory) private var viewFactory: ViewFactory
     let number: NumberRowViewEntity
 
-    init(number: NumberRowViewEntity, viewModel: ViewModel) {
+    init(number: NumberRowViewEntity) {
         self._isLoading = State(initialValue: false)
         self.number = number
-        self.viewModel = viewModel
+
     }
     var body: some View {
 
@@ -41,21 +41,8 @@ struct NumberRow: View {
             HStack {
                 primeButtonButton(number.isPrime)
                 Spacer()
-//                FavoriteIconView(
-//                    isLoading: $isLoading,
-//                    number: State(initialValue: number)
-//                )
-//                .environmentObject(
-//                    AnyViewModel(
-//                        FavoritesViewModel()
-//                    )
-//                )
-//                .environmentObject(
-//                    AnyViewModel(
-//                        FavoriteIconViewModel(isFavorite: number.isFavorite)
-//                    )
-//                )
-
+                viewFactory.favoriteIconView(isLoading: $isLoading,
+                                             number: number)
             }
 
             .padding()
@@ -66,7 +53,7 @@ struct NumberRow: View {
     private func primeButtonButton(_ favorite: Bool) -> some View {
 
         return Button(action: {
-            viewModel.trigger(.prime)
+
         }, label: {
             favorite.primeImage
         })

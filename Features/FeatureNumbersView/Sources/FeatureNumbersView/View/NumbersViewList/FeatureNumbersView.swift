@@ -22,13 +22,13 @@ public struct NumbersView: View {
 
     public typealias ViewModel = AnyViewModel<NumbersViewModel.Input, NumbersViewModel.State>
     @ObservedObject public var viewModel: ViewModel
+    @Environment(\.viewFactory) private var viewFactory
     @State private var alert = AlertView()
     @State private var isHideLoader: Bool = true
     @State private var searchText = ""
     @State private var isShowingSheet = false
-    @Environment(\.viewFactory) private var viewFactory
-    public init(viewModel: ViewModel) {
 
+    public init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
 

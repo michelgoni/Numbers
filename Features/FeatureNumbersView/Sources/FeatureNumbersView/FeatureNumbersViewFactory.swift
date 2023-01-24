@@ -7,7 +7,6 @@
 
 import NumbersUI
 import NumbersEx
-import NumbersInjector
 import SwiftUI
 
 
@@ -16,14 +15,25 @@ extension ViewFactory {
     func numberRow(_ number: NumberRowViewEntity) -> some View {
 
         make {
-            NumberRow(number: number,
-                      viewModel: AnyViewModel(
-                        NumberRowViewModel(favoritesUseCase: injector.get(FetchNumbersUseCaseType.self),
-                                           saveFavoritesUseCase: injector.get(SaveFavoriteNumberUseCaseType.self), deleteFavoritesUseCase: injector.get(DeleteFavoriteNumberUseCaseType.self)
-                                          )
-                      )
-            )
+            NumberRow(number: number)
         }
+    }
+
+    func favoriteIconView(isLoading: Binding<Bool>,
+                          number: NumberRowViewEntity) -> some View {
+
+        make {
+            FavoriteIconView(isLoading: isLoading,
+                             favoriteIconViewModel: AnyViewModel(
+                                FavoriteIconViewModel(
+                                    isFavorite: false,
+                                    favoritesUseCase: injector.get(IsfavoriteNumberUseCaseType.self),
+                                    saveFavoritesUseCase: injector.get(SaveFavoriteNumberUseCaseType.self)
+                                )
+                             ),
+                             number: number)
+        }
+
     }
     
 }

@@ -52,7 +52,6 @@
 		B44783862954C446006FC0EC /* NumbersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783852954C446006FC0EC /* NumbersError.swift */; };
 		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
 		B491B85329795EA600A49CBB /* ShowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B85229795EA600A49CBB /* ShowModifier.swift */; };
-		B491B86129798E2200A49CBB /* FeatureIcon in Frameworks */ = {isa = PBXBuildFile; productRef = B491B86029798E2200A49CBB /* FeatureIcon */; };
 		B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = B491B863297990EB00A49CBB /* FeatureNumbersView */; };
 		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
 		B497B856295A57130057237A /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B497B855295A57130057237A /* NumberRow.swift */; };
@@ -68,7 +67,6 @@
 		B4EE915529575ECD00BB45A3 /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE915429575ECD00BB45A3 /* NumbersViewModel.swift */; };
 		B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */; };
 		B4F91B55296D6A39008F011A /* FavoriteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B54296D6A39008F011A /* FavoriteIconView.swift */; };
-		B4F91B59296D7143008F011A /* FavoriteiconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */; };
 		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
 		B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */; };
 		B4FF870E29647FB2007067A3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF870D29647FB2007067A3 /* AlertView.swift */; };
@@ -136,7 +134,6 @@
 		B44783872954C5F1006FC0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
 		B491B85229795EA600A49CBB /* ShowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowModifier.swift; sourceTree = "<group>"; };
-		B491B85E29798DBA00A49CBB /* FeatureIcon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureIcon; sourceTree = "<group>"; };
 		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
 		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
 		B497B855295A57130057237A /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
@@ -150,7 +147,6 @@
 		B4EE915429575ECD00BB45A3 /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
 		B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		B4F91B54296D6A39008F011A /* FavoriteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconView.swift; sourceTree = "<group>"; };
-		B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteiconViewModel.swift; sourceTree = "<group>"; };
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
 		B4FF870D29647FB2007067A3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -167,7 +163,6 @@
 				B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */,
 				B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */,
 				B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */,
-				B491B86129798E2200A49CBB /* FeatureIcon in Frameworks */,
 				B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,7 +519,6 @@
 			children = (
 				B491B8652979911200A49CBB /* FeatureFavorites */,
 				B491B862297990D300A49CBB /* FeatureNumbersView */,
-				B491B85E29798DBA00A49CBB /* FeatureIcon */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -609,7 +603,6 @@
 			children = (
 				B4A25C862976E884008A7511 /* Test */,
 				B4F91B54296D6A39008F011A /* FavoriteIconView.swift */,
-				B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */,
 			);
 			path = FavoriteIconView;
 			sourceTree = "<group>";
@@ -652,7 +645,6 @@
 			packageProductDependencies = (
 				B4ABD3F92971A6F100A781D9 /* Swinject */,
 				B49D8FC229784966008AF9E3 /* NumbersEx */,
-				B491B86029798E2200A49CBB /* FeatureIcon */,
 				B491B863297990EB00A49CBB /* FeatureNumbersView */,
 				B491B8662979911C00A49CBB /* FeatureFavorites */,
 			);
@@ -756,7 +748,6 @@
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
 				B4B06E3C295F4CE200B25094 /* ModifiableViewState.swift in Sources */,
 				B44782F6295448C8006FC0EC /* NumbersView.swift in Sources */,
-				B4F91B59296D7143008F011A /* FavoriteiconViewModel.swift in Sources */,
 				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
 				B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */,
 				B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */,
@@ -1092,10 +1083,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B491B86029798E2200A49CBB /* FeatureIcon */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = FeatureIcon;
-		};
 		B491B863297990EB00A49CBB /* FeatureNumbersView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FeatureNumbersView;
