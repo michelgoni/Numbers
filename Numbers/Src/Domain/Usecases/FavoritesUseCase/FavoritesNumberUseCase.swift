@@ -12,10 +12,15 @@ protocol FavoritesNumberUseCaseType {
 }
 
 final class FavoritesNumberUseCase: FavoritesNumberUseCaseType {
-    @Inject var repository: NumberRepositoryType
+    
+    private var repository: NumberRepositoryType?
+
+    init(repository: NumberRepositoryType?) {
+        self.repository = repository
+    }
 
     func execute() -> ResponsePublisher<[NumberEntity]> {
-        repository.fetchSavedNumbers()
+        repository!.fetchSavedNumbers()
     }
 }
 

@@ -15,8 +15,8 @@ final class NumbersRepository: NumberRepositoryType {
 
     @AppStorage("") private var savedNumbers = Data()
 
-    @Inject var localDS: UserDefaultsDataSourceType
-    @Inject var remoteDS: RemoteDSType
+     var localDS: UserDefaultsDataSourceType!
+    var remoteDS: RemoteDSType!
 
     private lazy var cancellables = Set<AnyCancellable>()
 

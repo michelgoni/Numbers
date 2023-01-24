@@ -1,32 +1,32 @@
+////
+////  RemoteServiceAssembly.swift
+////  Numbers
+////
+////  Created by Michel Goñi on 14/1/23.
+////
 //
-//  RemoteServiceAssembly.swift
-//  Numbers
+//import Swinject
 //
-//  Created by Michel Goñi on 14/1/23.
+//struct RemoteServiceAssembly: Assembly {
 //
-
-import Swinject
-
-struct RemoteServiceAssembly: Assembly {
-
-    init() {}
-
-    public func assemble(container: Container) {
-        container.registerRemoteService()
-
-    }
-}
-
-private extension Container {
-
-    func registerRemoteService() {
-        register(RemoteDSType.self) { resolver in
-            RemoteDSImpl()
-        }
-
-        register(RemoteDSRandomNumberType.self) { resolver in
-            RemoteDSRandomNumber()
-        }
-    }
-}
-
+//    init() {}
+//
+//    public func assemble(container: Container) {
+//        container.registerRemoteService()
+//
+//    }
+//}
+//
+//private extension Container {
+//
+//    func registerRemoteService() {
+//        register(RemoteDSType.self) { resolver in
+//            RemoteDSImpl()
+//        }
+//
+//        register(RemoteDSRandomNumberType.self) { resolver in
+//            RemoteDSRandomNumber()
+//        }
+//    }
+//}
+//

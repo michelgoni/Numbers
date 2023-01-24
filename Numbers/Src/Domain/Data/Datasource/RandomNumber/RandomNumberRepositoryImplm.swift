@@ -10,8 +10,8 @@ import NumbersEx
 
 final class RandomNumberRepositoryImplm: RandomNumberRepositoryType {
 
-    @Inject var remoteDS: RemoteDSRandomNumberType
-    @Inject var localDS: UserDefaultsDataSourceType
+     var remoteDS: RemoteDSRandomNumberType!
+     var localDS: UserDefaultsDataSourceType!
 
     func fetchRandomNumber() async throws -> NumberEntity {
 
@@ -30,8 +30,8 @@ final class RandomNumberRepositoryImplm: RandomNumberRepositoryType {
 
 final class NumberWithOperationRepositoryImplm: NumberWithOperationRepositoryType {
 
-    @Inject var remoteDS: RemoteDSRandomNumberType
-    @Inject private var localDS: UserDefaultsDataSourceType
+     var remoteDS: RemoteDSRandomNumberType!
+     private var localDS: UserDefaultsDataSourceType!
 
     func fetchNumber(_ number: String) async throws -> NumberEntity {
 

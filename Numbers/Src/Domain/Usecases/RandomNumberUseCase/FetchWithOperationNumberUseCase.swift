@@ -14,9 +14,13 @@ protocol FetchWithOperationNumberUseCaseType {
 
 final class FetchWithOperationNumberUseCase: FetchWithOperationNumberUseCaseType {
 
-    @Inject var repository: NumberWithOperationRepositoryType
+    private var repository: NumberWithOperationRepositoryType?
+
+    init(repository: NumberWithOperationRepositoryType?) {
+        self.repository = repository
+    }
 
     func execute(_ number: String) async throws -> NumberEntity {
-        try await repository.fetchNumber(number)
+        try await repository!.fetchNumber(number)
     }
 }

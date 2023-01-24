@@ -15,10 +15,14 @@ protocol FetchRandomNumberUseCaseType {
 
 final class FetchRandomNumberUseCaseImplm: FetchRandomNumberUseCaseType {
 
-    @Inject var repository: RandomNumberRepositoryType
+    private var repository: RandomNumberRepositoryType?
+
+    init(repository: RandomNumberRepositoryType?) {
+        self.repository = repository
+    }
 
     func execute() async throws -> NumberEntity {
-        try await repository.fetchRandomNumber()
+        try await repository!.fetchRandomNumber()
     }
 }
 

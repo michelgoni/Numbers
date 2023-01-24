@@ -5,11 +5,11 @@
 //  Created by Michel Goñi on 14/1/23.
 //
 
-import Foundation
-import NumbersEx
 import FeatureNumbersView
+import NumbersEx
+import NumbersUI
 import SwiftUI
-import Swinject
+
 
 private extension String {
     static let numbersImage = "list.number"
@@ -17,22 +17,8 @@ private extension String {
 }
 
 
-public struct ViewFactory {
-    var injector: Injector { .shared }
-    init() {}
-
-}
-
 public extension ViewFactory {
-
-    func make<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
-        LazyView(build: content)
-    }
-}
-
-
-public extension ViewFactory {
-    func view(_ type: ViewType) -> some View {
+    func getTabs() -> some View {
 
         make {
             TabView {
@@ -84,16 +70,3 @@ public extension ViewFactory {
 //        }
     }
 }
-
-public enum ViewType {
-    case main
-}
-
-struct ViewFactoryKey: EnvironmentKey {
-    static let defaultValue: ViewFactory = .init()
-}
-
-public extension EnvironmentValues {
-    var viewFactory: ViewFactory { self[ViewFactoryKey.self] }
-}
-

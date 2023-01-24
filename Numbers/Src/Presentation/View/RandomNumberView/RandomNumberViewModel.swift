@@ -11,8 +11,8 @@ import NumbersEx
 
 final class RandomNumberViewModel: ViewModel {
 
-    @Inject var randomNumberUsecase: FetchRandomNumberUseCaseType
-    @Inject var plusNumberUsecase: FetchWithOperationNumberUseCaseType
+     var randomNumberUsecase: FetchRandomNumberUseCaseType!
+    var plusNumberUsecase: FetchWithOperationNumberUseCaseType!
 
     private lazy var cancellables = Set<AnyCancellable>()
     @Published var state = State()
