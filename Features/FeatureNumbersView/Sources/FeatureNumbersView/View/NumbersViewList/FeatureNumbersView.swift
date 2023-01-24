@@ -7,6 +7,7 @@
 
 import Combine
 import NumbersEx
+import NumbersUI
 import SwiftUI
 
 private extension CGFloat {
@@ -25,7 +26,7 @@ public struct NumbersView: View {
     @State private var isHideLoader: Bool = true
     @State private var searchText = ""
     @State private var isShowingSheet = false
-
+    @Environment(\.viewFactory) private var viewFactory
     public init(viewModel: ViewModel) {
 
         self.viewModel = viewModel
@@ -37,7 +38,7 @@ public struct NumbersView: View {
 
                 VStack {
                     List(viewModel.numbers) {
-                        Text(verbatim: $0.numberValue)
+                        viewFactory.numberRow($0)
                     }
                     .listStyle(.inset)
 
@@ -45,7 +46,7 @@ public struct NumbersView: View {
                         isShowingSheet.toggle()
                     }
                     .show(!viewModel.numbers.isEmpty)
-                    .buttonStyle(.bordered)
+                    .buttonStyle(PrimaryButton())
                     .padding([.bottom, .leading, .trailing], .padding)
                     .sheet(isPresented: $isShowingSheet) {
                         Text(verbatim: "")

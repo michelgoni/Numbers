@@ -28,20 +28,20 @@ private extension Container {
 //            FetchNumberUseCase()
 //        }
 
-        register(DeleteFavoriteNumberUseCaseType.self) { resolver in
-            DeleteFavoriteNumberUseCase()
-        }
-        register(FavoritesNumberUseCaseType.self) { resolver in
-            FavoritesNumberUseCase()
-        }
-
-        register(SaveFavoriteNumberUseCaseType.self) { resolver in
-            SaveFavoriteNumberUseCase()
-        }
-
-        register(IsfavoriteNumberUseCaseType.self) { resolver in
-            IsfavoriteNumberUseCase()
-        }
+//        register(DeleteFavoriteNumberUseCaseType.self) { resolver in
+//            DeleteFavoriteNumberUseCase()
+//        }
+//        register(FavoritesNumberUseCaseType.self) { resolver in
+//            FavoritesNumberUseCase()
+//        }
+//
+//        register(SaveFavoriteNumberUseCaseType.self) { resolver in
+//            SaveFavoriteNumberUseCase()
+//        }
+//
+//        register(IsfavoriteNumberUseCaseType.self) { resolver in
+//            IsfavoriteNumberUseCase()
+//        }
 
         register(FetchRandomNumberUseCaseType.self) { resolver in
             FetchRandomNumberUseCaseImplm()

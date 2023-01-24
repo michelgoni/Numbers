@@ -16,7 +16,6 @@
 		B405E5352965D0060045DAFF /* FavoritesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */; };
 		B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5372965F4CE0045DAFF /* LoaderView.swift */; };
 		B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53D2965FC600045DAFF /* EmptyView.swift */; };
-		B405E5402965FEE70045DAFF /* FetchNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */; };
 		B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */; };
 		B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */; };
 		B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */; };
@@ -26,12 +25,9 @@
 		B40E97852973126F007AC2A6 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97842973126F007AC2A6 /* LazyView.swift */; };
 		B40E9787297312AA007AC2A6 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9786297312AA007AC2A6 /* Inject.swift */; };
 		B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */; };
-		B410385629746570001CED69 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410385529746570001CED69 /* PrimaryButton.swift */; };
 		B41038642974804C001CED69 /* RandomNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41038632974804C001CED69 /* RandomNumberView.swift */; };
 		B410386829748485001CED69 /* RandomNumberProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410386729748485001CED69 /* RandomNumberProgressView.swift */; };
-		B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */; };
 		B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */; };
-		B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */; };
 		B4204780295BA31500C32192 /* NumberEntitity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420477F295BA31500C32192 /* NumberEntitity.swift */; };
 		B432F573295F3BB0007F6518 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B432F572295F3BB0007F6518 /* FavoritesView.swift */; };
 		B43608FE29755F4500FB3FB9 /* StepperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43608FD29755F4500FB3FB9 /* StepperButton.swift */; };
@@ -48,7 +44,6 @@
 		B44782FB295448CA006FC0EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782FA295448CA006FC0EC /* Preview Assets.xcassets */; };
 		B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447832B29545715006FC0EC /* NumbersRepositoryType.swift */; };
 		B447832E29545B0F006FC0EC /* NumbersRepositoryImplm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447832D29545B0F006FC0EC /* NumbersRepositoryImplm.swift */; };
-		B447833429545C27006FC0EC /* FetchNumbersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447833329545C27006FC0EC /* FetchNumbersUseCase.swift */; };
 		B447833729545D8A006FC0EC /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447833629545D8A006FC0EC /* Resolver.swift */; };
 		B44783782954819E006FC0EC /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783772954819E006FC0EC /* Appdelegate.swift */; };
 		B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837A295481EE006FC0EC /* Scenedelegate.swift */; };
@@ -74,7 +69,6 @@
 		B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */; };
 		B4F91B55296D6A39008F011A /* FavoriteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B54296D6A39008F011A /* FavoriteIconView.swift */; };
 		B4F91B59296D7143008F011A /* FavoriteiconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */; };
-		B4F91B5B296D72C3008F011A /* IsfavoriteNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */; };
 		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
 		B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */; };
 		B4FF870E29647FB2007067A3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF870D29647FB2007067A3 /* AlertView.swift */; };
@@ -103,7 +97,6 @@
 		B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTest.swift; sourceTree = "<group>"; };
 		B405E5372965F4CE0045DAFF /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		B405E53D2965FC600045DAFF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumberUseCase.swift; sourceTree = "<group>"; };
 		B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberUseCaseTest.swift; sourceTree = "<group>"; };
 		B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceAssembly.swift; sourceTree = "<group>"; };
@@ -113,12 +106,9 @@
 		B40E97842973126F007AC2A6 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		B40E9786297312AA007AC2A6 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssemblerTest.swift; sourceTree = "<group>"; };
-		B410385529746570001CED69 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		B41038632974804C001CED69 /* RandomNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberView.swift; sourceTree = "<group>"; };
 		B410386729748485001CED69 /* RandomNumberProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberProgressView.swift; sourceTree = "<group>"; };
-		B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberUseCase.swift; sourceTree = "<group>"; };
 		B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNumberUseCase.swift; sourceTree = "<group>"; };
-		B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoriteNumberUseCase.swift; sourceTree = "<group>"; };
 		B420477F295BA31500C32192 /* NumberEntitity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEntitity.swift; sourceTree = "<group>"; };
 		B432F572295F3BB0007F6518 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		B43608FD29755F4500FB3FB9 /* StepperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperButton.swift; sourceTree = "<group>"; };
@@ -137,7 +127,6 @@
 		B4478300295448CA006FC0EC /* NumbersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumbersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B447832B29545715006FC0EC /* NumbersRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersRepositoryType.swift; sourceTree = "<group>"; };
 		B447832D29545B0F006FC0EC /* NumbersRepositoryImplm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersRepositoryImplm.swift; sourceTree = "<group>"; };
-		B447833329545C27006FC0EC /* FetchNumbersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumbersUseCase.swift; sourceTree = "<group>"; };
 		B447833629545D8A006FC0EC /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		B44783772954819E006FC0EC /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
 		B447837A295481EE006FC0EC /* Scenedelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenedelegate.swift; sourceTree = "<group>"; };
@@ -162,7 +151,6 @@
 		B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		B4F91B54296D6A39008F011A /* FavoriteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconView.swift; sourceTree = "<group>"; };
 		B4F91B58296D7143008F011A /* FavoriteiconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteiconViewModel.swift; sourceTree = "<group>"; };
-		B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsfavoriteNumberUseCase.swift; sourceTree = "<group>"; };
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
 		B4FF870D29647FB2007067A3 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -319,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				B49D8FB929783695008AF9E3 /* Test */,
-				B4F91B5A296D72C3008F011A /* IsfavoriteNumberUseCase.swift */,
 				B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */,
 			);
 			path = FavoritesUseCase;
@@ -329,10 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				B405E524296591B00045DAFF /* Test */,
-				B447833329545C27006FC0EC /* FetchNumbersUseCase.swift */,
-				B41278892960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift */,
-				B405E53F2965FEE70045DAFF /* FetchNumberUseCase.swift */,
-				B41278852960B9FD006D1C82 /* DeleteNumberUseCase.swift */,
 			);
 			path = NumbersUseCase;
 			sourceTree = "<group>";
@@ -549,7 +532,6 @@
 		B497AED8296C65C000524C99 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				B410385529746570001CED69 /* PrimaryButton.swift */,
 				B405E5372965F4CE0045DAFF /* LoaderView.swift */,
 				B4FF870D29647FB2007067A3 /* AlertView.swift */,
 				B410386729748485001CED69 /* RandomNumberProgressView.swift */,
@@ -776,10 +758,8 @@
 				B44782F6295448C8006FC0EC /* NumbersView.swift in Sources */,
 				B4F91B59296D7143008F011A /* FavoriteiconViewModel.swift in Sources */,
 				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
-				B447833429545C27006FC0EC /* FetchNumbersUseCase.swift in Sources */,
 				B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */,
 				B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */,
-				B41278862960B9FD006D1C82 /* DeleteNumberUseCase.swift in Sources */,
 				B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */,
 				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
 				B497B856295A57130057237A /* NumberRow.swift in Sources */,
@@ -787,7 +767,6 @@
 				B41038642974804C001CED69 /* RandomNumberView.swift in Sources */,
 				B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */,
 				B436090629756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift in Sources */,
-				B410385629746570001CED69 /* PrimaryButton.swift in Sources */,
 				B436090E29758C7100FB3FB9 /* RandomNumberUseCase.swift in Sources */,
 				B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */,
 				B4A294FD295E19D40067FB54 /* TitleModifier.swift in Sources */,
@@ -795,14 +774,12 @@
 				B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */,
 				B4204780295BA31500C32192 /* NumberEntitity.swift in Sources */,
 				B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */,
-				B405E5402965FEE70045DAFF /* FetchNumberUseCase.swift in Sources */,
 				B4EE915529575ECD00BB45A3 /* NumbersViewModel.swift in Sources */,
 				B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */,
 				B4F91B55296D6A39008F011A /* FavoriteIconView.swift in Sources */,
 				B410386829748485001CED69 /* RandomNumberProgressView.swift in Sources */,
 				B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */,
 				B432F573295F3BB0007F6518 /* FavoritesView.swift in Sources */,
-				B412788A2960BAC9006D1C82 /* SaveFavoriteNumberUseCase.swift in Sources */,
 				B43609142975B34D00FB3FB9 /* NumberWithOperationRepositoryType.swift in Sources */,
 				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
 				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
@@ -811,7 +788,6 @@
 				B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */,
 				B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */,
 				B4FF87142964AA62007067A3 /* UserDefaultsDataSourceType.swift in Sources */,
-				B4F91B5B296D72C3008F011A /* IsfavoriteNumberUseCase.swift in Sources */,
 				B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */,
 				B436090329756DDE00FB3FB9 /* RandomNumberRepositoryType.swift in Sources */,
 			);

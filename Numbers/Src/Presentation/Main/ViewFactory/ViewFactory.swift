@@ -17,13 +17,13 @@ private extension String {
 }
 
 
-struct ViewFactory {
+public struct ViewFactory {
     var injector: Injector { .shared }
     init() {}
 
 }
 
-extension ViewFactory {
+public extension ViewFactory {
 
     func make<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
         LazyView(build: content)
@@ -31,7 +31,7 @@ extension ViewFactory {
 }
 
 
-extension ViewFactory {
+public extension ViewFactory {
     func view(_ type: ViewType) -> some View {
 
         make {
@@ -85,6 +85,15 @@ extension ViewFactory {
     }
 }
 
-enum ViewType {
+public enum ViewType {
     case main
 }
+
+struct ViewFactoryKey: EnvironmentKey {
+    static let defaultValue: ViewFactory = .init()
+}
+
+public extension EnvironmentValues {
+    var viewFactory: ViewFactory { self[ViewFactoryKey.self] }
+}
+

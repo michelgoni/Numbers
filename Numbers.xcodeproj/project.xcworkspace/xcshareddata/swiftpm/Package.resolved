@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "numbersinjector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michelgoni/NumbersInjector",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5605528bc71ea49535f86eac3863767ab26ea288"
+      }
+    },
+    {
+      "identity" : "numbersui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michelgoni/NumbersUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4b608aa125720e4ce9772c991b34836c287fc50d"
+      }
+    },
+    {
       "identity" : "swinject",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Swinject/Swinject.git",
