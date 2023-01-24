@@ -18,51 +18,51 @@ private extension String {
     static let heart = "heart"
 }
 
-struct FavoriteIconView: View {
-    typealias IconViewModel = AnyViewModel<FavoriteIconViewModel.Input, FavoriteIconViewModel.State>
+public struct FavoriteIconView: View {
+    public typealias IconViewModel = AnyViewModel<FavoriteIconViewModel.Input, FavoriteIconViewModel.State>
 
     @State var isFavorite = false
     @ObservedObject var favoriteIconViewModel: IconViewModel
-    @Binding private var isLoading: Bool
+    @Binding var isLoading: Bool
     private let number: NumberRowViewEntity
 
-    init(isLoading: Binding<Bool>,
-         favoriteIconViewModel: IconViewModel,
-         number: NumberRowViewEntity) {
+    public init(isLoading: Binding<Bool>,
+                favoriteIconViewModel: IconViewModel,
+                number: NumberRowViewEntity) {
         self._isLoading = isLoading
         self.favoriteIconViewModel = favoriteIconViewModel
         self.number = number
     }
 
-        var body: some View {
-            HStack {
-                Spacer()
-                ZStack {
-                    Button {
-                        if !isLoading {
-                            isLoading = true
-                        }
-                        favoriteIconViewModel.trigger(.modifyNumber)
-                        favoriteIconViewModel.favoriteNumber ? favoriteIconViewModel.trigger(.save(number)) : favoriteIconViewModel.trigger(.delete(number))
-                    } label: {
-                       isFavorite.favoriteImage
-                            .foregroundColor(.black)
+    public var body: some View {
+        HStack {
+            Spacer()
+            ZStack {
+                Button {
+                    if !isLoading {
+                        isLoading = true
                     }
-                    .show(!isLoading)
-                    ProgressView()
-                        .show(isLoading)
+                    favoriteIconViewModel.trigger(.modifyNumber)
+                    favoriteIconViewModel.favoriteNumber ? favoriteIconViewModel.trigger(.save(number)) : favoriteIconViewModel.trigger(.delete(number))
+                } label: {
+                    isFavorite.favoriteImage
+                        .foregroundColor(.black)
+                }
+                .show(!isLoading)
+                ProgressView()
+                    .show(isLoading)
 
-                }
-                .onReceive(favoriteIconViewModel.viewState, perform: viewState)
-                .onAppear {
-                    favoriteIconViewModel.trigger(
-                        .isFavorite(number.numberValue)
-                    )
-                }
+            }
+            .onReceive(favoriteIconViewModel.viewState, perform: viewState)
+            .onAppear {
+                favoriteIconViewModel.trigger(
+                    .isFavorite(number.numberValue)
+                )
             }
         }
-
     }
+
+}
 
 private extension FavoriteIconView {
 

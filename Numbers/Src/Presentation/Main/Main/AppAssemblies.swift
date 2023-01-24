@@ -7,10 +7,12 @@
 
 import Swinject
 import FeatureNumbersView
+import FeatureFavorites
 
 var assemblies: [Assembly] {
     [
-        FeatureNumbersAssembly()
+        FeatureNumbersAssembly(),
+        FeatureFavoritesAssembly()
     ]
 }
 

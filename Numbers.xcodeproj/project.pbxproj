@@ -26,9 +26,7 @@
 		B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */; };
 		B41038642974804C001CED69 /* RandomNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41038632974804C001CED69 /* RandomNumberView.swift */; };
 		B410386829748485001CED69 /* RandomNumberProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410386729748485001CED69 /* RandomNumberProgressView.swift */; };
-		B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */; };
 		B4204780295BA31500C32192 /* NumberEntitity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420477F295BA31500C32192 /* NumberEntitity.swift */; };
-		B432F573295F3BB0007F6518 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B432F572295F3BB0007F6518 /* FavoritesView.swift */; };
 		B43608FE29755F4500FB3FB9 /* StepperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43608FD29755F4500FB3FB9 /* StepperButton.swift */; };
 		B436090329756DDE00FB3FB9 /* RandomNumberRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436090229756DDE00FB3FB9 /* RandomNumberRepositoryType.swift */; };
 		B436090629756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436090529756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift */; };
@@ -58,7 +56,6 @@
 		B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABD3F92971A6F100A781D9 /* Swinject */; };
 		B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */; };
 		B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B06E39295F498800B25094 /* FavoriteRow.swift */; };
-		B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */; };
 		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
 		B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */; };
 		B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */; };
@@ -96,9 +93,7 @@
 		B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssemblerTest.swift; sourceTree = "<group>"; };
 		B41038632974804C001CED69 /* RandomNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberView.swift; sourceTree = "<group>"; };
 		B410386729748485001CED69 /* RandomNumberProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberProgressView.swift; sourceTree = "<group>"; };
-		B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNumberUseCase.swift; sourceTree = "<group>"; };
 		B420477F295BA31500C32192 /* NumberEntitity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEntitity.swift; sourceTree = "<group>"; };
-		B432F572295F3BB0007F6518 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		B43608FD29755F4500FB3FB9 /* StepperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperButton.swift; sourceTree = "<group>"; };
 		B436090229756DDE00FB3FB9 /* RandomNumberRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryType.swift; sourceTree = "<group>"; };
 		B436090529756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryImplm.swift; sourceTree = "<group>"; };
@@ -129,7 +124,6 @@
 		B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconViewmodelTest.swift; sourceTree = "<group>"; };
 		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
 		B4B06E39295F498800B25094 /* FavoriteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRow.swift; sourceTree = "<group>"; };
-		B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
 		B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDefaultDataSourceTest.swift; sourceTree = "<group>"; };
@@ -214,8 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				B4F91B56296D7104008F011A /* Test */,
-				B432F572295F3BB0007F6518 /* FavoritesView.swift */,
-				B4F73AA9295F3C92006C7333 /* FavoritesViewModel.swift */,
 				B4B06E39295F498800B25094 /* FavoriteRow.swift */,
 				B405E53D2965FC600045DAFF /* EmptyView.swift */,
 			);
@@ -272,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				B49D8FB929783695008AF9E3 /* Test */,
-				B41278872960BAB2006D1C82 /* FavoritesNumberUseCase.swift */,
 			);
 			path = FavoritesUseCase;
 			sourceTree = "<group>";
@@ -704,12 +695,10 @@
 				B447833729545D8A006FC0EC /* Resolver.swift in Sources */,
 				B436090929756EBF00FB3FB9 /* RemoteDSRandomNumber.swift in Sources */,
 				B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */,
-				B4F73AAA295F3C92006C7333 /* FavoritesViewModel.swift in Sources */,
 				B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */,
 				B436091029758D7700FB3FB9 /* RandomNumberViewModel.swift in Sources */,
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
 				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
-				B41278882960BAB2006D1C82 /* FavoritesNumberUseCase.swift in Sources */,
 				B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */,
 				B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */,
 				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
@@ -726,7 +715,6 @@
 				B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */,
 				B410386829748485001CED69 /* RandomNumberProgressView.swift in Sources */,
 				B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */,
-				B432F573295F3BB0007F6518 /* FavoritesView.swift in Sources */,
 				B43609142975B34D00FB3FB9 /* NumberWithOperationRepositoryType.swift in Sources */,
 				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
 				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,

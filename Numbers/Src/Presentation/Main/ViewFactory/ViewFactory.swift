@@ -6,6 +6,7 @@
 //
 
 import FeatureNumbersView
+import FeatureFavorites
 import NumbersEx
 import NumbersUI
 import SwiftUI
@@ -33,7 +34,20 @@ public extension ViewFactory {
                     Label("Numbers",
                           systemImage:. numbersImage)
                 }
+                FavoritesView(
+                    viewModel: AnyViewModel(
+                        FavoritesViewModel(
+                            favoritesUseCase: injector.get(FavoritesNumberUseCaseType.self),
+                            deleteFavoritesUseCase: injector.get(DeleteFavoriteNumberUseCaseType.self)
+                        )
+                    )
+                )
+                .tabItem {
+                    Label("Favorites",
+                          systemImage: .favsImage)
+                }
             }
+
         }
 
 //

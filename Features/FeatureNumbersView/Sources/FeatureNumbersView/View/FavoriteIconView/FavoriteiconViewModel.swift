@@ -10,22 +10,22 @@ import Combine
 import Foundation
 import NumbersEx
 
-final class FavoriteIconViewModel: ViewModel {
+public final class FavoriteIconViewModel: ViewModel {
     private var favoritesUseCase: IsfavoriteNumberUseCaseType?
     private var saveFavoritesUseCase: SaveFavoriteNumberUseCaseType?
     private var deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType?
-    @Published var state: State
+    @Published public var state: State
 
     private lazy var cancellables = Set<AnyCancellable>()
 
-    init(isFavorite: Bool, favoritesUseCase: IsfavoriteNumberUseCaseType?, saveFavoritesUseCase: SaveFavoriteNumberUseCaseType?) {
+    public init(isFavorite: Bool, favoritesUseCase: IsfavoriteNumberUseCaseType?, saveFavoritesUseCase: SaveFavoriteNumberUseCaseType?) {
         self.state = State(favoriteNumber: isFavorite)
         self.favoritesUseCase = favoritesUseCase
         self.saveFavoritesUseCase = saveFavoritesUseCase
     }
 }
 
-extension FavoriteIconViewModel {
+public extension FavoriteIconViewModel {
 
     func trigger(_ input: Input) {
         switch input {
@@ -69,7 +69,7 @@ extension FavoriteIconViewModel {
     
 }
 
-extension FavoriteIconViewModel {
+public extension FavoriteIconViewModel {
 
     enum Input {
         case delete(NumberRowViewEntity)
@@ -80,7 +80,7 @@ extension FavoriteIconViewModel {
 
     struct State: ModifiableStateData {
         var favoriteNumber: Bool
-        var modifiableView = ModifiableViewState<ViewState>()
+        public var modifiableView = ModifiableViewState<ViewState>()
     }
 
     enum ViewState {
