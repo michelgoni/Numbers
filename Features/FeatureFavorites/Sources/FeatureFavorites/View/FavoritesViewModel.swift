@@ -8,6 +8,7 @@
 
 import Foundation
 import NumbersEx
+import Shared
 
 @available(iOS 13.0, *)
 public final class FavoritesViewModel: ViewModel {
@@ -25,7 +26,7 @@ public final class FavoritesViewModel: ViewModel {
 
 @available(iOS 13.0, *)
 extension FavoritesViewModel {
-
+    @MainActor
     public func trigger(_ input: Input) {
         switch input {
         case .delete(let number):
@@ -38,16 +39,27 @@ extension FavoritesViewModel {
 
         case .favoritesList :
             Task {
-                self.state.favoriteNumbers = try! await favoritesUseCase!.execute()
-                handle(total: self.state.favoriteNumbers)
+                do {
+                    if let value = try favoritesUseCase?.execute() {
+                        self.state.favoriteNumbers = value
+                        handle(total: self.state.favoriteNumbers)
+                    } else {
+                        self.state.viewState.send(.emptyFavorites)
+                    }
+
+                } catch {
+                    self.state.viewState.send(.error)
+                }
             }
         }
     }
 
-    private func handle(total: [FavoriteNumberEntity] ) {
+    private func handle(total: [NumberRowViewEntity]?) {
+        guard let total = total else {
+            self.state.viewState.send(.emptyFavorites)
+            return  }
         switch total.isEmpty {
         case true:
-
             self.state.viewState.send(.emptyFavorites)
         case false:
             self.state.viewState.send(.favorites)
@@ -60,13 +72,13 @@ extension FavoritesViewModel {
 public extension FavoritesViewModel {
 
     enum Input {
-        case delete(FavoriteNumberEntity)
+        case delete(NumberRowViewEntity)
         case favoritesList
 
     }
 
     struct State: ModifiableStateData {
-        var favoriteNumbers = [FavoriteNumberEntity]()
+        var favoriteNumbers = [NumberRowViewEntity]()
         public  var modifiableView = ModifiableViewState<ViewState>()
     }
 

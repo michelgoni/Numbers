@@ -6,11 +6,9 @@
 //
 
 import Foundation
+import Shared
 
 protocol FavoriteNumbersRepositoryType {
-
+    func fetchFavoritesList() throws -> [NumberRowViewEntity]?
 }
 
-class FavoriteNumbersRepositoryImplm: FavoriteNumbersRepositoryType {
-    
-}

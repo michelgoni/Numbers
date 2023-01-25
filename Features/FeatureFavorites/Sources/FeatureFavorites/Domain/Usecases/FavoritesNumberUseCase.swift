@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Shared
 
 
 public protocol FavoritesNumberUseCaseType {
-    func execute() async throws -> [FavoriteNumberEntity]
+    func execute() throws -> [NumberRowViewEntity]?
 }
 
 public final class FavoritesNumberUseCase: FavoritesNumberUseCaseType {
@@ -20,8 +21,8 @@ public final class FavoritesNumberUseCase: FavoritesNumberUseCaseType {
         self.repository = repository
     }
 
-    public func execute() async throws -> [FavoriteNumberEntity] {
-       []
+    public func execute() throws -> [NumberRowViewEntity]? {
+        try repository?.fetchFavoritesList()
     }
 }
 

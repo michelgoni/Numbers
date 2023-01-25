@@ -5,8 +5,9 @@
 //  Created by Michel Goñi on 30/12/22.
 //
 
-import SwiftUI
 import NumbersEx
+import Shared
+import SwiftUI
 
 private extension String {
     static let favoriteTitle = "Saved favorites"
