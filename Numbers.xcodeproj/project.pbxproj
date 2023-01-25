@@ -14,7 +14,6 @@
 		B405E5312965A9840045DAFF /* SaveFavoritesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */; };
 		B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */; };
 		B405E5352965D0060045DAFF /* FavoritesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */; };
-		B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5372965F4CE0045DAFF /* LoaderView.swift */; };
 		B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */; };
 		B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */; };
 		B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */; };
@@ -23,7 +22,6 @@
 		B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97802973120B007AC2A6 /* ViewFactory.swift */; };
 		B40E9787297312AA007AC2A6 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9786297312AA007AC2A6 /* Inject.swift */; };
 		B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */; };
-		B4204780295BA31500C32192 /* NumberEntitity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420477F295BA31500C32192 /* NumberEntitity.swift */; };
 		B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */; };
 		B44782F8295448CA006FC0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782F7295448CA006FC0EC /* Assets.xcassets */; };
 		B44782FB295448CA006FC0EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782FA295448CA006FC0EC /* Preview Assets.xcassets */; };
@@ -33,7 +31,6 @@
 		B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837A295481EE006FC0EC /* Scenedelegate.swift */; };
 		B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837C295482EE006FC0EC /* AppCoordinator.swift */; };
 		B44783862954C446006FC0EC /* NumbersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783852954C446006FC0EC /* NumbersError.swift */; };
-		B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D5007295C4D010013BC65 /* NewNumberModifier.swift */; };
 		B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = B491B863297990EB00A49CBB /* FeatureNumbersView */; };
 		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
 		B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */; };
@@ -65,7 +62,6 @@
 		B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoritesUseCaseTest.swift; sourceTree = "<group>"; };
 		B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumbersUseCaseTest.swift; sourceTree = "<group>"; };
 		B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTest.swift; sourceTree = "<group>"; };
-		B405E5372965F4CE0045DAFF /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberUseCaseTest.swift; sourceTree = "<group>"; };
 		B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceAssembly.swift; sourceTree = "<group>"; };
@@ -74,7 +70,6 @@
 		B40E97802973120B007AC2A6 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		B40E9786297312AA007AC2A6 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssemblerTest.swift; sourceTree = "<group>"; };
-		B420477F295BA31500C32192 /* NumberEntitity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEntitity.swift; sourceTree = "<group>"; };
 		B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssemblies.swift; sourceTree = "<group>"; };
 		B44782F0295448C8006FC0EC /* Numbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44782F7295448CA006FC0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +82,6 @@
 		B447837C295482EE006FC0EC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B44783852954C446006FC0EC /* NumbersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersError.swift; sourceTree = "<group>"; };
 		B44783872954C5F1006FC0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		B44D5007295C4D010013BC65 /* NewNumberModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNumberModifier.swift; sourceTree = "<group>"; };
 		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
 		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
 		B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryTest.swift; sourceTree = "<group>"; };
@@ -206,16 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				B49D8FBE29783DC2008AF9E3 /* Test */,
-				B436090729756EA700FB3FB9 /* RemoteDS */,
 			);
 			path = RandomNumber;
-			sourceTree = "<group>";
-		};
-		B436090729756EA700FB3FB9 /* RemoteDS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RemoteDS;
 			sourceTree = "<group>";
 		};
 		B436090A29758C1800FB3FB9 /* FavoritesUseCase */ = {
@@ -319,21 +305,12 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		B447832F29545B6F006FC0EC /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				B420477F295BA31500C32192 /* NumberEntitity.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		B447833129545BD6006FC0EC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				B436090129756CEF00FB3FB9 /* RandomNumber */,
 				B43608FF29756CD400FB3FB9 /* Number */,
 				B44D332B2958DD480026CFF4 /* Error */,
-				B447832F29545B6F006FC0EC /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -361,8 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				B40E978229731240007AC2A6 /* ViewFactory */,
-				B497AED8296C65C000524C99 /* CustomViews */,
-				B44D5006295C4CE90013BC65 /* Viewmodifiers */,
 				B44783812954BEA7006FC0EC /* Main */,
 			);
 			path = Main;
@@ -406,14 +381,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B44D5006295C4CE90013BC65 /* Viewmodifiers */ = {
-			isa = PBXGroup;
-			children = (
-				B44D5007295C4D010013BC65 /* NewNumberModifier.swift */,
-			);
-			path = Viewmodifiers;
-			sourceTree = "<group>";
-		};
 		B491B8552979887C00A49CBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,14 +395,6 @@
 				B491B862297990D300A49CBB /* FeatureNumbersView */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		B497AED8296C65C000524C99 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				B405E5372965F4CE0045DAFF /* LoaderView.swift */,
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		B49D8FB82977F695008AF9E3 /* Test */ = {
@@ -643,17 +602,14 @@
 				B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */,
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
 				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
-				B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */,
 				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
 				B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */,
 				B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */,
 				B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */,
-				B4204780295BA31500C32192 /* NumberEntitity.swift in Sources */,
 				B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */,
 				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
 				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
 				B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */,
-				B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */,
 				B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

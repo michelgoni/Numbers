@@ -49,21 +49,5 @@ public extension ViewFactory {
             }
 
         }
-
-//
-//
-//                //                    FavoritesView()
-//                //                        .environmentObject(
-//                //                            AnyViewModel(
-//                //                                FavoritesViewModel()
-//                //                            )
-//                //                        )
-//                //                        .tabItem {
-//                //                            Label("Saved Numbers",
-//                //                                  systemImage: .favsImage)
-//                //                        }
-//            }
-//
-//        }
     }
 }

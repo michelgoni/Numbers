@@ -7,14 +7,6 @@
 
 import Foundation
 
-enum NumbersError: Error {
-    case badRequest(String)
-    case badResponse
-    case encodingError
-    case empty
-    case decodingError
-
-}
 
 public func == (lhs: Error, rhs: Error) -> Bool {
     guard type(of: lhs) == type(of: rhs) else { return false }
