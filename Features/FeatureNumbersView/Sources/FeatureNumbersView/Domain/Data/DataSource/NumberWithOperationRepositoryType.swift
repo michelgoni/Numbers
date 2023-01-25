@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Shared
 
 protocol NumberWithOperationRepositoryType {
-    func fetchNumber(_ number: String)  async throws -> NumberEntity
+    func fetchNumber(_ number: String)  async throws -> NumberRowViewEntity
 }

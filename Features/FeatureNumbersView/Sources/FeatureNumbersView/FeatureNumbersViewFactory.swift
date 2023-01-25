@@ -13,13 +13,6 @@ import Shared
 
 extension ViewFactory {
 
-    func numberRow(_ number: NumberRowViewEntity) -> some View {
-
-        make {
-            NumberRow(number: number)
-        }
-    }
-
     func favoriteIconView(isLoading: Binding<Bool>,
                           number: NumberRowViewEntity) -> some View {
 
@@ -36,5 +29,24 @@ extension ViewFactory {
         }
 
     }
-    
+
+    func numberRow(_ number: NumberRowViewEntity) -> some View {
+
+        make {
+            NumberRow(number: number)
+        }
+    }
+
+    func randomNumberView() -> some View {
+        make {
+            RandomNumberView(
+                viewModel: AnyViewModel(
+                    RandomNumberViewModel(
+                        randomNumberUsecase: injector.get(FetchRandomNumberUseCaseType.self),
+                        plusNumberUsecase: injector.get(FetchWithOperationNumberUseCaseType.self)
+                    )
+                )
+            )
+        }
+    }
 }

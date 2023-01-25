@@ -22,10 +22,10 @@ private extension String {
 }
 
 struct RandomNumberView: View {
-    private typealias ViewModel = AnyViewModel<RandomNumberViewModel.Input, RandomNumberViewModel.State>
+    public typealias ViewModel = AnyViewModel<RandomNumberViewModel.Input, RandomNumberViewModel.State>
     @State var progressValue: Float = 0.0
     @State var isLoading: Bool = true
-    @EnvironmentObject private var viewModel: ViewModel
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
@@ -88,13 +88,13 @@ private extension RandomNumberView {
         }
     }
 }
-struct RandomNumberView_Previews: PreviewProvider {
-    static var previews: some View {
-        RandomNumberView(isLoading: false)
-            .environmentObject(
-                AnyViewModel(
-                    RandomNumberViewModel()
-                )
-            )
-    }
-}
+//struct RandomNumberView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RandomNumberView(isLoading: false)
+//            .environmentObject(
+//                AnyViewModel(
+//                    RandomNumberViewModel()
+//                )
+//            )
+//    }
+//}

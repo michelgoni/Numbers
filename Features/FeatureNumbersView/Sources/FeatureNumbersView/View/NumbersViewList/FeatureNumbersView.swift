@@ -50,7 +50,7 @@ public struct NumbersView: View {
                     .buttonStyle(PrimaryButton())
                     .padding([.bottom, .leading, .trailing], .padding)
                     .sheet(isPresented: $isShowingSheet) {
-                        Text(verbatim: "")
+                        viewFactory.randomNumberView()
                             .presentationDetents([.fraction(0.6)])
                             .presentationDragIndicator(.hidden)
                     }

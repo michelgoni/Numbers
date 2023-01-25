@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Shared
 
 protocol RandomNumberRepositoryType {
-    func fetchRandomNumber()  async throws -> NumberEntity
+    func fetchRandomNumber()  async throws -> NumberRowViewEntity
 }

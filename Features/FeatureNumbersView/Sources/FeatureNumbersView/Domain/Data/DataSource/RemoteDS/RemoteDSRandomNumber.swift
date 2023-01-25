@@ -30,7 +30,7 @@ final class RemoteDSRandomNumber: RemoteDSRandomNumberType {
         guard
             let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == .okCode
         else {
-            throw NumbersError.badResponse
+            throw NumberViewError.badResponse("Bad response")
         }
         return data
     }

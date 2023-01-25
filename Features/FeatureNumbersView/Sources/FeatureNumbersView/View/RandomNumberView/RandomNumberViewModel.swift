@@ -8,14 +8,20 @@
 import Combine
 import Foundation
 import NumbersEx
+import Shared
 
 final class RandomNumberViewModel: ViewModel {
 
-     var randomNumberUsecase: FetchRandomNumberUseCaseType!
-    var plusNumberUsecase: FetchWithOperationNumberUseCaseType!
+    var randomNumberUsecase: FetchRandomNumberUseCaseType?
+    var plusNumberUsecase: FetchWithOperationNumberUseCaseType?
 
     private lazy var cancellables = Set<AnyCancellable>()
     @Published var state = State()
+
+    init(randomNumberUsecase: FetchRandomNumberUseCaseType?, plusNumberUsecase: FetchWithOperationNumberUseCaseType?) {
+        self.randomNumberUsecase = randomNumberUsecase
+        self.plusNumberUsecase = plusNumberUsecase
+    }
 }
 
 extension RandomNumberViewModel {
@@ -27,7 +33,7 @@ extension RandomNumberViewModel {
     }
 
     struct State: ModifiableStateData {
-        var number: NumberEntity?
+        var number: NumberRowViewEntity?
         var modifiableView = ModifiableViewState<ViewState>()
     }
 
@@ -44,7 +50,7 @@ extension RandomNumberViewModel {
         switch input {
         case .randomNumber:
             Task {
-                self.state.number = try await randomNumberUsecase.execute()
+                self.state.number = try await randomNumberUsecase?.execute()
                 self.state.viewState.send(.loaded)
             }
         case .plus:
@@ -53,7 +59,7 @@ extension RandomNumberViewModel {
                       var intNumber = Int(numberValue),
                         intNumber > .zero else { return }
                 intNumber += 1
-                self.state.number = try await plusNumberUsecase.execute(String(intNumber))
+                self.state.number = try await plusNumberUsecase?.execute(String(intNumber))
                 self.state.viewState.send(.loaded)
             }
         case .minus:
@@ -62,7 +68,7 @@ extension RandomNumberViewModel {
                         var intNumber = Int(numberValue),
                       intNumber > .zero else { return }
                 intNumber -= 1
-                self.state.number = try await plusNumberUsecase.execute(String(intNumber))
+                self.state.number = try await plusNumberUsecase?.execute(String(intNumber))
                 self.state.viewState.send(.loaded)
             }
 

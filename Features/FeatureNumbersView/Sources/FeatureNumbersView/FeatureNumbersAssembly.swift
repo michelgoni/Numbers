@@ -44,7 +44,7 @@ extension Container {
             )
         }.inObjectScope(.container)
 
-        register(SaveFavoriteNumberUseCaseType.self.self) { resolver in
+        register(SaveFavoriteNumberUseCaseType.self) { resolver in
             SaveFavoriteNumberUseCase(
                 repository: NumberRepositoryImplm(
                     localDS: resolver.resolve(
@@ -54,7 +54,7 @@ extension Container {
             )
         }.inObjectScope(.container)
 
-        register(DeleteFavoriteNumberUseCaseType.self.self) { resolver in
+        register(DeleteFavoriteNumberUseCaseType.self) { resolver in
             DeleteFavoriteNumberUseCase(
                 repository: NumberRepositoryImplm(
                     localDS: resolver.resolve(
@@ -64,7 +64,7 @@ extension Container {
             )
         }.inObjectScope(.container)
 
-        register(IsfavoriteNumberUseCaseType.self.self) { resolver in
+        register(IsfavoriteNumberUseCaseType.self) { resolver in
             IsfavoriteNumberUseCase(
                 repository: NumberRepositoryImplm(
                     localDS: resolver.resolve(
@@ -73,6 +73,18 @@ extension Container {
                 )
             )
         }.inObjectScope(.container)
+
+        register(FetchRandomNumberUseCaseType.self) { resolver in
+            FetchRandomNumberUseCaseImplm(
+                repository: resolver.resolve(RandomNumberRepositoryType.self)
+            )
+        }
+        .inObjectScope(.container)
+
+        register(FetchWithOperationNumberUseCaseType.self) { resolver in
+            FetchWithOperationNumberUseCase(repository: resolver.resolve(NumberWithOperationRepositoryType.self))
+        }
+        .inObjectScope(.container)
     }
 
     func registerRepository() {
@@ -81,18 +93,37 @@ extension Container {
                 localDS: resolver.resolve(FetchNumberLocalDSType.self),
                 remoteDS: resolver.resolve(FetchNumberRemoteDSType.self)
             )
-        }
+        }.inObjectScope(.container)
+
+        register(RandomNumberRepositoryType.self) { resolver in
+            RandomNumberRepositoryImplm(remoteDS: resolver.resolve(RemoteDSRandomNumberType.self),
+                                        localDS: resolver.resolve(FetchNumberLocalDSType.self)
+            )
+        }.inObjectScope(.container)
+
+        register(NumberWithOperationRepositoryType.self) { resolver in
+            NumberWithOperationRepositoryImplm(remoteDS: resolver.resolve(RemoteDSRandomNumberType.self),
+                                               localDS: resolver.resolve(FetchNumberLocalDSType.self))
+        }.inObjectScope(.container)
     }
 
     func registerRemoteService() {
         register(FetchNumberRemoteDSType.self) { _ in
             FetchNumberRemoteDSImplm()
-        }
+        }.inObjectScope(.container)
+
+        register(RemoteDSRandomNumberType.self) { _ in
+            RemoteDSRandomNumber()
+        }.inObjectScope(.container)
     }
 
     func registerLocalService() {
         register(FetchNumberLocalDSType.self) { _ in
             FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard)
-        }
+        }.inObjectScope(.container)
+
+        register(FetchNumberLocalDSType.self.self) { _ in
+            FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard)
+        }.inObjectScope(.container)
     }
 }

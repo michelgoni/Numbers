@@ -7,10 +7,11 @@
 
 import Combine
 import Foundation
+import Shared
 
 protocol FetchRandomNumberUseCaseType {
 
-    func execute() async throws -> NumberEntity
+    func execute() async throws -> NumberRowViewEntity
 }
 
 final class FetchRandomNumberUseCaseImplm: FetchRandomNumberUseCaseType {
@@ -21,7 +22,7 @@ final class FetchRandomNumberUseCaseImplm: FetchRandomNumberUseCaseType {
         self.repository = repository
     }
 
-    func execute() async throws -> NumberEntity {
+    func execute() async throws -> NumberRowViewEntity {
         try await repository!.fetchRandomNumber()
     }
 }
