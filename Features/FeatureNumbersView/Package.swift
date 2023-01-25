@@ -26,6 +26,7 @@ let package = Package(
             name: "FeatureNumbersView",
             dependencies: [ .product(name: "NumbersInjector", package: "NumbersInjector"),
                             .product(name: "NumbersUI", package: "NumbersUI"),
+                            .product(name: "NumbersEx", package: "NumbersEx"),
                             .product(name: "Shared", package: "Shared")]),
         .testTarget(
             name: "FeatureNumbersViewTests",
