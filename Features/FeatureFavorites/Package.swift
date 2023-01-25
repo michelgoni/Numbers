@@ -15,6 +15,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/michelgoni/NumbersEx", branch: "main"),
+        .package(url: "https://github.com/michelgoni/NumbersUI", branch: "main"),
         .package(name: "Shared", path: "../Shared")
     ],
     targets: [
@@ -22,7 +23,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FeatureFavorites",
-            dependencies: [.product(name: "Shared", package: "Shared")]),
+            dependencies: [.product(name: "Shared", package: "Shared"),
+                           .product(name: "NumbersUI", package: "NumbersUI"),
+                           .product(name: "NumbersEx", package: "NumbersEx")]),
         .testTarget(
             name: "FeatureFavoritesTests",
             dependencies: ["FeatureFavorites"]),

@@ -7,25 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B405E526296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E525296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift */; };
 		B405E52A296594C00045DAFF /* AwaitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E529296594C00045DAFF /* AwaitPublisher.swift */; };
-		B405E52D2965A7F60045DAFF /* ContentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E52C2965A7F60045DAFF /* ContentViewModelTest.swift */; };
-		B405E52F2965A8AC0045DAFF /* FavoritesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E52E2965A8AC0045DAFF /* FavoritesUseCaseTest.swift */; };
-		B405E5312965A9840045DAFF /* SaveFavoritesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */; };
-		B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */; };
-		B405E5352965D0060045DAFF /* FavoritesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */; };
-		B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */; };
 		B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */; };
 		B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */; };
 		B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */; };
 		B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977E297311D0007AC2A6 /* DependencyProvider.swift */; };
 		B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97802973120B007AC2A6 /* ViewFactory.swift */; };
 		B40E9787297312AA007AC2A6 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9786297312AA007AC2A6 /* Inject.swift */; };
-		B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */; };
 		B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */; };
 		B44782F8295448CA006FC0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782F7295448CA006FC0EC /* Assets.xcassets */; };
 		B44782FB295448CA006FC0EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782FA295448CA006FC0EC /* Preview Assets.xcassets */; };
-		B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447832B29545715006FC0EC /* NumbersRepositoryType.swift */; };
 		B447833729545D8A006FC0EC /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447833629545D8A006FC0EC /* Resolver.swift */; };
 		B44783782954819E006FC0EC /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783772954819E006FC0EC /* Appdelegate.swift */; };
 		B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837A295481EE006FC0EC /* Scenedelegate.swift */; };
@@ -33,15 +24,9 @@
 		B44783862954C446006FC0EC /* NumbersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783852954C446006FC0EC /* NumbersError.swift */; };
 		B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = B491B863297990EB00A49CBB /* FeatureNumbersView */; };
 		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
-		B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */; };
 		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
-		B4A25C852976C0D8008A7511 /* RandomNumberViewmodeltest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */; };
-		B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */; };
 		B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABD3F92971A6F100A781D9 /* Swinject */; };
 		B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */; };
-		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
-		B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */; };
-		B4FF87192964B6BD007067A3 /* NumbersRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87182964B6BD007067A3 /* NumbersRepositoryTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,27 +40,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B405E525296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumbersUseCaseTest.swift; sourceTree = "<group>"; };
 		B405E529296594C00045DAFF /* AwaitPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitPublisher.swift; sourceTree = "<group>"; };
-		B405E52C2965A7F60045DAFF /* ContentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTest.swift; sourceTree = "<group>"; };
-		B405E52E2965A8AC0045DAFF /* FavoritesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUseCaseTest.swift; sourceTree = "<group>"; };
-		B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoritesUseCaseTest.swift; sourceTree = "<group>"; };
-		B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumbersUseCaseTest.swift; sourceTree = "<group>"; };
-		B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTest.swift; sourceTree = "<group>"; };
-		B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberUseCaseTest.swift; sourceTree = "<group>"; };
 		B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceAssembly.swift; sourceTree = "<group>"; };
 		B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServiceAssembly.swift; sourceTree = "<group>"; };
 		B40E977E297311D0007AC2A6 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
 		B40E97802973120B007AC2A6 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		B40E9786297312AA007AC2A6 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
-		B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAssemblerTest.swift; sourceTree = "<group>"; };
 		B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssemblies.swift; sourceTree = "<group>"; };
 		B44782F0295448C8006FC0EC /* Numbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44782F7295448CA006FC0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B44782FA295448CA006FC0EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4478300295448CA006FC0EC /* NumbersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumbersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B447832B29545715006FC0EC /* NumbersRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersRepositoryType.swift; sourceTree = "<group>"; };
 		B447833629545D8A006FC0EC /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		B44783772954819E006FC0EC /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
 		B447837A295481EE006FC0EC /* Scenedelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenedelegate.swift; sourceTree = "<group>"; };
@@ -84,14 +60,9 @@
 		B44783872954C5F1006FC0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
 		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
-		B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberRepositoryTest.swift; sourceTree = "<group>"; };
-		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
-		B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconViewmodelTest.swift; sourceTree = "<group>"; };
+		B495E48B29819C0B00C4CCA1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
 		B4BAF071298068F300FF05A0 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = ../Shared; sourceTree = "<group>"; };
-		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
-		B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDefaultDataSourceTest.swift; sourceTree = "<group>"; };
-		B4FF87182964B6BD007067A3 /* NumbersRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersRepositoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,23 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B405E524296591B00045DAFF /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B405E525296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift */,
-				B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		B405E52B2965A7E00045DAFF /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B405E52C2965A7F60045DAFF /* ContentViewModelTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		B40E978229731240007AC2A6 /* ViewFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,91 +95,11 @@
 			path = ViewFactory;
 			sourceTree = "<group>";
 		};
-		B40E9788297319AC007AC2A6 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B40E9789297319C1007AC2A6 /* NumbersAssemblerTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		B41038622974803C001CED69 /* RandomNumberView */ = {
-			isa = PBXGroup;
-			children = (
-				B4A25C832976C0BF008A7511 /* Test */,
-			);
-			path = RandomNumberView;
-			sourceTree = "<group>";
-		};
-		B432F56F295F3B39007F6518 /* NumbersView */ = {
-			isa = PBXGroup;
-			children = (
-				B405E52B2965A7E00045DAFF /* Test */,
-			);
-			path = NumbersView;
-			sourceTree = "<group>";
-		};
-		B432F571295F3B86007F6518 /* FavoritesView */ = {
-			isa = PBXGroup;
-			children = (
-				B4F91B56296D7104008F011A /* Test */,
-			);
-			path = FavoritesView;
-			sourceTree = "<group>";
-		};
 		B43608FF29756CD400FB3FB9 /* Number */ = {
 			isa = PBXGroup;
 			children = (
-				B447832B29545715006FC0EC /* NumbersRepositoryType.swift */,
 			);
 			path = Number;
-			sourceTree = "<group>";
-		};
-		B436090029756CE100FB3FB9 /* Number */ = {
-			isa = PBXGroup;
-			children = (
-				B4FF87172964AD9C007067A3 /* Test */,
-			);
-			path = Number;
-			sourceTree = "<group>";
-		};
-		B436090129756CEF00FB3FB9 /* RandomNumber */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RandomNumber;
-			sourceTree = "<group>";
-		};
-		B436090429756E3900FB3FB9 /* RandomNumber */ = {
-			isa = PBXGroup;
-			children = (
-				B49D8FBE29783DC2008AF9E3 /* Test */,
-			);
-			path = RandomNumber;
-			sourceTree = "<group>";
-		};
-		B436090A29758C1800FB3FB9 /* FavoritesUseCase */ = {
-			isa = PBXGroup;
-			children = (
-				B49D8FB929783695008AF9E3 /* Test */,
-			);
-			path = FavoritesUseCase;
-			sourceTree = "<group>";
-		};
-		B436090B29758C3400FB3FB9 /* NumbersUseCase */ = {
-			isa = PBXGroup;
-			children = (
-				B405E524296591B00045DAFF /* Test */,
-			);
-			path = NumbersUseCase;
-			sourceTree = "<group>";
-		};
-		B436090C29758C3F00FB3FB9 /* RandomNumberUseCase */ = {
-			isa = PBXGroup;
-			children = (
-				B49D8FB82977F695008AF9E3 /* Test */,
-			);
-			path = RandomNumberUseCase;
 			sourceTree = "<group>";
 		};
 		B44782E7295448C8006FC0EC = {
@@ -278,27 +152,9 @@
 			path = Src;
 			sourceTree = "<group>";
 		};
-		B447832129544A16006FC0EC /* Datasource */ = {
-			isa = PBXGroup;
-			children = (
-				B436090429756E3900FB3FB9 /* RandomNumber */,
-				B436090029756CE100FB3FB9 /* Number */,
-			);
-			path = Datasource;
-			sourceTree = "<group>";
-		};
-		B447832229544A25006FC0EC /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				B447832129544A16006FC0EC /* Datasource */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		B4478329295454F5006FC0EC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				B447832229544A25006FC0EC /* Data */,
 				B447833129545BD6006FC0EC /* Domain */,
 				B447833229545BE4006FC0EC /* Usecases */,
 			);
@@ -308,7 +164,6 @@
 		B447833129545BD6006FC0EC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				B436090129756CEF00FB3FB9 /* RandomNumber */,
 				B43608FF29756CD400FB3FB9 /* Number */,
 				B44D332B2958DD480026CFF4 /* Error */,
 			);
@@ -318,9 +173,6 @@
 		B447833229545BE4006FC0EC /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
-				B436090B29758C3400FB3FB9 /* NumbersUseCase */,
-				B436090C29758C3F00FB3FB9 /* RandomNumberUseCase */,
-				B436090A29758C1800FB3FB9 /* FavoritesUseCase */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -329,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				B4478379295481D1006FC0EC /* Main */,
-				B44783802954BC93006FC0EC /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -341,17 +192,6 @@
 				B44783812954BEA7006FC0EC /* Main */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		B44783802954BC93006FC0EC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B41038622974803C001CED69 /* RandomNumberView */,
-				B4F91B57296D710D008F011A /* FavoriteIconView */,
-				B432F571295F3B86007F6518 /* FavoritesView */,
-				B432F56F295F3B39007F6518 /* NumbersView */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B44783812954BEA7006FC0EC /* Main */ = {
@@ -384,6 +224,7 @@
 		B491B8552979887C00A49CBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B495E48B29819C0B00C4CCA1 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -397,51 +238,9 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
-		B49D8FB82977F695008AF9E3 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		B49D8FB929783695008AF9E3 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B405E5302965A9840045DAFF /* SaveFavoritesUseCaseTest.swift */,
-				B405E52E2965A8AC0045DAFF /* FavoritesUseCaseTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		B49D8FBE29783DC2008AF9E3 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B49D8FBF29783DE0008AF9E3 /* RandomNumberRepositoryTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		B4A25C832976C0BF008A7511 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		B4A25C862976E884008A7511 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		B4ABD3FC2971E8D300A781D9 /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
-				B40E9788297319AC007AC2A6 /* Test */,
 				B447833629545D8A006FC0EC /* Resolver.swift */,
 				B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */,
 				B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */,
@@ -459,32 +258,6 @@
 				B4BAF071298068F300FF05A0 /* Shared */,
 			);
 			name = Packages;
-			sourceTree = "<group>";
-		};
-		B4F91B56296D7104008F011A /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		B4F91B57296D710D008F011A /* FavoriteIconView */ = {
-			isa = PBXGroup;
-			children = (
-				B4A25C862976E884008A7511 /* Test */,
-			);
-			path = FavoriteIconView;
-			sourceTree = "<group>";
-		};
-		B4FF87172964AD9C007067A3 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */,
-				B4FF87182964B6BD007067A3 /* NumbersRepositoryTest.swift */,
-				B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */,
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,7 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B447833729545D8A006FC0EC /* Resolver.swift in Sources */,
-				B447832C29545715006FC0EC /* NumbersRepositoryType.swift in Sources */,
 				B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */,
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
 				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
@@ -618,21 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4FF87192964B6BD007067A3 /* NumbersRepositoryTest.swift in Sources */,
-				B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */,
-				B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */,
-				B405E526296591CA0045DAFF /* DeleteNumbersUseCaseTest.swift in Sources */,
-				B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */,
-				B49D8FC029783DE0008AF9E3 /* RandomNumberRepositoryTest.swift in Sources */,
-				B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */,
-				B4A25C852976C0D8008A7511 /* RandomNumberViewmodeltest.swift in Sources */,
-				B40E978A297319C1007AC2A6 /* NumbersAssemblerTest.swift in Sources */,
-				B405E52F2965A8AC0045DAFF /* FavoritesUseCaseTest.swift in Sources */,
-				B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */,
-				B405E5312965A9840045DAFF /* SaveFavoritesUseCaseTest.swift in Sources */,
 				B405E52A296594C00045DAFF /* AwaitPublisher.swift in Sources */,
-				B405E52D2965A7F60045DAFF /* ContentViewModelTest.swift in Sources */,
-				B405E5352965D0060045DAFF /* FavoritesViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +529,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ZHAC3RSP3;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Numbers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -801,6 +560,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Numbers/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ZHAC3RSP3;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Numbers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -829,6 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4ZHAC3RSP3;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
@@ -849,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4ZHAC3RSP3;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
