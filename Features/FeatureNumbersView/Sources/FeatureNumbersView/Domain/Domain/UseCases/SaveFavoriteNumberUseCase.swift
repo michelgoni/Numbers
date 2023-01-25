@@ -21,7 +21,7 @@ final class SaveFavoriteNumberUseCase: SaveFavoriteNumberUseCaseType {
     }
 
     public func execute(_ data: NumberRowViewEntity) throws {
-
+        try repository.saveNumber(data)
     }
 }
 

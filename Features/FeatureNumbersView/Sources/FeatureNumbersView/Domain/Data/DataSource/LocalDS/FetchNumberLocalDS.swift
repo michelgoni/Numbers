@@ -11,6 +11,8 @@ import Shared
 
 protocol FetchNumberLocalDSType {
     func fetchSavedNumbers() throws -> [NumberRowViewEntity]
+    func saveNumber(_ number: NumberRowViewEntity)  throws
+
 }
 
 final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
@@ -31,6 +33,19 @@ final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
             throw NumberViewError.decodingLocalNumberError
         }
         self.numbers = numbers
+        return numbers
+    }
+
+    func saveNumber(_ number: NumberRowViewEntity) throws {
+        if !numbers.contains(where: { $0.numberValue == number.numberValue }) {
+            numbers.append(number)
+            savedNumbers = try encode(numbers)
+        }
+    }
+
+    private func encode(_ numbers: [NumberRowViewEntity]) throws  -> Data {
+        guard let numbers = try? JSONEncoder()
+            .encode(numbers) else { throw NumberViewError.decodingLocalNumberError }
         return numbers
     }
 }

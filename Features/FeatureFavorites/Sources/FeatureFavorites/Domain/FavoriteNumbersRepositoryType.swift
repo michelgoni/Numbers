@@ -9,6 +9,7 @@ import Foundation
 import Shared
 
 protocol FavoriteNumbersRepositoryType {
+    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity]?
     func fetchFavoritesList() throws -> [NumberRowViewEntity]?
 }
 

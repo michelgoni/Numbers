@@ -30,26 +30,29 @@ extension FavoritesViewModel {
     public func trigger(_ input: Input) {
         switch input {
         case .delete(let number):
-            Task {
-                debugPrint("Deleting number: \(number.numberValue) from favorites")
-                self.state.favoriteNumbers = try! await deleteFavoritesUseCase!.execute(number)
-                handle(total: self.state.favoriteNumbers)
+            debugPrint("Deleting number: \(number.numberValue) from favorites")
+            do {
+                if let value = try deleteFavoritesUseCase?.execute(number) {
+                    self.state.favoriteNumbers = value
+                    handle(total: self.state.favoriteNumbers)
+                } else {
+                    self.state.viewState.send(.emptyFavorites)
+                }
+            } catch {
+                self.state.viewState.send(.error)
             }
 
-
         case .favoritesList :
-            Task {
-                do {
-                    if let value = try favoritesUseCase?.execute() {
-                        self.state.favoriteNumbers = value
-                        handle(total: self.state.favoriteNumbers)
-                    } else {
-                        self.state.viewState.send(.emptyFavorites)
-                    }
-
-                } catch {
-                    self.state.viewState.send(.error)
+            do {
+                if let value = try favoritesUseCase?.execute() {
+                    self.state.favoriteNumbers = value
+                    handle(total: self.state.favoriteNumbers)
+                } else {
+                    self.state.viewState.send(.emptyFavorites)
                 }
+
+            } catch {
+                self.state.viewState.send(.error)
             }
         }
     }

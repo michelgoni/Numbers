@@ -48,4 +48,13 @@ final class NumberRepositoryImplm: NumberRepositoryType {
 
     }
 
+    func saveNumber(_ number: NumberRowViewEntity) throws {
+        do {
+            try localDS?.saveNumber(number)
+
+        } catch {
+            throw error
+        }
+    }
+
 }

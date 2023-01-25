@@ -16,6 +16,10 @@ class FavoritesRepositoryImplm: FavoriteNumbersRepositoryType {
         self.localDS = localDS
     }
 
+    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity]? {
+        try localDS?.delete(number)
+    }
+
     func fetchFavoritesList() throws -> [NumberRowViewEntity]? {
         try localDS?.fetchSavedNumbers()
     }

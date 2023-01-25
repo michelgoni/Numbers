@@ -10,7 +10,7 @@ import Shared
 
 public protocol DeleteFavoriteNumberUseCaseType {
 
-    func execute(_ data: NumberRowViewEntity) async throws -> [NumberRowViewEntity]
+    func execute(_ data: NumberRowViewEntity) throws -> [NumberRowViewEntity]
 }
 
 public final class DeleteFavoriteNumberUseCase: DeleteFavoriteNumberUseCaseType {
@@ -23,9 +23,9 @@ public final class DeleteFavoriteNumberUseCase: DeleteFavoriteNumberUseCaseType 
     }
 
 
-    public func execute(_ data: NumberRowViewEntity) async throws -> [NumberRowViewEntity] {
-       
-        [NumberRowViewEntity(numberValue: "", numberFact: "")]
+    public func execute(_ data: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
+        try repository.delete(data)!
+        
     }
 }
 
