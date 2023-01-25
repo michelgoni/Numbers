@@ -26,7 +26,7 @@ public final class FavoritesViewModel: ViewModel {
 
 @available(iOS 13.0, *)
 extension FavoritesViewModel {
-    @MainActor
+  
     public func trigger(_ input: Input) {
         switch input {
         case .delete(let number):
@@ -34,7 +34,7 @@ extension FavoritesViewModel {
             do {
                 if let value = try deleteFavoritesUseCase?.execute(number) {
                     handle(total: value)
-                    self.state.favoriteNumbers = value
+
 
                 } else {
                     self.state.viewState.send(.emptyFavorites)
@@ -65,8 +65,10 @@ extension FavoritesViewModel {
             return  }
         switch total.isEmpty {
         case true:
+            self.state.favoriteNumbers = []
             self.state.viewState.send(.emptyFavorites)
         case false:
+            self.state.favoriteNumbers = total
             self.state.viewState.send(.favorites)
 
 
