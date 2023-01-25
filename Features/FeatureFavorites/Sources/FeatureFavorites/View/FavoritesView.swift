@@ -8,6 +8,7 @@
 import NumbersEx
 import Shared
 import SwiftUI
+import NumbersUI
 
 private extension String {
     static let favoriteTitle = "Saved favorites"
@@ -18,6 +19,7 @@ public struct FavoritesView: View {
     public typealias ViewModel = AnyViewModel<FavoritesViewModel.Input, FavoritesViewModel.State>
     @ObservedObject private var viewModel: ViewModel
     @State private var showHidden = false
+    @Environment(\.viewFactory) private var viewFactory: ViewFactory
 
     public init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -28,7 +30,7 @@ public struct FavoritesView: View {
 
             VStack {
                 List(viewModel.favoriteNumbers) {
-                    Text(verbatim: $0.numberValue)
+                    viewFactory.favoriteRow($0)
                 }
                 .modifier(TitleModifier(title: .favoriteTitle))
             }

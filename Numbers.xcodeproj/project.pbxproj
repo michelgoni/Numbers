@@ -15,7 +15,6 @@
 		B405E5332965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */; };
 		B405E5352965D0060045DAFF /* FavoritesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */; };
 		B405E5382965F4CE0045DAFF /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E5372965F4CE0045DAFF /* LoaderView.swift */; };
-		B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E53D2965FC600045DAFF /* EmptyView.swift */; };
 		B40C24582976F23F00047A9F /* RandomNumberUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */; };
 		B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */; };
 		B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */; };
@@ -55,7 +54,6 @@
 		B4A25C882976E89A008A7511 /* FavoriteIconViewmodelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */; };
 		B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABD3F92971A6F100A781D9 /* Swinject */; };
 		B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */; };
-		B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B06E39295F498800B25094 /* FavoriteRow.swift */; };
 		B4F91B5D296DAB90008F011A /* NumbersAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */; };
 		B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */; };
 		B4FF87122964A9F1007067A3 /* UsersDefaultDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF87112964A9F1007067A3 /* UsersDefaultDataSourceTest.swift */; };
@@ -82,7 +80,6 @@
 		B405E5322965AC7C0045DAFF /* FetchNumbersUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNumbersUseCaseTest.swift; sourceTree = "<group>"; };
 		B405E5342965D0060045DAFF /* FavoritesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTest.swift; sourceTree = "<group>"; };
 		B405E5372965F4CE0045DAFF /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
-		B405E53D2965FC600045DAFF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B40C24572976F23F00047A9F /* RandomNumberUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberUseCaseTest.swift; sourceTree = "<group>"; };
 		B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceAssembly.swift; sourceTree = "<group>"; };
@@ -123,7 +120,6 @@
 		B4A25C842976C0D8008A7511 /* RandomNumberViewmodeltest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewmodeltest.swift; sourceTree = "<group>"; };
 		B4A25C872976E89A008A7511 /* FavoriteIconViewmodelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconViewmodelTest.swift; sourceTree = "<group>"; };
 		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
-		B4B06E39295F498800B25094 /* FavoriteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRow.swift; sourceTree = "<group>"; };
 		B4BAF071298068F300FF05A0 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = ../Shared; sourceTree = "<group>"; };
 		B4F91B5C296DAB90008F011A /* NumbersAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPITest.swift; sourceTree = "<group>"; };
 		B4FCD3F62970117800768861 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = Numbers/Src/Domain/LocalDS/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
@@ -209,8 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				B4F91B56296D7104008F011A /* Test */,
-				B4B06E39295F498800B25094 /* FavoriteRow.swift */,
-				B405E53D2965FC600045DAFF /* EmptyView.swift */,
 			);
 			path = FavoritesView;
 			sourceTree = "<group>";
@@ -712,7 +706,6 @@
 				B44D5008295C4D010013BC65 /* NewNumberModifier.swift in Sources */,
 				B44783842954BF0F006FC0EC /* RemoteDS.swift in Sources */,
 				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
-				B4B06E3A295F498800B25094 /* FavoriteRow.swift in Sources */,
 				B41038642974804C001CED69 /* RandomNumberView.swift in Sources */,
 				B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */,
 				B436090629756E5200FB3FB9 /* RandomNumberRepositoryImplm.swift in Sources */,
@@ -724,7 +717,6 @@
 				B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */,
 				B4FCD3F72970117800768861 /* UserDefaultDataSource.swift in Sources */,
 				B410386829748485001CED69 /* RandomNumberProgressView.swift in Sources */,
-				B405E53E2965FC600045DAFF /* EmptyView.swift in Sources */,
 				B43609142975B34D00FB3FB9 /* NumberWithOperationRepositoryType.swift in Sources */,
 				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
 				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
