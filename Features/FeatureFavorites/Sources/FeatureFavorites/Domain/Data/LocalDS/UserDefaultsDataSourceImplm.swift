@@ -38,7 +38,8 @@ final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
               guard let numbers = try? JSONDecoder().decode([NumberRowViewEntity].self, from: savedNumbers) else {
                   throw FavoritesError.badDecoding
               }
-              return numbers
+              self.numbers = numbers
+              return self.numbers
           }
       }
 

@@ -37,10 +37,11 @@ public struct FavoritesView: View {
             .overlay(EmptyView()
                 .show(showHidden)
             )
-            .onReceive(viewModel.viewState, perform: viewState)
+
             .onAppear{ [weak viewModel] in
                 viewModel?.trigger(.favoritesList)
             }
+            .onReceive(viewModel.viewState, perform: viewState)
         }
     }
 }

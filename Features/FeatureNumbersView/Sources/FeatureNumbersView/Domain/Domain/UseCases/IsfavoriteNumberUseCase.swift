@@ -20,7 +20,7 @@ public final class IsfavoriteNumberUseCase: IsfavoriteNumberUseCaseType {
     }
 
     public func execute(_ number: String) -> Bool {
-        false
+        repository.isFavorite(number)
     }
 }
 

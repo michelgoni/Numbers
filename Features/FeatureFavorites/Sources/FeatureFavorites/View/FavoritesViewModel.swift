@@ -34,10 +34,6 @@ extension FavoritesViewModel {
             do {
                 if let value = try deleteFavoritesUseCase?.execute(number) {
                     handle(total: value)
-
-
-                } else {
-                    self.state.viewState.send(.emptyFavorites)
                 }
             } catch {
                 self.state.viewState.send(.error)
@@ -47,8 +43,6 @@ extension FavoritesViewModel {
             do {
                 if let value = try favoritesUseCase?.execute() {
                     handle(total: value)
-                    self.state.favoriteNumbers = value
-
                 } else {
                     self.state.viewState.send(.emptyFavorites)
                 }

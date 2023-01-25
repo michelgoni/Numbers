@@ -48,6 +48,10 @@ final class NumberRepositoryImplm: NumberRepositoryType {
 
     }
 
+    func isFavorite(_ number: String) -> Bool {
+        localDS?.isFavorite(number) ?? false
+    }
+
     func saveNumber(_ number: NumberRowViewEntity) throws {
         do {
             try localDS?.saveNumber(number)
