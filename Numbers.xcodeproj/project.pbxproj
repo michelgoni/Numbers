@@ -8,16 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B405E52A296594C00045DAFF /* AwaitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B405E529296594C00045DAFF /* AwaitPublisher.swift */; };
-		B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */; };
-		B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */; };
-		B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */; };
-		B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E977E297311D0007AC2A6 /* DependencyProvider.swift */; };
 		B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E97802973120B007AC2A6 /* ViewFactory.swift */; };
-		B40E9787297312AA007AC2A6 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E9786297312AA007AC2A6 /* Inject.swift */; };
 		B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */; };
 		B44782F8295448CA006FC0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782F7295448CA006FC0EC /* Assets.xcassets */; };
 		B44782FB295448CA006FC0EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44782FA295448CA006FC0EC /* Preview Assets.xcassets */; };
-		B447833729545D8A006FC0EC /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447833629545D8A006FC0EC /* Resolver.swift */; };
 		B44783782954819E006FC0EC /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783772954819E006FC0EC /* Appdelegate.swift */; };
 		B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837A295481EE006FC0EC /* Scenedelegate.swift */; };
 		B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837C295482EE006FC0EC /* AppCoordinator.swift */; };
@@ -26,7 +20,6 @@
 		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
 		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
 		B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABD3F92971A6F100A781D9 /* Swinject */; };
-		B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,18 +34,12 @@
 
 /* Begin PBXFileReference section */
 		B405E529296594C00045DAFF /* AwaitPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitPublisher.swift; sourceTree = "<group>"; };
-		B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
-		B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceAssembly.swift; sourceTree = "<group>"; };
-		B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServiceAssembly.swift; sourceTree = "<group>"; };
-		B40E977E297311D0007AC2A6 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
 		B40E97802973120B007AC2A6 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
-		B40E9786297312AA007AC2A6 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssemblies.swift; sourceTree = "<group>"; };
 		B44782F0295448C8006FC0EC /* Numbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44782F7295448CA006FC0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B44782FA295448CA006FC0EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4478300295448CA006FC0EC /* NumbersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumbersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B447833629545D8A006FC0EC /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		B44783772954819E006FC0EC /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
 		B447837A295481EE006FC0EC /* Scenedelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenedelegate.swift; sourceTree = "<group>"; };
 		B447837C295482EE006FC0EC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -61,7 +48,6 @@
 		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
 		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
 		B495E48B29819C0B00C4CCA1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesAssembly.swift; sourceTree = "<group>"; };
 		B4BAF071298068F300FF05A0 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = ../Shared; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +130,6 @@
 		B447831E295449D4006FC0EC /* Src */ = {
 			isa = PBXGroup;
 			children = (
-				B4ABD3FC2971E8D300A781D9 /* Assembler */,
 				B44D33302958DE320026CFF4 /* Extensions */,
 				B447833529545CDC006FC0EC /* Presentation */,
 				B4478329295454F5006FC0EC /* Domain */,
@@ -236,20 +221,6 @@
 				B491B862297990D300A49CBB /* FeatureNumbersView */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		B4ABD3FC2971E8D300A781D9 /* Assembler */ = {
-			isa = PBXGroup;
-			children = (
-				B447833629545D8A006FC0EC /* Resolver.swift */,
-				B4ABD3FD2971E8EE00A781D9 /* UseCasesAssembly.swift */,
-				B40E977829730DD7007AC2A6 /* RepositoryAssembly.swift */,
-				B40E977A29730E3B007AC2A6 /* RemoteServiceAssembly.swift */,
-				B40E977C29730E79007AC2A6 /* LocalServiceAssembly.swift */,
-				B40E977E297311D0007AC2A6 /* DependencyProvider.swift */,
-				B40E9786297312AA007AC2A6 /* Inject.swift */,
-			);
-			path = Assembler;
 			sourceTree = "<group>";
 		};
 		B4BAF06A2980682E00FF05A0 /* Packages */ = {
@@ -370,18 +341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B447833729545D8A006FC0EC /* Resolver.swift in Sources */,
-				B40E977929730DD7007AC2A6 /* RepositoryAssembly.swift in Sources */,
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
 				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
-				B4ABD3FE2971E8EE00A781D9 /* UseCasesAssembly.swift in Sources */,
 				B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */,
 				B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */,
-				B40E977D29730E79007AC2A6 /* LocalServiceAssembly.swift in Sources */,
 				B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */,
-				B40E9787297312AA007AC2A6 /* Inject.swift in Sources */,
-				B40E977F297311D0007AC2A6 /* DependencyProvider.swift in Sources */,
-				B40E977B29730E3B007AC2A6 /* RemoteServiceAssembly.swift in Sources */,
 				B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
