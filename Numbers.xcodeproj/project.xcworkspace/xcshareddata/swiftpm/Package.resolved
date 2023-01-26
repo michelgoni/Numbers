@@ -6,7 +6,25 @@
       "location" : "https://github.com/michelgoni/NumbersEx",
       "state" : {
         "branch" : "main",
-        "revision" : "9d59ea073b35aac39133e28f2fcc8597bbf6e3fd"
+        "revision" : "65cd50d341b618e0323f82cf918aba6acf05374e"
+      }
+    },
+    {
+      "identity" : "numbersinjector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michelgoni/NumbersInjector",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4951e828c9568767b3f1e3b3f98ed59b167c6128"
+      }
+    },
+    {
+      "identity" : "numbersui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michelgoni/NumbersUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4b608aa125720e4ce9772c991b34836c287fc50d"
       }
     },
     {

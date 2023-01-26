@@ -5,7 +5,9 @@
 //  Created by Michel Goñi on 22/12/22.
 //
 
+import NumbersUI
 import SwiftUI
+
 
 protocol AppCoordinatorType {
 
@@ -14,7 +16,7 @@ protocol AppCoordinatorType {
 
 final class AppCoordinator: AppCoordinatorType {
     private var window: UIWindow?
-    private lazy var factory: ViewFactory = { ViewFactory() }()
+    private lazy var viewFactory: ViewFactory = { ViewFactory() }()
 
     func start(with window: UIWindow) {
         debugPrint("Starting app coordinator...")
@@ -27,7 +29,7 @@ final class AppCoordinator: AppCoordinatorType {
 private extension AppCoordinator {
     func setRoot() {
         debugPrint("Setting Root...")
-        self.window?.rootViewController = factory.view(.main).eraseToHostingController()
+        self.window?.rootViewController = viewFactory.getTabs().eraseToHostingController()
     }
 }
 
