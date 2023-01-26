@@ -13,16 +13,12 @@ import Shared
 
 extension ViewFactory {
     
-    func favoriteRow(_ favoriteEntity: NumberRowViewEntity) -> some View {
+    func favoriteRow(_ favoriteEntity: NumberRowViewEntity,
+                     viewModel: AnyViewModel<FavoritesViewModel.Input, FavoritesViewModel.State>) -> some View {
         make {
             FavoriteRow(
                 number: favoriteEntity,
-                viewModel: AnyViewModel(
-                    FavoritesViewModel(
-                        favoritesUseCase: injector.get(FavoritesNumberUseCaseType.self),
-                        deleteFavoritesUseCase: injector.get(DeleteFavoriteNumberUseCaseType.self)
-                    )
-                )
+                viewModel: viewModel
             )
         }
     }

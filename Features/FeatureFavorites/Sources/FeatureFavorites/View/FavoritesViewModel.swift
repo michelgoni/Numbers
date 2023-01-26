@@ -17,7 +17,7 @@ public final class FavoritesViewModel: ViewModel {
     public var deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType?
     @Published public var state = State()
 
-    public init(favoritesUseCase: FavoritesNumberUseCaseType? , deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType?) {
+    public init(favoritesUseCase: FavoritesNumberUseCaseType?, deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType?) {
         self.favoritesUseCase = favoritesUseCase
         self.deleteFavoritesUseCase = deleteFavoritesUseCase
 
@@ -26,7 +26,7 @@ public final class FavoritesViewModel: ViewModel {
 
 @available(iOS 13.0, *)
 extension FavoritesViewModel {
-  
+
     public func trigger(_ input: Input) {
         switch input {
         case .delete(let number):
@@ -62,10 +62,8 @@ extension FavoritesViewModel {
             self.state.favoriteNumbers = []
             self.state.viewState.send(.emptyFavorites)
         case false:
-            self.state.favoriteNumbers = total
             self.state.viewState.send(.favorites)
-
-
+            self.state.favoriteNumbers = total
         }
     }
 }
@@ -75,7 +73,6 @@ public extension FavoritesViewModel {
     enum Input {
         case delete(NumberRowViewEntity)
         case favoritesList
-
     }
 
     struct State: ModifiableStateData {
