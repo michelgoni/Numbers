@@ -100,7 +100,6 @@
 		B447831E295449D4006FC0EC /* Src */ = {
 			isa = PBXGroup;
 			children = (
-				B44D33302958DE320026CFF4 /* Extensions */,
 				B447833529545CDC006FC0EC /* Presentation */,
 			);
 			path = Src;
@@ -132,13 +131,6 @@
 				B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		B44D33302958DE320026CFF4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B491B8552979887C00A49CBB /* Frameworks */ = {
