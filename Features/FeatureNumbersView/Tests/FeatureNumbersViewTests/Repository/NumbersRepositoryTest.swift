@@ -9,7 +9,7 @@ import XCTest
 import Shared
 @testable import FeatureNumbersView
 
-final class NumbersReposositoryTest: XCTestCase, AwaitPublisher {
+final class NumbersRepositoryTest: XCTestCase {
 
     var localMock: UserDefaultsDataSourceTypeMock = UserDefaultsDataSourceTypeMock()
     var remoteMock: RemoteDataSourceTypeMock = RemoteDataSourceTypeMock()
