@@ -10,6 +10,7 @@ import SwiftUI
 import Shared
 
 protocol FetchNumberLocalDSType {
+    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity]
     func fetchSavedNumbers() throws -> [NumberRowViewEntity]
     func isFavorite(_ number: String) -> Bool
     func saveNumber(_ number: NumberRowViewEntity)  throws
@@ -25,6 +26,23 @@ final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
 
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
+    }
+
+    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
+        numbers.removeAll { $0.numberValue == number.numberValue }
+        do {
+            savedNumbers = try encode(numbers)
+        } catch {
+            throw NumberViewError.decodingLocalNumberError
+        }
+        if numbers.isEmpty {
+            return []
+        } else {
+            guard let numbers = try? JSONDecoder().decode([NumberRowViewEntity].self,
+                                                          from: self.savedNumbers) else {
+                throw NumberViewError.decodingLocalNumberError }
+            return numbers
+        }
     }
 
     func fetchSavedNumbers() throws -> [NumberRowViewEntity] {

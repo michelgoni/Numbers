@@ -103,7 +103,6 @@ class RemoteDataSourceTypeMock: FetchNumberRemoteDSType {
 class UserDefaultsDataSourceTypeMock: FetchNumberLocalDSType {
 
 
-
     var isInvoked = false
     var callCount = 0
     var isExecuteCalled: Bool {
@@ -112,6 +111,10 @@ class UserDefaultsDataSourceTypeMock: FetchNumberLocalDSType {
     var returnValue: [NumberRowViewEntity]!
 
     var isFavorite = false
+
+    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
+        returnValue
+    }
 
     func fetchSavedNumbers() throws -> [NumberRowViewEntity] {
         isInvoked.toggle()

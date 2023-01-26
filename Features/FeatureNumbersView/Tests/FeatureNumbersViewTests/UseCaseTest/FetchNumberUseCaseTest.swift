@@ -63,10 +63,21 @@ final class FetchNumberUseCaseTest: XCTestCase {
 }
 
 class NumbersRepositoryMock: NumberRepositoryType {
+
+
     var returnValue = [NumberRowViewEntity]()
     var failure: NumberViewError!
     var throwError = false
     var callCount = 0
+
+    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
+        callCount += 1
+        if throwError {
+            throw failure
+        } else {
+            return returnValue
+        }
+    }
 
     func fetchNumbers() async throws -> [NumberRowViewEntity] {
         callCount += 1

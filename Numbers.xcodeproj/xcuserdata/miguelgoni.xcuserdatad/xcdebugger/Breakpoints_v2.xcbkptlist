@@ -52,5 +52,69 @@
             landmarkType = "13">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34B1BFD3-BB2D-4DF7-BA38-5F0A4B1779F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/FeatureNumbersView/Sources/FeatureNumbersView/View/NumberRow/NumberRowViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "trigger(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "34B1BFD3-BB2D-4DF7-BA38-5F0A4B1779F2 - 97c2db3f76791521"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FeatureNumbersView.NumberRowViewModel.trigger(FeatureNumbersView.NumberRowViewModel.Input) -&gt; ()"
+                  moduleName = "Numbers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miguelgoni/Documents/Numbers/Features/FeatureNumbersView/Sources/FeatureNumbersView/View/NumberRow/NumberRowViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "34B1BFD3-BB2D-4DF7-BA38-5F0A4B1779F2 - 43da89d08e6e762f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FeatureNumbersView.NumberRowViewModel.trigger(FeatureNumbersView.NumberRowViewModel.Input) -&gt; ()"
+                  moduleName = "FeatureNumbersViewTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miguelgoni/Documents/Numbers/Features/FeatureNumbersView/Sources/FeatureNumbersView/View/NumberRow/NumberRowViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "536">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82D109FB-6D0D-4602-A750-FC47752DA94E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/FeatureFavorites/Sources/FeatureFavorites/Domain/Usecases/DeleteNumberUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "execute(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -26,11 +26,11 @@ final class DeleteNumberUseCaseTest: XCTestCase {
         sut = nil
     }
 
-    func testExecuteFailure() async throws {
+    func testExecuteFailure() throws {
         repositoryMock.throwError = true
         repositoryMock.failure = .wrongStatusCode
         do {
-            let _ = try await sut.execute("")
+            let _ = try  sut.execute(numberEntity())
             XCTFail("Test should fail")
         } catch {
             XCTAssertTrue(error == NumberViewError.wrongStatusCode)
@@ -40,8 +40,8 @@ final class DeleteNumberUseCaseTest: XCTestCase {
     func testExecuteSuccess() async throws {
         repositoryMock.returnValue.append(numberEntity())
         do {
-            let value = try await sut.execute("")
-            XCTAssertTrue(value.numberValue == "1")
+            let value = try sut.execute(numberEntity())
+            XCTAssertTrue(value.first?.numberValue == "1")
         } catch {
             XCTFail("Test should success")
         }
@@ -49,7 +49,7 @@ final class DeleteNumberUseCaseTest: XCTestCase {
 
     func testExecuteIsOnlyOnceInvoked() async throws  {
         repositoryMock.returnValue.append(numberEntity())
-        let _ = try! await sut.execute("")
+        let _ = try! sut.execute(numberEntity())
         XCTAssertTrue(repositoryMock.callCount == 1)
     }
 

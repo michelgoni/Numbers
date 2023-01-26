@@ -19,10 +19,14 @@ public final class FavoriteIconViewModel: ViewModel {
 
     private lazy var cancellables = Set<AnyCancellable>()
 
-    public init(isFavorite: Bool, favoritesUseCase: IsfavoriteNumberUseCaseType?, saveFavoritesUseCase: SaveFavoriteNumberUseCaseType?) {
+    public init(isFavorite: Bool,
+                favoritesUseCase: IsfavoriteNumberUseCaseType?,
+                saveFavoritesUseCase: SaveFavoriteNumberUseCaseType?,
+                deleteFavoritesUseCase: DeleteFavoriteNumberUseCaseType?) {
         self.state = State(favoriteNumber: isFavorite)
         self.favoritesUseCase = favoritesUseCase
         self.saveFavoritesUseCase = saveFavoritesUseCase
+        self.deleteFavoritesUseCase = deleteFavoritesUseCase
     }
 }
 
@@ -32,13 +36,11 @@ public extension FavoriteIconViewModel {
         switch input {
         case .delete(let number):
             debugPrint("Deleting number: \(number.numberValue) from favorites")
-            Task {
-                do {
-                    let _ = try await deleteFavoritesUseCase?.execute(number)
+            do {
+                let _ = try deleteFavoritesUseCase?.execute(number)
 
-                } catch {
-                    self.state.viewState.send(.error)
-                }
+            } catch {
+                self.state.viewState.send(.error)
             }
         case .isFavorite(let number):
             switch favoritesUseCase!.execute(number) {

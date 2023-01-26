@@ -10,6 +10,8 @@ import NumbersEx
 import Shared
 
 final class NumberRepositoryImplm: NumberRepositoryType {
+
+
     private var localDS: FetchNumberLocalDSType?
     private var remoteDS: FetchNumberRemoteDSType?
 
@@ -17,6 +19,10 @@ final class NumberRepositoryImplm: NumberRepositoryType {
          remoteDS: FetchNumberRemoteDSType?) {
         self.localDS = localDS
         self.remoteDS = remoteDS
+    }
+
+    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
+        try localDS?.delete(number) ?? []
     }
     
     func fetchNumbers() async throws -> [NumberRowViewEntity] {
