@@ -15,7 +15,6 @@
 		B44783782954819E006FC0EC /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783772954819E006FC0EC /* Appdelegate.swift */; };
 		B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837A295481EE006FC0EC /* Scenedelegate.swift */; };
 		B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837C295482EE006FC0EC /* AppCoordinator.swift */; };
-		B44783862954C446006FC0EC /* NumbersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783852954C446006FC0EC /* NumbersError.swift */; };
 		B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = B491B863297990EB00A49CBB /* FeatureNumbersView */; };
 		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
 		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
@@ -43,7 +42,6 @@
 		B44783772954819E006FC0EC /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
 		B447837A295481EE006FC0EC /* Scenedelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenedelegate.swift; sourceTree = "<group>"; };
 		B447837C295482EE006FC0EC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		B44783852954C446006FC0EC /* NumbersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersError.swift; sourceTree = "<group>"; };
 		B44783872954C5F1006FC0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
 		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
@@ -79,13 +77,6 @@
 				B40E97802973120B007AC2A6 /* ViewFactory.swift */,
 			);
 			path = ViewFactory;
-			sourceTree = "<group>";
-		};
-		B43608FF29756CD400FB3FB9 /* Number */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Number;
 			sourceTree = "<group>";
 		};
 		B44782E7295448C8006FC0EC = {
@@ -132,34 +123,8 @@
 			children = (
 				B44D33302958DE320026CFF4 /* Extensions */,
 				B447833529545CDC006FC0EC /* Presentation */,
-				B4478329295454F5006FC0EC /* Domain */,
 			);
 			path = Src;
-			sourceTree = "<group>";
-		};
-		B4478329295454F5006FC0EC /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				B447833129545BD6006FC0EC /* Domain */,
-				B447833229545BE4006FC0EC /* Usecases */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		B447833129545BD6006FC0EC /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				B43608FF29756CD400FB3FB9 /* Number */,
-				B44D332B2958DD480026CFF4 /* Error */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		B447833229545BE4006FC0EC /* Usecases */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Usecases;
 			sourceTree = "<group>";
 		};
 		B447833529545CDC006FC0EC /* Presentation */ = {
@@ -188,14 +153,6 @@
 				B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		B44D332B2958DD480026CFF4 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				B44783852954C446006FC0EC /* NumbersError.swift */,
-			);
-			path = Error;
 			sourceTree = "<group>";
 		};
 		B44D33302958DE320026CFF4 /* Extensions */ = {
@@ -342,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
-				B44783862954C446006FC0EC /* NumbersError.swift in Sources */,
 				B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */,
 				B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */,
 				B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */,
