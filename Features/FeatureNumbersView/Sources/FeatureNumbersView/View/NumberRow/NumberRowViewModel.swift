@@ -36,13 +36,11 @@ extension NumberRowViewModel {
         case .delete(let number):
 
             debugPrint("Deleting number: \(number.numberValue) from favorites")
-            Task {
-                do {
-                    let value = try await deleteFavoritesUseCase?.execute(number)
-                    self.handle(total: value!)
-                } catch {
-                    self.state.viewState.send(.error)
-                }
+            do {
+                let value = try  deleteFavoritesUseCase?.execute(number)
+                self.handle(total: value!)
+            } catch {
+                self.state.viewState.send(.error)
             }
 
         case .favoritesList:
