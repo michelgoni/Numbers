@@ -29,4 +29,20 @@ final class NumbersViewAssemblerTest: XCTestCase {
         XCTAssertNotNil(injector.get(SaveFavoriteNumberUseCaseType.self))
     }
 
+    func testRegisterRepositories() {
+        XCTAssertNotNil(injector.get(RandomNumberRepositoryType.self))
+        XCTAssertNotNil(injector.get(NumberRepositoryType.self))
+        XCTAssertNotNil(injector.get(NumberWithOperationRepositoryType.self))
+    }
+
+    func testRegisterRemoteDS() {
+        XCTAssertNotNil(injector.get(RemoteDSRandomNumberType.self))
+        XCTAssertNotNil(injector.get(FetchNumberRemoteDSType.self))
+    }
+
+    func testRegisterLocalDS() {
+        XCTAssertNotNil(injector.get(FetchNumberLocalDSType.self))
+        
+    }
+
 }
