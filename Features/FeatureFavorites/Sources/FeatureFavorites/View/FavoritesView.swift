@@ -30,7 +30,7 @@ public struct FavoritesView: View {
 
             VStack {
                 List(viewModel.favoriteNumbers) {
-                    viewFactory.favoriteRow($0)
+                    viewFactory.favoriteRow($0, viewModel: viewModel)
                 }
                 .modifier(TitleModifier(title: .favoriteTitle))
             }
