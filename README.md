@@ -19,7 +19,7 @@ Each layer has its own test implementation 🤟
 - [x] Use SPM as depdendency manager
 - [ ] UI testing
 - [x] Viewmodel testing
-- [ ] Modularization
+- [x] Modularization
 
 
 
