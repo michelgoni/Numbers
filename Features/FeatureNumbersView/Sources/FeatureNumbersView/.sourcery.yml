@@ -1,0 +1,11 @@
+sources:
+    -  /Users/miguelgoni/Documents/Numbers/Features/FeatureNumbersView/Sources/FeatureNumbersView
+templates:
+    - /Users/miguelgoni/Documents/Numbers/Features/FeatureNumbersView/Sources/FeatureNumbersView/Templates
+output: /Users/miguelgoni/Documents/Numbers/Features/FeatureNumbersView/Tests/FeatureNumbersViewTests/Generated
+
+args:
+  autoMockableImports:
+    - Shared
+  autoMockableTestableImports:
+    - FeatureNumbersView

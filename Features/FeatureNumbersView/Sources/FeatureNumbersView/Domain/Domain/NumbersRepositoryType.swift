@@ -8,6 +8,8 @@
 import Foundation
 import Shared
 
+
+//sourcery: AutoMockable
 public protocol NumberRepositoryType {
     func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity]
     func fetchNumbers()  async throws -> [NumberRowViewEntity]

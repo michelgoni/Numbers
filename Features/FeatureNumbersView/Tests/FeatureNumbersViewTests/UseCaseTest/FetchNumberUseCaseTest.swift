@@ -13,7 +13,7 @@ import XCTest
 final class FetchNumberUseCaseTest: XCTestCase {
     
     var sut: FetchNumberUseCaseType!
-    private var repositoryMock = NumbersRepositoryMock()
+    private var repositoryMock = NumberRepositoryTypeMock()
     
     override func setUp() {
         super.setUp()
@@ -62,52 +62,52 @@ final class FetchNumberUseCaseTest: XCTestCase {
     
 }
 
-class NumbersRepositoryMock: NumberRepositoryType {
-
-
-    var returnValue = [NumberRowViewEntity]()
-    var failure: NumberViewError!
-    var throwError = false
-    var callCount = 0
-
-    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
-        callCount += 1
-        if throwError {
-            throw failure
-        } else {
-            return returnValue
-        }
-    }
-
-    func fetchNumbers() async throws -> [NumberRowViewEntity] {
-        callCount += 1
-        if throwError {
-            throw failure
-        } else {
-            return returnValue
-        }
-    }
-    
-    func fetchNumber(_ number: String) async throws -> NumberRowViewEntity {
-        callCount += 1
-        if throwError {
-            throw failure
-        } else {
-            return returnValue.first!
-        }
-
-    }
-    
-    func isFavorite(_ number: String) -> Bool {
-        true
-    }
-    
-    func saveNumber(_ number: NumberRowViewEntity) throws {
-        callCount += 1
-        if throwError {
-            throw failure
-        } else {
-            return Void()
-        }
-    }
-}
+//class NumbersRepositoryMock: NumberRepositoryType {
+//
+//
+//    var returnValue = [NumberRowViewEntity]()
+//    var failure: NumberViewError!
+//    var throwError = false
+//    var callCount = 0
+//
+//    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
+//        callCount += 1
+//        if throwError {
+//            throw failure
+//        } else {
+//            return returnValue
+//        }
+//    }
+//
+//    func fetchNumbers() async throws -> [NumberRowViewEntity] {
+//        callCount += 1
+//        if throwError {
+//            throw failure
+//        } else {
+//            return returnValue
+//        }
+//    }
+//
+//    func fetchNumber(_ number: String) async throws -> NumberRowViewEntity {
+//        callCount += 1
+//        if throwError {
+//            throw failure
+//        } else {
+//            return returnValue.first!
+//        }
+//
+//    }
+//
+//    func isFavorite(_ number: String) -> Bool {
+//        true
+//    }
+//
+//    func saveNumber(_ number: NumberRowViewEntity) throws {
+//        callCount += 1
+//        if throwError {
+//            throw failure
+//        } else {
+//            return Void()
+//        }
+//    }
+//}
