@@ -7,6 +7,7 @@ This a simple iOS app made with SwiftUI wich shows some random facts about numbe
 * **Combine**
 * **Async / await**
 * **Dependency injection**
+* **Unit testing in each feature layer**
 
 Did I mention **SwiftUI**? 😁
 
@@ -19,7 +20,7 @@ Each layer has its own test implementation 🤟
 - [x] Use SPM as depdendency manager
 - [ ] UI testing
 - [x] Viewmodel testing
-- [ ] Modularization
+- [x] Modularization
 
 
 

@@ -13,7 +13,7 @@ import XCTest
 final class SaveNumberUseCaseTest: XCTestCase {
 
     var sut: SaveFavoriteNumberUseCaseType!
-    private var repositoryMock = NumbersRepositoryMock()
+    private var repositoryMock = NumberRepositoryTypeMock()
 
     override func setUp() {
         super.setUp()
@@ -27,8 +27,8 @@ final class SaveNumberUseCaseTest: XCTestCase {
     }
 
     func testExecuteFailure()  throws {
-        repositoryMock.throwError = true
-        repositoryMock.failure = .wrongStatusCode
+
+        repositoryMock.saveNumberThrowableError = NumberViewError.wrongStatusCode
         do {
             try sut.execute(numberEntity())
             XCTFail("Test should fail")
@@ -38,13 +38,14 @@ final class SaveNumberUseCaseTest: XCTestCase {
     }
 
     func testExecuteSuccess() async throws {
+        
         try sut.execute(numberEntity())
         XCTAssert(true)
     }
 
     func testExecuteIsOnlyOnceInvoked() async throws  {
        try sut.execute(numberEntity())
-        XCTAssertTrue(repositoryMock.callCount == 1)
+        XCTAssertTrue(repositoryMock.saveNumberCallsCount == 1)
     }
 
     private func numberEntity() -> NumberRowViewEntity {

@@ -13,12 +13,11 @@ import XCTest
 final class FetchNumbersUseCaseTest: XCTestCase {
 
     var sut: FetchNumbersUseCaseType!
-    private var repositoryMock = NumbersRepositoryMock()
+    private var repositoryMock = NumberRepositoryTypeMock()
 
     override func setUp() {
         super.setUp()
         sut = FetchNumbersUseCase(repository: repositoryMock)
-
     }
 
     override func tearDown() {
@@ -27,8 +26,8 @@ final class FetchNumbersUseCaseTest: XCTestCase {
     }
 
     func testExecuteFailure() async throws {
-        repositoryMock.throwError = true
-        repositoryMock.failure = .wrongStatusCode
+
+        repositoryMock.fetchNumbersThrowableError = NumberViewError.wrongStatusCode
         do {
             let _ = try await sut.execute()
             XCTFail("Test should fail")
@@ -38,7 +37,7 @@ final class FetchNumbersUseCaseTest: XCTestCase {
     }
 
     func testExecuteSuccess() async throws {
-        repositoryMock.returnValue.append(numberEntity())
+        repositoryMock.fetchNumbersReturnValue = [numberEntity()]
         do {
             let value = try await sut.execute()
             XCTAssertTrue(value.first?.numberValue == "1")
@@ -48,9 +47,9 @@ final class FetchNumbersUseCaseTest: XCTestCase {
     }
 
     func testExecuteIsOnlyOnceInvoked() async throws  {
-        repositoryMock.returnValue.append(numberEntity())
+        repositoryMock.fetchNumbersReturnValue = [numberEntity()]
         let _ = try! await sut.execute()
-        XCTAssertTrue(repositoryMock.callCount == 1)
+        XCTAssertTrue(repositoryMock.fetchNumbersCallsCount == 1)
     }
 
     private func numberEntity() -> NumberRowViewEntity {
