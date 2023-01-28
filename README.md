@@ -22,7 +22,7 @@ Each layer has its own test implementation 🤟
 - [x] Viewmodel testing
 - [x] Modularization
 - [x] Use SPM as depdendency manager
-- [ ] Use [Soucery](https://github.com/krzysztofzablocki/Sourcery) in order to generate automatically mocks. 
+- [x] Use [Soucery](https://github.com/krzysztofzablocki/Sourcery) in order to generate automatically mocks. 
 
 
 Thanks for reading
