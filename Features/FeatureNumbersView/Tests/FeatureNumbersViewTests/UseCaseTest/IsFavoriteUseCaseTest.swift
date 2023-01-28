@@ -13,7 +13,7 @@ import XCTest
 final class IsFavoriteUseCaseTest: XCTestCase {
 
     var sut: IsfavoriteNumberUseCaseType!
-    private var repositoryMock = NumbersRepositoryMock()
+    private var repositoryMock = NumberRepositoryTypeMock()
 
     override func setUp() {
         super.setUp()
@@ -21,6 +21,7 @@ final class IsFavoriteUseCaseTest: XCTestCase {
     }
 
     func testExecuteSuccess() {
+        repositoryMock.isFavoriteReturnValue = true
         let value =  sut.execute("")
        XCTAssertTrue(value)
     }
