@@ -42,7 +42,9 @@ public struct NumbersView: View {
                         viewFactory.numberRow($0)
                     }
                     .listStyle(.inset)
-
+                    .refreshable { [weak viewModel] in
+                        viewModel?.trigger(.numbersList)
+                    }
                     Button("Choose a random number!") {
                         isShowingSheet.toggle()
                     }
@@ -74,9 +76,7 @@ public struct NumbersView: View {
 
         .searchable(text: $searchText)
         .onSubmit(of: .search, runSearch)
-        .refreshable { [weak viewModel] in
-            viewModel?.trigger(.numbersList)
-        }
+
     }
 
     func runSearch() {
