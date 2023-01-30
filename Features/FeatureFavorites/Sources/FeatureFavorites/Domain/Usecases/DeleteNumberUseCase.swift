@@ -8,11 +8,13 @@
 import Foundation
 import Shared
 
+//sourcery: AutoMockable
 public protocol DeleteFavoriteNumberUseCaseType {
 
     func execute(_ data: NumberRowViewEntity) throws -> [NumberRowViewEntity]
 }
 
+//sourcery: AutoMockable
 public final class DeleteFavoriteNumberUseCase: DeleteFavoriteNumberUseCaseType {
 
 

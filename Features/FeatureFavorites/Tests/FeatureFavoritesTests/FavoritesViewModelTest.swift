@@ -15,8 +15,8 @@ import Shared
 final class FavoritesViewModelTest: XCTestCase {
 
     var sut: FavoritesViewModel!
-    var favoriteNumberUseCaseMock = FavoriteNumberUseCaseMock()
-    var deleteFavoriteNumberUsecaseMock = DeleteFavoriteNumberUsecaseMock()
+    var favoriteNumberUseCaseMock = FavoritesNumberUseCaseTypeMock()
+    var deleteFavoriteNumberUsecaseMock = DeleteFavoriteNumberUseCaseTypeMock()
     private lazy var cancellables = Set<AnyCancellable>()
 
     override func setUp() {
@@ -30,7 +30,7 @@ final class FavoritesViewModelTest: XCTestCase {
     }
 
     func testDeleteEmptyStateSuccess() {
-        deleteFavoriteNumberUsecaseMock.emptyState = true
+        deleteFavoriteNumberUsecaseMock.executeReturnValue = []
         let expectation = self.expectation(description: "ViewModel State")
         var result: FavoritesViewModel.ViewState?
 
@@ -55,7 +55,9 @@ final class FavoritesViewModelTest: XCTestCase {
     }
 
     func testDeleteNonEmptyStateSuccess() {
-
+        deleteFavoriteNumberUsecaseMock.executeReturnValue = [NumberRowViewEntity(numberValue: "1",
+                                                                                  numberFact: "Numberfact 1",
+                                                                                  isPrime: true)]
         let expectation = self.expectation(description: "ViewModel State")
         var result: FavoritesViewModel.ViewState?
 
@@ -80,7 +82,9 @@ final class FavoritesViewModelTest: XCTestCase {
     }
 
     func testFavoriteListStateSuccess() {
-
+        favoriteNumberUseCaseMock.executeReturnValue = [NumberRowViewEntity(numberValue: "1",
+                                                                            numberFact: "Numberfact 1",
+                                                                            isPrime: true)]
         let expectation = self.expectation(description: "ViewModel State")
         var result: FavoritesViewModel.ViewState?
         sut.state.viewState.sink { viewState in
@@ -107,32 +111,4 @@ final class FavoritesViewModelTest: XCTestCase {
         NumberRowViewEntity(numberValue: "1", numberFact: "1", isPrime: true)
     }
 
-}
-
-class FavoriteNumberUseCaseMock: FavoritesNumberUseCaseType {
-    func execute() throws -> [NumberRowViewEntity]? {
-        return [
-            NumberRowViewEntity(numberValue: "2", numberFact: "2 is the second fact", isPrime: false),
-            NumberRowViewEntity(numberValue: "3", numberFact: "3 is the third fact", isPrime: false),
-            NumberRowViewEntity(numberValue: "24", numberFact: "24 is the 24th fact", isPrime: true)
-        ]
-    }
-
-
-}
-
-class DeleteFavoriteNumberUsecaseMock: DeleteFavoriteNumberUseCaseType {
-    var emptyState = false
-    func execute(_ data: Shared.NumberRowViewEntity) throws -> [NumberRowViewEntity] {
-        if emptyState {
-            return []
-        } else {
-            return [
-                NumberRowViewEntity(numberValue: "2", numberFact: "2 is the second fact", isPrime: false),
-                NumberRowViewEntity(numberValue: "3", numberFact: "3 is the third fact", isPrime: false),
-                NumberRowViewEntity(numberValue: "24", numberFact: "24 is the 24th fact", isPrime: true)
-            ]
-        }
-
-    }
 }
