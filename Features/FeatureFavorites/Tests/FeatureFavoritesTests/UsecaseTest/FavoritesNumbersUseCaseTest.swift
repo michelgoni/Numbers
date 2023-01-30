@@ -12,16 +12,16 @@ import XCTest
 final class FavoritesNumbersUseCaseTest: XCTestCase {
 
     var sut: FavoritesNumberUseCaseType!
-    var respositoryMock = RepositoryMock()
+    var repositoryMock = FavoriteNumbersRepositoryTypeMock()
 
     override func setUp() {
         super.setUp()
-        sut = FavoritesNumberUseCase(repository: respositoryMock)
+        sut = FavoritesNumberUseCase(repository: repositoryMock)
     }
 
     func testExecuteFails() throws {
-        respositoryMock.failure = .badDecoding
-        respositoryMock.throwError = true
+
+        repositoryMock.deleteThrowableError = FavoritesError.badDecoding
         do {
             let _ = try sut.execute()
             XCTFail("Test should fail")
@@ -31,7 +31,7 @@ final class FavoritesNumbersUseCaseTest: XCTestCase {
     }
 
     func testExecuteSuccess() throws {
-        respositoryMock.returnValue.append(numberEntity())
+        repositoryMock.fetchFavoritesListReturnValue = [numberEntity()]
 
         do {
             let value = try sut.execute()
@@ -42,9 +42,9 @@ final class FavoritesNumbersUseCaseTest: XCTestCase {
     }
 
     func testExecuteIsOnlyOnceInvoked() async throws  {
-        respositoryMock.returnValue.append(numberEntity())
+        repositoryMock.fetchFavoritesListReturnValue = [numberEntity()]
         let _ = try! sut.execute()
-        XCTAssertTrue(respositoryMock.callCount == 1)
+        XCTAssertTrue(repositoryMock.fetchFavoritesListCallsCount == 1)
     }
 
     private func numberEntity() -> NumberRowViewEntity {
@@ -53,34 +53,4 @@ final class FavoritesNumbersUseCaseTest: XCTestCase {
             numberFact: "1 is the value for this test",
             isPrime: true)
     }
-
 }
-
-class RepositoryMock: FavoriteNumbersRepositoryType {
-    var returnValue = [NumberRowViewEntity]()
-    var failure: FavoritesError!
-    var throwError = false
-    var callCount = 0
-
-    func delete(_ number: Shared.NumberRowViewEntity) throws -> [NumberRowViewEntity]? {
-        callCount += 1
-        if throwError {
-            throw failure
-        } else {
-            return returnValue
-        }
-
-    }
-
-    func fetchFavoritesList() throws -> [NumberRowViewEntity]? {
-        callCount += 1
-        if throwError {
-            throw failure
-        } else {
-            return returnValue
-        }
-    }
-
-
-}
-

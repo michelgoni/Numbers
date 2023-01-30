@@ -8,6 +8,7 @@
 import Foundation
 import Shared
 
+//sourcery: AutoMockable
 class FavoritesRepositoryImplm: FavoriteNumbersRepositoryType {
 
     private var localDS: FetchNumberLocalDSType?
