@@ -12,12 +12,14 @@ private extension Int {
     static let okCode = 200
 }
 
+//sourcery: AutoMockable
 protocol FetchNumberRemoteDSType {
     var urlSession: URLSession { get }
     func fetchNumbers(_ numbers: [String]) async throws -> [Data]
     func fetchNumber(_ number: String) async throws -> Data
 }
 
+//sourcery: AutoMockable
 final class FetchNumberRemoteDSImplm: FetchNumberRemoteDSType {
 
     var urlSession: URLSession

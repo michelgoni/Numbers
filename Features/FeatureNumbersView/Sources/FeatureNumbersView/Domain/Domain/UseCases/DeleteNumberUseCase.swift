@@ -8,7 +8,6 @@
 import Foundation
 import Shared
 
-
 //sourcery: AutoMockable
 public protocol DeleteFavoriteNumberUseCaseType {
 

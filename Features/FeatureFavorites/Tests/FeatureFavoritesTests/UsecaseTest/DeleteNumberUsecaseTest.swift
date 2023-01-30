@@ -12,7 +12,7 @@ import XCTest
 final class DeleteNumberUsecaseTest: XCTestCase {
 
     var sut: DeleteFavoriteNumberUseCaseType!
-    var repositoryMock = RepositoryMock()
+    var repositoryMock = FavoriteNumbersRepositoryTypeMock()
 
     override func setUp() {
         super.setUp()
@@ -20,8 +20,8 @@ final class DeleteNumberUsecaseTest: XCTestCase {
     }
 
     func testExecuteFails() throws {
-        repositoryMock.failure = .badDecoding
-        repositoryMock.throwError = true
+        repositoryMock.deleteThrowableError = FavoritesError.badDecoding
+
         do {
             let _ = try sut.execute(numberEntity())
             XCTFail("Test should fail")
@@ -31,7 +31,7 @@ final class DeleteNumberUsecaseTest: XCTestCase {
     }
 
     func testExecuteSuccess() throws {
-        repositoryMock.returnValue.append(numberEntity())
+        repositoryMock.deleteReturnValue = [numberEntity()]
 
         do {
             let value = try sut.execute(numberEntity())
@@ -42,9 +42,9 @@ final class DeleteNumberUsecaseTest: XCTestCase {
     }
 
     func testExecuteIsOnlyOnceInvoked() async throws  {
-        repositoryMock.returnValue.append(numberEntity())
+        repositoryMock.deleteReturnValue = [numberEntity()]
         let _ = try! sut.execute(numberEntity())
-        XCTAssertTrue(repositoryMock.callCount == 1)
+        XCTAssertTrue(repositoryMock.deleteCallsCount == 1)
     }
 
     private func numberEntity() -> NumberRowViewEntity {

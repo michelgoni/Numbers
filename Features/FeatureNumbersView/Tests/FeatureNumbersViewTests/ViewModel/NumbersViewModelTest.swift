@@ -15,8 +15,8 @@ final class NumbersViewModelTest: XCTestCase {
 
     lazy var cancellables = Set<AnyCancellable>()
     private var sut: NumbersViewModel!
-    private var fetchNumbersUseCaseMock = FetchNumbersUseCaseMock()
-    private var fetchNumberUseCaseMock = FetchNumberUseCaseMock()
+    private var fetchNumbersUseCaseMock = FetchNumbersUseCaseTypeMock()
+    private var fetchNumberUseCaseMock = FetchNumberUseCaseTypeMock()
 
     override func setUp() {
         super.setUp()
@@ -33,7 +33,7 @@ final class NumbersViewModelTest: XCTestCase {
 
     @MainActor func testFetchNumbersLoadingState() {
         let expectation = self.expectation(description: "ViewModel State")
-        fetchNumbersUseCaseMock.returnValue = []
+        fetchNumbersUseCaseMock.executeReturnValue = []
 
         var result: NumbersViewModel.ViewState?
         sut.state.viewState.sink { _ in
@@ -56,7 +56,9 @@ final class NumbersViewModelTest: XCTestCase {
 
     @MainActor func testFetchNumberLoadingState() {
         let expectation = self.expectation(description: "ViewModel State")
-        fetchNumberUseCaseMock.returnValue = NumberRowViewEntity(numberValue: "", numberFact: "", isPrime: false)
+        fetchNumberUseCaseMock.executeReturnValue = NumberRowViewEntity(numberValue: "",
+                                                                        numberFact: "",
+                                                                        isPrime: false)
 
         var result: NumbersViewModel.ViewState?
         sut.state.viewState.sink { _ in
@@ -79,7 +81,7 @@ final class NumbersViewModelTest: XCTestCase {
 
     @MainActor func testFetchNumbersErrorState() {
         let expectation = self.expectation(description: "ViewModel State")
-        fetchNumbersUseCaseMock.throwError = true
+        fetchNumbersUseCaseMock.executeThrowableError = NumberViewError.wrongStatusCode
 
         var result: NumbersViewModel.ViewState?
 
@@ -106,7 +108,7 @@ final class NumbersViewModelTest: XCTestCase {
 
     @MainActor func testFetchNumberErrorState() {
         let expectation = self.expectation(description: "ViewModel State")
-        fetchNumberUseCaseMock.throwError = true
+        fetchNumberUseCaseMock.executeThrowableError = NumberViewError.wrongStatusCode
 
         var result: NumbersViewModel.ViewState?
 
@@ -132,34 +134,3 @@ final class NumbersViewModelTest: XCTestCase {
     }
 }
 
-
-class FetchNumbersUseCaseMock: FetchNumbersUseCaseType {
-
-    var returnValue: [NumberRowViewEntity]!
-    var throwError = false
-
-    func execute() async throws -> [NumberRowViewEntity] {
-
-        switch throwError {
-        case true:
-            throw NumberViewError.wrongStatusCode
-        case false:
-            return [NumberRowViewEntity(numberValue: "1", numberFact: "", isPrime: true)]
-        }
-    }
-
-}
-
-class FetchNumberUseCaseMock: FetchNumberUseCaseType {
-    var throwError = false
-    var returnValue: NumberRowViewEntity!
-
-    func execute(_ number: String) async throws -> NumberRowViewEntity {
-        switch throwError {
-        case true:
-            throw NumberViewError.wrongStatusCode
-        case false:
-            return returnValue
-        }
-    }
-}

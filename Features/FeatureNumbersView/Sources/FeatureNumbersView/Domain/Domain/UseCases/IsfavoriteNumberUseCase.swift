@@ -7,11 +7,13 @@
 
 import Foundation
 
+//sourcery: AutoMockable
 public protocol IsfavoriteNumberUseCaseType {
 
     func execute(_ number: String) -> Bool
 }
 
+//sourcery: AutoMockable
 public final class IsfavoriteNumberUseCase: IsfavoriteNumberUseCaseType {
     private  var repository: NumberRepositoryType
 
