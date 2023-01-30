@@ -11,8 +11,8 @@ import Shared
 
 final class NumbersRepositoryTest: XCTestCase {
 
-    var localMock: UserDefaultsDataSourceTypeMock = UserDefaultsDataSourceTypeMock()
-    var remoteMock: RemoteDataSourceTypeMock = RemoteDataSourceTypeMock()
+    var localMock: FetchNumberLocalDSTypeMock = FetchNumberLocalDSTypeMock()
+    var remoteMock: FetchNumberRemoteDSTypeMock = FetchNumberRemoteDSTypeMock()
     var sut: NumberRepositoryImplm!
 
 
@@ -28,35 +28,37 @@ final class NumbersRepositoryTest: XCTestCase {
 
 
     func testIsRemoteDSInvoked() async {
-        remoteMock.data = Data()
+        remoteMock.fetchNumbersReturnValue = [Data()]
         let _ = try! await sut.fetchNumbers()
-        XCTAssertTrue(remoteMock.isExecuteCalled)
+        XCTAssertTrue(remoteMock.fetchNumbersCalled)
     }
 
     func testFetchLocalNumberIsOnlyOnceInvoked() async {
-        remoteMock.data = Data()
+        remoteMock.fetchNumbersReturnValue = [Data()]
         let _ = try! await sut.fetchNumbers()
-        XCTAssertTrue(remoteMock.callCount == 1)
+        XCTAssertTrue(remoteMock.fetchNumbersCallsCount == 1)
     }
 
     func testIsFavorite()  {
-        remoteMock.data = Data()
+        localMock.isFavoriteReturnValue = true
         let value = sut.isFavorite("")
         XCTAssertTrue(value)
     }
 
     func testSaveIsInvoked()  {
-        localMock.returnValue = []
-        try! sut.saveNumber(NumberRowViewEntity(numberValue: "1", numberFact: "", isPrime: true))
+        localMock.fetchSavedNumbersReturnValue = []
+        try! sut.saveNumber(NumberRowViewEntity(numberValue: "1",
+                                                numberFact: "",
+                                                isPrime: true))
 
-        XCTAssertTrue(localMock.isInvoked)
+        XCTAssertTrue(localMock.saveNumberCalled)
     }
 
     func testSaveIsOnlyOnceInvoked()  {
-        localMock.returnValue = []
+        localMock.fetchSavedNumbersReturnValue = []
         try! sut.saveNumber(NumberRowViewEntity(numberValue: "1", numberFact: "", isPrime: true))
 
-        XCTAssertTrue(localMock.callCount == 1)
+        XCTAssertTrue(localMock.saveNumberCallsCount == 1)
     }
 
     func testFetchRemoteNumberDoesNotMapProperly() {
@@ -69,67 +71,8 @@ final class NumbersRepositoryTest: XCTestCase {
     }
 
     func testFetchRemoteNumberMapsProperly() async {
-        remoteMock.data = Data()
+        remoteMock.fetchNumbersReturnValue = [Data()]
         let value = try! await sut.fetchNumbers()
         XCTAssertTrue(!value.isEmpty)
     }
 }
-
-// MARK: -Mock
-
-class RemoteDataSourceTypeMock: FetchNumberRemoteDSType {
-
-
-    var urlSession: URLSession = URLSession.shared
-    var data: Data!
-    var isInvoked = false
-    var callCount = 0
-    var isExecuteCalled: Bool {
-        return callCount > 0
-    }
-
-    func fetchNumbers(_ numbers: [String]) async throws -> [Data] {
-        isInvoked = true
-        callCount += 1
-        return [data]
-    }
-
-    func fetchNumber(_ number: String) async throws -> Data {
-        Data()
-    }
-
-}
-
-class UserDefaultsDataSourceTypeMock: FetchNumberLocalDSType {
-
-
-    var isInvoked = false
-    var callCount = 0
-    var isExecuteCalled: Bool {
-        return callCount > 0
-    }
-    var returnValue: [NumberRowViewEntity]!
-
-    var isFavorite = false
-
-    func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
-        returnValue
-    }
-
-    func fetchSavedNumbers() throws -> [NumberRowViewEntity] {
-        isInvoked.toggle()
-        callCount += 1
-        return returnValue
-    }
-
-    func isFavorite(_ number: String) -> Bool {
-        isFavorite.toggle()
-        return isFavorite
-    }
-
-    func saveNumber(_ number: NumberRowViewEntity) throws {
-        isInvoked.toggle()
-        callCount += 1
-    }
-}
-
