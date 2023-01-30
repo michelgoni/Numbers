@@ -8,11 +8,12 @@
 import Foundation
 import Shared
 
-
+//sourcery: AutoMockable
 public protocol SaveFavoriteNumberUseCaseType {
     func execute(_ data: NumberRowViewEntity) throws
 }
 
+//sourcery: AutoMockable
 final class SaveFavoriteNumberUseCase: SaveFavoriteNumberUseCaseType {
     private var repository: NumberRepositoryType
 

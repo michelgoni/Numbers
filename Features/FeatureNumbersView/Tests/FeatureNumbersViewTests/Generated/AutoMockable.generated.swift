@@ -110,6 +110,31 @@ class FetchNumbersUseCaseTypeMock: FetchNumbersUseCaseType {
     }
 
 }
+class IsfavoriteNumberUseCaseTypeMock: IsfavoriteNumberUseCaseType {
+
+    //MARK: - execute
+
+    var executeCallsCount = 0
+    var executeCalled: Bool {
+        return executeCallsCount > 0
+    }
+    var executeReceivedNumber: String?
+    var executeReceivedInvocations: [String] = []
+    var executeReturnValue: Bool!
+    var executeClosure: ((String) -> Bool)?
+
+    func execute(_ number: String) -> Bool {
+        executeCallsCount += 1
+        executeReceivedNumber = number
+        executeReceivedInvocations.append(number)
+        if let executeClosure = executeClosure {
+            return executeClosure(number)
+        } else {
+            return executeReturnValue
+        }
+    }
+
+}
 class NumberRepositoryTypeMock: NumberRepositoryType {
 
     //MARK: - delete
@@ -227,6 +252,30 @@ class NumberRepositoryTypeMock: NumberRepositoryType {
         saveNumberReceivedNumber = number
         saveNumberReceivedInvocations.append(number)
         try saveNumberClosure?(number)
+    }
+
+}
+class SaveFavoriteNumberUseCaseTypeMock: SaveFavoriteNumberUseCaseType {
+
+    //MARK: - execute
+
+    var executeThrowableError: Error?
+    var executeCallsCount = 0
+    var executeCalled: Bool {
+        return executeCallsCount > 0
+    }
+    var executeReceivedData: NumberRowViewEntity?
+    var executeReceivedInvocations: [NumberRowViewEntity] = []
+    var executeClosure: ((NumberRowViewEntity) throws -> Void)?
+
+    func execute(_ data: NumberRowViewEntity) throws {
+        if let error = executeThrowableError {
+            throw error
+        }
+        executeCallsCount += 1
+        executeReceivedData = data
+        executeReceivedInvocations.append(data)
+        try executeClosure?(data)
     }
 
 }
