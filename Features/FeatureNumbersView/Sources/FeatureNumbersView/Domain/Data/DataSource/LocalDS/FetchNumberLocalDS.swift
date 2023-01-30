@@ -9,15 +9,15 @@ import Foundation
 import SwiftUI
 import Shared
 
+//sourcery: AutoMockable
 protocol FetchNumberLocalDSType {
     func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity]
     func fetchSavedNumbers() throws -> [NumberRowViewEntity]
     func isFavorite(_ number: String) -> Bool
     func saveNumber(_ number: NumberRowViewEntity)  throws
-
-
 }
 
+//sourcery: AutoMockable
 final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
 
     private let userDefaults: UserDefaults

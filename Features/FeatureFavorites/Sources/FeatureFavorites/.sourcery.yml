@@ -1,0 +1,11 @@
+sources:
+    -  /Users/miguelgoni/Documents/Numbers/Features/FeatureFavorites/Sources/FeatureFavorites
+templates:
+    - /Users/miguelgoni/Documents/Numbers/Features/FeatureFavorites/Sources/FeatureFavorites/Templates
+output: /Users/miguelgoni/Documents/Numbers/Features/FeatureFavorites/Tests/FeatureFavoritesTests/Generated
+
+args:
+  autoMockableImports:
+    - Shared
+  autoMockableTestableImports:
+    - FeatureFavorites

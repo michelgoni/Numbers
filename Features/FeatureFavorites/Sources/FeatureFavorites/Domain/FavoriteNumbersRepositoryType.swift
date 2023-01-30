@@ -8,6 +8,7 @@
 import Foundation
 import Shared
 
+//sourcery: AutoMockable
 protocol FavoriteNumbersRepositoryType {
     func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity]?
     func fetchFavoritesList() throws -> [NumberRowViewEntity]?
