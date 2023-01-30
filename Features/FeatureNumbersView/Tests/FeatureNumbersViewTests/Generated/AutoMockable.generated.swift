@@ -56,6 +56,60 @@ class DeleteFavoriteNumberUseCaseTypeMock: DeleteFavoriteNumberUseCaseType {
     }
 
 }
+class FetchNumberUseCaseTypeMock: FetchNumberUseCaseType {
+
+    //MARK: - execute
+
+    var executeThrowableError: Error?
+    var executeCallsCount = 0
+    var executeCalled: Bool {
+        return executeCallsCount > 0
+    }
+    var executeReceivedNumber: String?
+    var executeReceivedInvocations: [String] = []
+    var executeReturnValue: NumberRowViewEntity!
+    var executeClosure: ((String) async throws -> NumberRowViewEntity)?
+
+    func execute(_ number: String) async throws -> NumberRowViewEntity {
+        if let error = executeThrowableError {
+            throw error
+        }
+        executeCallsCount += 1
+        executeReceivedNumber = number
+        executeReceivedInvocations.append(number)
+        if let executeClosure = executeClosure {
+            return try await executeClosure(number)
+        } else {
+            return executeReturnValue
+        }
+    }
+
+}
+class FetchNumbersUseCaseTypeMock: FetchNumbersUseCaseType {
+
+    //MARK: - execute
+
+    var executeThrowableError: Error?
+    var executeCallsCount = 0
+    var executeCalled: Bool {
+        return executeCallsCount > 0
+    }
+    var executeReturnValue: [NumberRowViewEntity]!
+    var executeClosure: (() async throws -> [NumberRowViewEntity])?
+
+    func execute() async throws -> [NumberRowViewEntity] {
+        if let error = executeThrowableError {
+            throw error
+        }
+        executeCallsCount += 1
+        if let executeClosure = executeClosure {
+            return try await executeClosure()
+        } else {
+            return executeReturnValue
+        }
+    }
+
+}
 class NumberRepositoryTypeMock: NumberRepositoryType {
 
     //MARK: - delete

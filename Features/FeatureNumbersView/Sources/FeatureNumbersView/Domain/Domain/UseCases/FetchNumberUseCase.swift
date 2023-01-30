@@ -8,11 +8,15 @@
 import Foundation
 import Shared
 
+
+//sourcery: AutoMockable
 public protocol FetchNumberUseCaseType {
 
     func execute(_ number: String) async throws -> NumberRowViewEntity
 }
 
+
+//sourcery: AutoMockable
 public final class FetchNumberUseCase: FetchNumberUseCaseType {
 
     private var repository: NumberRepositoryType
