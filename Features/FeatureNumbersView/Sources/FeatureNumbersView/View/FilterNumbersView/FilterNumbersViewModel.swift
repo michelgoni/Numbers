@@ -10,14 +10,13 @@ import NumbersEx
 
  final class FilterNumbersViewModel: ViewModel {
 
-    @Published  var state: State
-    let operational: SearchOperational
+     @Published  var state = State()
+     let operational: SearchOperational
 
-     init (operational: SearchOperational, categories: [Category]) {
-        self.state = State(categories: categories)
-        self.operational = operational
-    }
-}
+     init (operational: SearchOperational) {
+         self.operational = operational
+     }
+ }
 
 extension FilterNumbersViewModel {
 
@@ -26,7 +25,7 @@ extension FilterNumbersViewModel {
     }
 
     struct State {
-        let categories: [Category]
+       
     }
 }
 
@@ -41,12 +40,13 @@ extension FilterNumbersViewModel {
     }
 }
 
- struct Category: Hashable {
+struct Category: Hashable {
     let id = UUID()
     let description: String
     let tag: String
-
-    static var categories: [Self] {
+    var isSelected = false
+    
+    static var categories: [Category] {
         [Category(description: "Prime numbers", tag: "prime"),
          Category(description: "Odd numbers", tag: "odd"),
          Category(description: "Even numbers", tag: "even"),

@@ -40,14 +40,13 @@ public struct NumbersView: View {
             ZStack(alignment: .center) {
 
                 VStack {
-                    FilterNumbersView(
-                        viewModel: AnyViewModel(
-                            FilterNumbersViewModel(operational: operational,
-                                                   categories: Category.categories
-                            )
-                        )
-                    )
-
+                    viewFactory.searchList(
+                        AnyViewModel(
+                            FilterNumbersViewModel(
+                                operational: operational)
+                        ),
+                        categories: viewModel.categories)
+                    
                     List(viewModel.numbers) {
                         viewFactory.numberRow($0)
                     }

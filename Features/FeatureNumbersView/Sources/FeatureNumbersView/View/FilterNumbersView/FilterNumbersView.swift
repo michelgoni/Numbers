@@ -9,24 +9,26 @@ import Combine
 import SwiftUI
 import NumbersEx
 
- struct FilterNumbersView: View {
+struct FilterNumbersView: View {
 
-     typealias ViewModel = AnyViewModel<FilterNumbersViewModel.Input, FilterNumbersViewModel.State>
+    typealias ViewModel = AnyViewModel<FilterNumbersViewModel.Input, FilterNumbersViewModel.State>
     @ObservedObject  var viewModel: ViewModel
-
-     init(viewModel: ViewModel) {
-
+    private let categories: [Category]
+    
+    init(viewModel: ViewModel, categories: [Category]) {
+        self.categories = categories
         self.viewModel = viewModel
     }
+
      var body: some View {
         HStack(spacing: 12.0) {
-            ForEach(Category.categories, id: \.id) { category in
+            ForEach(categories, id: \.id) { category in
                 Text(category.description)
                     .font(.caption)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(category.isSelected ? Color.white : Color.gray)
                     .padding(.vertical, 8.0)
                     .padding(.horizontal, 8.0)
-                    .background(Color.white, in: Capsule())
+                    .background(category.isSelected ? Color.black : Color.white, in: Capsule())
                     .shadowNormal(color: Color.gray.opacity(0.5))
                     .eraseToButton { [weak viewModel] in
                         viewModel?.trigger(.selectedNumberCategory(category))
@@ -37,6 +39,7 @@ import NumbersEx
         .padding(.bottom, 4.0)
         .scrollable(.horizontal, showIndicators: false)
     }
+
 }
 
 @available(iOS 13.0, *)

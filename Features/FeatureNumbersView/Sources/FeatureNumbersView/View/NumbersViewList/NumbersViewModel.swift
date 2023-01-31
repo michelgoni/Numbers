@@ -31,7 +31,11 @@ public extension NumbersViewModel {
         case .filter(let filter):
             switch filter {
             case .prime:
-              
+                if var valueToModifie = self.state.categories.first(where: { $0.tag == filter.rawValue }) {
+                    self.state.categories.removeAll { $0.tag == filter.rawValue }
+                    valueToModifie.isSelected.toggle()
+                    self.state.categories.append(valueToModifie)
+                }
                 self.state.numbers = self.state.numbers.filter {Int($0.numberValue)!.isPrime}
 
             case .odd: break
@@ -78,6 +82,7 @@ public extension NumbersViewModel {
 
     struct State: ModifiableStateData {
         var numbers = [NumberRowViewEntity]()
+        var categories = Category.categories
         public var modifiableView = ModifiableViewState<ViewState>()
     }
 
