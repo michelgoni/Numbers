@@ -29,6 +29,8 @@ public struct NumbersView: View {
     @State private var searchText = ""
     @State private var isShowingSheet = false
 
+    private let operational = SearchOperational()
+
     public init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
@@ -38,9 +40,18 @@ public struct NumbersView: View {
             ZStack(alignment: .center) {
 
                 VStack {
+                    FilterNumbersView(
+                        viewModel: AnyViewModel(
+                            FilterNumbersViewModel(operational: operational,
+                                                   categories: Category.categories
+                            )
+                        )
+                    )
+
                     List(viewModel.numbers) {
                         viewFactory.numberRow($0)
                     }
+                    .animation(.linear, value: 1.0)
                     .listStyle(.inset)
                     .refreshable { [weak viewModel] in
                         viewModel?.trigger(.numbersList)
@@ -67,6 +78,7 @@ public struct NumbersView: View {
                 LoaderView()
                 .show(isHideLoader)
             )
+            .onReceive(operational.output, perform: operationalState)
             .onReceive(viewModel.viewState, perform: viewState)
             .initializeAlert(alert)
             .onAppearOnce{ [weak viewModel] in
@@ -86,6 +98,19 @@ public struct NumbersView: View {
 }
 
 private extension NumbersView {
+
+    func operationalState (_ state: SearchOperational.Element) {
+        switch state {
+        case .validFilter(let filter):
+            guard let filter = Filter(rawValue: filter) else {
+                viewModel.viewState.send(.filterError)
+                return
+            }
+            viewModel.trigger(.filter(filter))
+        case .invalidFilter:
+            debugPrint("Invalid filter")
+        }
+    }
 
     func viewState(_ state: NumbersViewModel.ViewState?) {
         isHideLoader = state == .loading
