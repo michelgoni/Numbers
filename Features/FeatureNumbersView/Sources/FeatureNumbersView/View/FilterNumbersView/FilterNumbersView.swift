@@ -13,8 +13,9 @@ struct FilterNumbersView: View {
 
     typealias ViewModel = AnyViewModel<FilterNumbersViewModel.Input, FilterNumbersViewModel.State>
     @ObservedObject  var viewModel: ViewModel
+    @State private var categorySelected: String?
     private let categories: [Category]
-    
+
     init(viewModel: ViewModel, categories: [Category]) {
         self.categories = categories
         self.viewModel = viewModel
@@ -25,13 +26,14 @@ struct FilterNumbersView: View {
             ForEach(categories, id: \.id) { category in
                 Text(category.description)
                     .font(.caption)
-                    .foregroundColor(category.isSelected ? Color.white : Color.gray)
+                    .foregroundColor(categorySelected == category.tag ? Color.white : Color.gray)
                     .padding(.vertical, 8.0)
                     .padding(.horizontal, 8.0)
-                    .background(category.isSelected ? Color.black : Color.white, in: Capsule())
+                    .background(categorySelected == category.tag ? Color.black : Color.white, in: Capsule())
                     .shadowNormal(color: Color.gray.opacity(0.5))
                     .eraseToButton { [weak viewModel] in
                         viewModel?.trigger(.selectedNumberCategory(category))
+                        categorySelected =  categorySelected == category.tag ? nil : category.tag
                     }
             }
         }
