@@ -13,7 +13,7 @@ private extension Int {
 
 protocol RemoteDSRandomNumberType {
     var urlSession: URLSession { get }
-    func fetchNumbersAsync(_ number: String) async throws -> Data
+    func fetchNumbersAsync(_ number: Int) async throws -> Data
 }
 
 final class RemoteDSRandomNumber: RemoteDSRandomNumberType {
@@ -24,7 +24,7 @@ final class RemoteDSRandomNumber: RemoteDSRandomNumberType {
         self.urlSession = urlSession
     }
 
-    func fetchNumbersAsync(_ number: String) async throws -> Data {
+    func fetchNumbersAsync(_ number: Int) async throws -> Data {
         let (data, response) = try await URLSession.shared
             .data(from: URL(string: "http://numbersapi.com/\(number)/trivia")!)
         guard

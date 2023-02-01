@@ -26,8 +26,7 @@ public struct FavoriteRow: View {
     public var body: some View {
         VStack {
             HStack {
-                Text(
-                    number.numberValue)
+                Text(String(number.numberValue))
                 .modifier(
                     NumberModifier()
                 )

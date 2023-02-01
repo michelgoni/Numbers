@@ -68,15 +68,13 @@ public extension FavoriteIconViewModel {
         default: break
         }
     }
-
-    
 }
 
 public extension FavoriteIconViewModel {
 
     enum Input {
         case delete(NumberRowViewEntity)
-        case isFavorite(String)
+        case isFavorite(Int)
         case modifyNumber
         case save(NumberRowViewEntity)
     }

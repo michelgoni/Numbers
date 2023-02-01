@@ -11,27 +11,27 @@ import NumbersEx
 import Shared
 
 final public class NumbersViewModel: ViewModel {
-    
+
     @Published public var state = State()
     public var numbersUseCase: FetchNumbersUseCaseType?
     public var numberUseCase: FetchNumberUseCaseType?
     private lazy var cancellables = Set<AnyCancellable>()
-    
+
     public init(numbersUseCase: FetchNumbersUseCaseType?, numberUseCase: FetchNumberUseCaseType?) {
         self.numbersUseCase = numbersUseCase
         self.numberUseCase = numberUseCase
-        
+
     }
 }
 
 public extension NumbersViewModel {
     @MainActor func trigger(_ input: Input) {
         switch input {
-            
+
         case .filter(let filter):
             switch filter {
             case .prime:
-                self.state.numbers = self.state.numbers.filter {Int($0.numberValue)!.isPrime}
+                self.state.numbers = self.state.numbers.filter {$0.numberValue.isPrime}
             case .odd: break
             case .even: break
             case .unknown:
@@ -66,20 +66,20 @@ public extension NumbersViewModel {
 }
 
 public extension NumbersViewModel {
-    
+
     enum Input {
         case filter(Filter)
         case numbersList
         case searchNumber(String)
-        
+
     }
-    
+
     struct State: ModifiableStateData {
         var numbers = [NumberRowViewEntity]()
         var categories = Category.categories
         public var modifiableView = ModifiableViewState<ViewState>()
     }
-    
+
     enum ViewState {
         case filterError
         case error

@@ -36,7 +36,7 @@ final class NumberRepositoryImplm: NumberRepositoryType {
             .map {
                 let numberFact = String(decoding: $0, as: UTF8.self)
                 let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
-                return NumberRowViewEntity(numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
+                return NumberRowViewEntity(numberValue: Int(number) ?? .zero,
                                            numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
                                            isPrime: Int(number)?.isPrime ?? false)
             }
@@ -48,13 +48,13 @@ final class NumberRepositoryImplm: NumberRepositoryType {
         let value = try await remoteDS.fetchNumber(number)
         let numberFact = String(decoding: value, as: UTF8.self)
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
-        return NumberRowViewEntity(numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
+        return NumberRowViewEntity(numberValue: Int(number) ?? .zero,
                                    numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
                                    isPrime: Int(number)?.isPrime ?? false)
 
     }
 
-    func isFavorite(_ number: String) -> Bool {
+    func isFavorite(_ number: Int) -> Bool {
         localDS?.isFavorite(number) ?? false
     }
 

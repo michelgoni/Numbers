@@ -21,12 +21,12 @@ final class RandomNumberRepositoryImplm: RandomNumberRepositoryType {
 
     func fetchRandomNumber() async throws -> NumberRowViewEntity {
 
-        let data = try await remoteDS?.fetchNumbersAsync(String(Int.random(in: 1 ... 99)))
+        let data = try await remoteDS?.fetchNumbersAsync(Int.random(in: 1 ... 99))
 
         let numberFact = String(decoding: data!, as: UTF8.self)
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(
-            numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
+            numberValue: Int(number) ?? .zero,
             numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
             isPrime: Int(number)?.isPrime ?? false)
     }
@@ -43,14 +43,14 @@ final class NumberWithOperationRepositoryImplm: NumberWithOperationRepositoryTyp
         self.localDS = localDS
     }
 
-    func fetchNumber(_ number: String) async throws -> NumberRowViewEntity {
+    func fetchNumber(_ number: Int) async throws -> NumberRowViewEntity {
 
         let data = try await remoteDS?.fetchNumbersAsync(number)
 
         let numberFact = String(decoding: data!, as: UTF8.self)
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(
-            numberValue: numberFact.split(separator: Character(" ")).first?.description ?? "",
+            numberValue: Int(number) ?? .zero,
             numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
             isPrime: Int(number)?.isPrime ?? false)
     }
