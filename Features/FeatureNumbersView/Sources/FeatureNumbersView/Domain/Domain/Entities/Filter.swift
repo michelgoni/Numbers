@@ -8,8 +8,10 @@
 import Foundation
 
 public enum Filter: String {
-    case odd
+    case all
     case even
+    case odd
     case prime
     case unknown
+
 }

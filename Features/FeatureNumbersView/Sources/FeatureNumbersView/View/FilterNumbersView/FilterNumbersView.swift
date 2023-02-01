@@ -32,8 +32,8 @@ struct FilterNumbersView: View {
                     .background(categorySelected == category.tag ? Color.black : Color.white, in: Capsule())
                     .shadowNormal(color: Color.gray.opacity(0.5))
                     .eraseToButton { [weak viewModel] in
-                        viewModel?.trigger(.selectedNumberCategory(category))
                         categorySelected =  categorySelected == category.tag ? nil : category.tag
+                        categorySelected == nil ? viewModel?.trigger(.selectedNumberCategory(nil)) : viewModel?.trigger(.selectedNumberCategory(category))
                     }
             }
         }
@@ -58,6 +58,6 @@ public extension SearchOperational {
 
     enum Element {
         case invalidFilter
-        case validFilter(String)
+        case validFilter(String?)
     }
 }

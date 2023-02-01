@@ -16,6 +16,9 @@ final public class NumbersViewModel: ViewModel {
     public var numbersUseCase: FetchNumbersUseCaseType?
     public var numberUseCase: FetchNumberUseCaseType?
     private lazy var cancellables = Set<AnyCancellable>()
+    private lazy var localNumbers = {
+        [NumberRowViewEntity]()
+    }()
 
     public init(numbersUseCase: FetchNumbersUseCaseType?, numberUseCase: FetchNumberUseCaseType?) {
         self.numbersUseCase = numbersUseCase
@@ -30,10 +33,17 @@ public extension NumbersViewModel {
 
         case .filter(let filter):
             switch filter {
+            case .all:
+                self.state.numbers = localNumbers
             case .prime:
-                self.state.numbers = self.state.numbers.filter {$0.numberValue.isPrime}
-            case .odd: break
-            case .even: break
+                let local = localNumbers
+                self.state.numbers = local.filter {$0.numberValue.isPrime}
+            case .odd:
+                let local = localNumbers
+                self.state.numbers = local.filter {$0.numberValue.isOdd}
+            case .even:
+                let local = localNumbers
+                self.state.numbers = local.filter {$0.numberValue.isEven}
             case .unknown:
                 break
             }
@@ -43,6 +53,7 @@ public extension NumbersViewModel {
                 do {
                     guard let numbersUseCase = numbersUseCase else { return }
                     let value = try await numbersUseCase.execute()
+                    self.localNumbers = value
                     self.state.numbers = value
                     self.state.viewState.send(.none)
                 } catch {

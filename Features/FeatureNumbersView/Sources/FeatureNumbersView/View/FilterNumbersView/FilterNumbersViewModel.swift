@@ -21,7 +21,7 @@ import NumbersEx
 extension FilterNumbersViewModel {
 
     enum Input {
-        case selectedNumberCategory(Category)
+        case selectedNumberCategory(Category?)
     }
 
     struct State {
@@ -35,6 +35,9 @@ extension FilterNumbersViewModel {
         switch input {
 
         case .selectedNumberCategory(let category):
+            guard let category = category else {
+                operational.output.send(.validFilter(nil))
+                return  }
             operational.output.send(.validFilter(category.tag))
         }
     }

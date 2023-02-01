@@ -101,11 +101,12 @@ private extension NumbersView {
     func operationalState (_ state: SearchOperational.Element) {
         switch state {
         case .validFilter(let filter):
-            guard let filter = Filter(rawValue: filter) else {
-                viewModel.viewState.send(.filterError)
+            guard let filter = filter,
+                    let raw = Filter(rawValue: filter) else {
+                viewModel.trigger(.filter(.all))
                 return
             }
-            viewModel.trigger(.filter(filter))
+            viewModel.trigger(.filter(raw))
         case .invalidFilter:
             debugPrint("Invalid filter")
         }
