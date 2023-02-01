@@ -55,7 +55,7 @@ final class FavoritesViewModelTest: XCTestCase {
     }
 
     func testDeleteNonEmptyStateSuccess() {
-        deleteFavoriteNumberUsecaseMock.executeReturnValue = [NumberRowViewEntity(numberValue: "1",
+        deleteFavoriteNumberUsecaseMock.executeReturnValue = [NumberRowViewEntity(numberValue: 1,
                                                                                   numberFact: "Numberfact 1",
                                                                                   isPrime: true)]
         let expectation = self.expectation(description: "ViewModel State")
@@ -82,7 +82,7 @@ final class FavoritesViewModelTest: XCTestCase {
     }
 
     func testFavoriteListStateSuccess() {
-        favoriteNumberUseCaseMock.executeReturnValue = [NumberRowViewEntity(numberValue: "1",
+        favoriteNumberUseCaseMock.executeReturnValue = [NumberRowViewEntity(numberValue: 1,
                                                                             numberFact: "Numberfact 1",
                                                                             isPrime: true)]
         let expectation = self.expectation(description: "ViewModel State")
@@ -108,7 +108,7 @@ final class FavoritesViewModelTest: XCTestCase {
 
     private func numberRowEntity() -> NumberRowViewEntity {
 
-        NumberRowViewEntity(numberValue: "1", numberFact: "1", isPrime: true)
+        NumberRowViewEntity(numberValue: 1, numberFact: "1", isPrime: true)
     }
 
 }

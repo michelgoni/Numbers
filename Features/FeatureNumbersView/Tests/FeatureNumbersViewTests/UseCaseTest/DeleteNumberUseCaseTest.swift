@@ -41,7 +41,7 @@ final class DeleteNumberUseCaseTest: XCTestCase {
         repositoryMock.deleteReturnValue = [numberEntity()]
         do {
             let value = try sut.execute(numberEntity())
-            XCTAssertTrue(value.first?.numberValue == "1")
+            XCTAssertTrue(value.first?.numberValue == 1)
         } catch {
             XCTFail("Test should success")
         }
@@ -55,7 +55,7 @@ final class DeleteNumberUseCaseTest: XCTestCase {
 
     private func numberEntity() -> NumberRowViewEntity {
         NumberRowViewEntity(
-            numberValue: "1",
+            numberValue: 1,
             numberFact: "1 is the value for this test",
             isPrime: true)
     }

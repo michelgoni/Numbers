@@ -50,7 +50,7 @@ final class SaveNumberUseCaseTest: XCTestCase {
 
     private func numberEntity() -> NumberRowViewEntity {
         NumberRowViewEntity(
-            numberValue: "1",
+            numberValue: 1,
             numberFact: "1 is the value for this test",
             isPrime: true)
     }
