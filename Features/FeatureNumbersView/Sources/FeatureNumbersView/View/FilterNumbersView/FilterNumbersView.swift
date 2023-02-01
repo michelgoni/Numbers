@@ -44,7 +44,6 @@ struct FilterNumbersView: View {
 
 }
 
-@available(iOS 13.0, *)
 public struct SearchOperational: OperationalFlow {
     public let input: Void = ()
     public var output = Output()
@@ -53,7 +52,6 @@ public struct SearchOperational: OperationalFlow {
 
 }
 
-@available(iOS 13.0, *)
 public extension SearchOperational {
 
     enum Element {
