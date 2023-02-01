@@ -49,14 +49,16 @@ public struct FavoriteIconView: View {
                     isFavorite.favoriteImage
                         .foregroundColor(.black)
                 }
+                .buttonStyle(.plain)
                 .show(!isLoading)
                 ProgressView()
                     .show(isLoading)
 
             }
+
             .onReceive(favoriteIconViewModel.viewState, perform: viewState)
-            .onAppear {
-                favoriteIconViewModel.trigger(
+            .onAppear { [weak favoriteIconViewModel] in
+                favoriteIconViewModel?.trigger(
                     .isFavorite(number.numberValue)
                 )
             }
