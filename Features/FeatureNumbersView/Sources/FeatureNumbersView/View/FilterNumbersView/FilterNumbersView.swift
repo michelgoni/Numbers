@@ -25,7 +25,7 @@ struct FilterNumbersView: View {
         HStack(spacing: 12.0) {
             ForEach(categories, id: \.id) { category in
                 Text(category.description)
-                    .font(.caption)
+                    .font(.subheadline)
                     .foregroundColor(categorySelected == category.tag ? Color.white : Color.gray)
                     .padding(.vertical, 8.0)
                     .padding(.horizontal, 8.0)

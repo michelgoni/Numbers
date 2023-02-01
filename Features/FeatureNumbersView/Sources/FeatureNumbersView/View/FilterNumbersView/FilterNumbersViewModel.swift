@@ -24,9 +24,7 @@ extension FilterNumbersViewModel {
         case selectedNumberCategory(Category?)
     }
 
-    struct State {
-       
-    }
+    struct State {}
 }
 
  extension FilterNumbersViewModel {
@@ -52,8 +50,7 @@ struct Category: Hashable {
     static var categories: [Category] {
         [Category(description: "Prime numbers", tag: "prime"),
          Category(description: "Odd numbers", tag: "odd"),
-         Category(description: "Even numbers", tag: "even"),
-         Category(description: "Negative numbers", tag: "negative")
+         Category(description: "Even numbers", tag: "even")
         ]
     }
 }
