@@ -40,25 +40,13 @@ struct NumberRow: View {
                     .padding()
             }
             HStack {
-                primeButtonButton(number.isPrime)
+                number.isPrime.primeImage
                 Spacer()
                 viewFactory.favoriteIconView(isLoading: $isLoading,
                                              number: number)
             }
-
             .padding()
         }
-    }
-
-
-    private func primeButtonButton(_ favorite: Bool) -> some View {
-
-        return Button(action: {
-
-        }, label: {
-            favorite.primeImage
-        })
-        .buttonStyle(PlainButtonStyle())
     }
 
 }
