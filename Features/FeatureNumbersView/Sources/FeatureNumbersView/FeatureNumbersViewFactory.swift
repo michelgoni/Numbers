@@ -50,4 +50,10 @@ extension ViewFactory {
             )
         }
     }
+
+    func searchList(_ viewModel: AnyViewModel<FilterNumbersViewModel.Input, FilterNumbersViewModel.State>, categories: [Category]) -> some View {
+        make {
+            FilterNumbersView(viewModel: viewModel, categories: categories)
+        }
+    }
 }

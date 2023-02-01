@@ -35,7 +35,7 @@ extension LocalDSTest {
         var testResult: NumberRowViewEntity!
         try! sut.saveNumber(numberEntity())
         testResult = try! sut.fetchSavedNumbers().first!
-       XCTAssertTrue(testResult.numberValue == "1")
+       XCTAssertTrue(testResult.numberValue == 1)
     }
 
     func testFetchNumberSuccess() {
@@ -50,14 +50,14 @@ private extension LocalDSTest {
 
     func wrongNumberEntity() -> NumberRowViewEntity {
         NumberRowViewEntity(id: UUID(uuidString: "")!,
-                            numberValue: "1",
+                            numberValue: 1,
                             numberFact: "1 is the value for the test",
                             isPrime: true)
     }
 
     func numberEntity() -> NumberRowViewEntity {
         NumberRowViewEntity(id: UUID(uuidString: "33041937-25b2-464a-98ad-3910cbe0d09e")!,
-                            numberValue: "1",
+                            numberValue: 1,
                             numberFact: "1 is the value for the test",
                             isPrime: true)
     }
@@ -65,11 +65,11 @@ private extension LocalDSTest {
     func numberEntities() -> [NumberRowViewEntity] {
 
         [ NumberRowViewEntity(id: UUID(uuidString: "33041937-05b2-464a-98ad-3910cbe0d09e")!,
-                              numberValue: "1",
+                              numberValue: 1,
                               numberFact: "1 is the value for the test",
                               isPrime: true),
           NumberRowViewEntity(id: UUID(uuidString: "E621E1F8-C36C-495A-29FC-0C247A3E6E5F")!,
-                              numberValue: "2",
+                              numberValue: 2,
                               numberFact: "2 is the value for the test",
                               isPrime: true)
         ]

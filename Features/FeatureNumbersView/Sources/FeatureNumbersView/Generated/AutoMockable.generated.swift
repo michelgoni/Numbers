@@ -137,12 +137,12 @@ class NumberRepositoryTypeMock: NumberRepositoryType {
     var isFavoriteCalled: Bool {
         return isFavoriteCallsCount > 0
     }
-    var isFavoriteReceivedNumber: String?
-    var isFavoriteReceivedInvocations: [String] = []
+    var isFavoriteReceivedNumber: Int?
+    var isFavoriteReceivedInvocations: [Int] = []
     var isFavoriteReturnValue: Bool!
-    var isFavoriteClosure: ((String) -> Bool)?
+    var isFavoriteClosure: ((Int) -> Bool)?
 
-    func isFavorite(_ number: String) -> Bool {
+    func isFavorite(_ number: Int) -> Bool {
         isFavoriteCallsCount += 1
         isFavoriteReceivedNumber = number
         isFavoriteReceivedInvocations.append(number)

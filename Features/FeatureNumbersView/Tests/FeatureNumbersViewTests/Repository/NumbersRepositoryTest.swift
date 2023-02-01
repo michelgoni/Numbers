@@ -41,13 +41,13 @@ final class NumbersRepositoryTest: XCTestCase {
 
     func testIsFavorite()  {
         localMock.isFavoriteReturnValue = true
-        let value = sut.isFavorite("")
+        let value = sut.isFavorite(.zero)
         XCTAssertTrue(value)
     }
 
     func testSaveIsInvoked()  {
         localMock.fetchSavedNumbersReturnValue = []
-        try! sut.saveNumber(NumberRowViewEntity(numberValue: "1",
+        try! sut.saveNumber(NumberRowViewEntity(numberValue: 1,
                                                 numberFact: "",
                                                 isPrime: true))
 
@@ -56,7 +56,7 @@ final class NumbersRepositoryTest: XCTestCase {
 
     func testSaveIsOnlyOnceInvoked()  {
         localMock.fetchSavedNumbersReturnValue = []
-        try! sut.saveNumber(NumberRowViewEntity(numberValue: "1", numberFact: "", isPrime: true))
+        try! sut.saveNumber(NumberRowViewEntity(numberValue: 1, numberFact: "", isPrime: true))
 
         XCTAssertTrue(localMock.saveNumberCallsCount == 1)
     }

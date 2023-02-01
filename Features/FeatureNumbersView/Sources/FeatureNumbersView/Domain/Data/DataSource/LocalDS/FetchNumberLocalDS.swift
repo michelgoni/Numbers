@@ -13,7 +13,7 @@ import Shared
 protocol FetchNumberLocalDSType {
     func delete(_ number: NumberRowViewEntity) throws -> [NumberRowViewEntity]
     func fetchSavedNumbers() throws -> [NumberRowViewEntity]
-    func isFavorite(_ number: String) -> Bool
+    func isFavorite(_ number: Int) -> Bool
     func saveNumber(_ number: NumberRowViewEntity)  throws
 }
 
@@ -56,7 +56,7 @@ final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
         return numbers
     }
 
-    func isFavorite(_ number: String) -> Bool {
+    func isFavorite(_ number: Int) -> Bool {
         guard let numbers = try? JSONDecoder()
             .decode([NumberRowViewEntity].self, from: self.savedNumbers),
               !numbers.isEmpty else {

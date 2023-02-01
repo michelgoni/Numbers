@@ -34,7 +34,7 @@ struct NumberRow: View {
 
         VStack {
             HStack {
-                Text(number.numberValue)
+                Text("\(number.numberValue)")
                     .modifier(NumberModifier())
                 Text(number.numberFact)
                     .padding()

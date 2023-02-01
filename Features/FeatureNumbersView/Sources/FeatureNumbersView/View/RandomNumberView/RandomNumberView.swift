@@ -71,7 +71,7 @@ struct RandomNumberView: View {
         }
         .onChange(of: viewModel.number) { newValue in
             guard let number = newValue else { return }
-            self.progressValue = (number.numberValue as NSString).floatValue / 100.0
+            self.progressValue = Float(number.numberValue) / 100.0
         }
     }
 }

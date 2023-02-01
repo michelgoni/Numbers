@@ -56,7 +56,7 @@ final class NumbersViewModelTest: XCTestCase {
 
     @MainActor func testFetchNumberLoadingState() {
         let expectation = self.expectation(description: "ViewModel State")
-        fetchNumberUseCaseMock.executeReturnValue = NumberRowViewEntity(numberValue: "",
+        fetchNumberUseCaseMock.executeReturnValue = NumberRowViewEntity(numberValue: .zero,
                                                                         numberFact: "",
                                                                         isPrime: false)
 

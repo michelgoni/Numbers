@@ -34,14 +34,14 @@ final class FavoriteIconViewModelTest: XCTestCase {
 
     func testFavoriteStateSuccess() {
         isfavoriteNumberUseCaseMock.executeReturnValue = true
-        sut.trigger(.isFavorite("1"))
+        sut.trigger(.isFavorite(1))
 
         XCTAssertTrue(sut.state.favoriteNumber)
     }
 
     func testFavoriteStateFails() {
         isfavoriteNumberUseCaseMock.executeReturnValue = false
-        sut.trigger(.isFavorite("1"))
+        sut.trigger(.isFavorite(1))
 
         XCTAssertFalse(sut.state.favoriteNumber)
     }
@@ -66,7 +66,7 @@ final class FavoriteIconViewModelTest: XCTestCase {
         }.store(in: &cancellables)
 
 
-        sut.trigger(.delete(NumberRowViewEntity(numberValue: "",
+        sut.trigger(.delete(NumberRowViewEntity(numberValue: 1,
                                                 numberFact: "",
                                                 isPrime: false)))
         waitForExpectations(timeout: 1)
@@ -97,7 +97,7 @@ final class FavoriteIconViewModelTest: XCTestCase {
             result = viewState
             expectation.fulfill()
         }.store(in: &cancellables)
-        sut.trigger(.isFavorite("1"))
+        sut.trigger(.isFavorite(1))
 
         waitForExpectations(timeout: 2)
 

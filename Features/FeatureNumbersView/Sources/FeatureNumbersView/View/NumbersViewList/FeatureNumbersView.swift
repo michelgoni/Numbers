@@ -29,6 +29,8 @@ public struct NumbersView: View {
     @State private var searchText = ""
     @State private var isShowingSheet = false
 
+    private let operational = SearchOperational()
+
     public init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
@@ -38,11 +40,21 @@ public struct NumbersView: View {
             ZStack(alignment: .center) {
 
                 VStack {
+                    viewFactory.searchList(
+                        AnyViewModel(
+                            FilterNumbersViewModel(
+                                operational: operational)
+                        ),
+                        categories: viewModel.categories)
+                    
                     List(viewModel.numbers) {
                         viewFactory.numberRow($0)
                     }
+                    .animation(.linear, value: 1.0)
                     .listStyle(.inset)
-
+                    .refreshable { [weak viewModel] in
+                        viewModel?.trigger(.numbersList)
+                    }
                     Button("Choose a random number!") {
                         isShowingSheet.toggle()
                     }
@@ -65,6 +77,7 @@ public struct NumbersView: View {
                 LoaderView()
                 .show(isHideLoader)
             )
+            .onReceive(operational.output, perform: operationalState)
             .onReceive(viewModel.viewState, perform: viewState)
             .initializeAlert(alert)
             .onAppearOnce{ [weak viewModel] in
@@ -74,9 +87,7 @@ public struct NumbersView: View {
 
         .searchable(text: $searchText)
         .onSubmit(of: .search, runSearch)
-        .refreshable { [weak viewModel] in
-            viewModel?.trigger(.numbersList)
-        }
+
     }
 
     func runSearch() {
@@ -86,6 +97,20 @@ public struct NumbersView: View {
 }
 
 private extension NumbersView {
+
+    func operationalState (_ state: SearchOperational.Element) {
+        switch state {
+        case .validFilter(let filter):
+            guard let filter = filter,
+                    let raw = Filter(rawValue: filter) else {
+                viewModel.trigger(.filter(.all))
+                return
+            }
+            viewModel.trigger(.filter(raw))
+        case .invalidFilter:
+            debugPrint("Invalid filter")
+        }
+    }
 
     func viewState(_ state: NumbersViewModel.ViewState?) {
         isHideLoader = state == .loading

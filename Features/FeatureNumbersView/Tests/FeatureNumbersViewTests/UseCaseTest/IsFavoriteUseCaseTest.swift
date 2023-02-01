@@ -22,7 +22,7 @@ final class IsFavoriteUseCaseTest: XCTestCase {
 
     func testExecuteSuccess() {
         repositoryMock.isFavoriteReturnValue = true
-        let value =  sut.execute("")
+        let value =  sut.execute(.zero)
        XCTAssertTrue(value)
     }
 

@@ -55,20 +55,18 @@ extension RandomNumberViewModel {
             }
         case .plus:
             Task {
-                guard let numberValue = self.state.number?.numberValue,
-                      var intNumber = Int(numberValue),
-                        intNumber > .zero else { return }
-                intNumber += 1
-                self.state.number = try await plusNumberUsecase?.execute(String(intNumber))
+                guard var numberValue = self.state.number?.numberValue,
+                        numberValue > .zero else { return }
+                numberValue -= 1
+                self.state.number = try await plusNumberUsecase?.execute(numberValue)
                 self.state.viewState.send(.loaded)
             }
         case .minus:
             Task {
-                guard let numberValue = self.state.number?.numberValue,
-                        var intNumber = Int(numberValue),
-                      intNumber > .zero else { return }
-                intNumber -= 1
-                self.state.number = try await plusNumberUsecase?.execute(String(intNumber))
+                guard var numberValue = self.state.number?.numberValue,
+                        numberValue > .zero else { return }
+                numberValue -= 1
+                self.state.number = try await plusNumberUsecase?.execute(numberValue)
                 self.state.viewState.send(.loaded)
             }
 
