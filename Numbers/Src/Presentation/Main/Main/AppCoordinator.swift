@@ -19,7 +19,7 @@ final class AppCoordinator: AppCoordinatorType {
     private lazy var viewFactory: ViewFactory = { ViewFactory() }()
 
     func start(with window: UIWindow) {
-        debugPrint("Starting app coordinator...")
+        debugPrint("Starting app coordinator")
         self.window = window
         self.window?.makeKeyAndVisible()
         setRoot()
@@ -28,8 +28,8 @@ final class AppCoordinator: AppCoordinatorType {
 
 private extension AppCoordinator {
     func setRoot() {
-        debugPrint("Setting Root...")
-        self.window?.rootViewController = viewFactory.getTabs().eraseToHostingController()
+        debugPrint("Setting TabBar as Root")
+        self.window?.rootViewController = viewFactory.getMainView().eraseToHostingController()
     }
 }
 

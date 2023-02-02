@@ -18,6 +18,7 @@
 		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
 		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
 		B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABD3F92971A6F100A781D9 /* Swinject */; };
+		B4FF7F75298BA95500B5A7F7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF7F74298BA95500B5A7F7 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
 		B495E48B29819C0B00C4CCA1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B4BAF071298068F300FF05A0 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = ../Shared; sourceTree = "<group>"; };
+		B4FF7F74298BA95500B5A7F7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				B447837A295481EE006FC0EC /* Scenedelegate.swift */,
 				B447837C295482EE006FC0EC /* AppCoordinator.swift */,
 				B438FB4B297E9B5A0034F2FC /* AppAssemblies.swift */,
+				B4FF7F74298BA95500B5A7F7 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B44783782954819E006FC0EC /* Appdelegate.swift in Sources */,
+				B4FF7F75298BA95500B5A7F7 /* MainView.swift in Sources */,
 				B438FB4C297E9B5A0034F2FC /* AppAssemblies.swift in Sources */,
 				B40E97812973120B007AC2A6 /* ViewFactory.swift in Sources */,
 				B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */,
