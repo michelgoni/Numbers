@@ -37,7 +37,6 @@ struct NumberRow: View {
 
         VStack {
             HStack {
-                
                 Text("\(number.numberValue)")
                     .modifier(NumberModifier())
                 Text(number.numberFact)
@@ -45,11 +44,12 @@ struct NumberRow: View {
 
             }
             HStack {
-                Spacer(minLength: 10)
+                Spacer()
                 number.isPrime.primeImage
                 Spacer()
                 viewFactory.favoriteIconView(isLoading: $isLoading,
                                              number: number)
+                Spacer()
             }
             .padding()
         }

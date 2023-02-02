@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Inject
 import SwiftUI
 import NumbersEx
 
@@ -13,6 +14,7 @@ struct FilterNumbersView: View {
 
     typealias ViewModel = AnyViewModel<FilterNumbersViewModel.Input, FilterNumbersViewModel.State>
     @ObservedObject  var viewModel: ViewModel
+    @ObservedObject private var iO = Inject.observer
     @State private var categorySelected: String?
     private let categories: [Category]
 
@@ -30,7 +32,7 @@ struct FilterNumbersView: View {
                     .padding(.vertical, 8.0)
                     .padding(.horizontal, 8.0)
                     .background(categorySelected == category.tag ? Color.black : Color.white, in: Capsule())
-                    .shadowNormal(color: Color.gray.opacity(0.5))
+                    .shadowNormal(color: Color.gray.opacity(0.4))
                     .eraseToButton { [weak viewModel] in
                         categorySelected =  categorySelected == category.tag ? nil : category.tag
                         categorySelected == nil ? viewModel?.trigger(.selectedNumberCategory(nil)) : viewModel?.trigger(.selectedNumberCategory(category))
@@ -40,8 +42,8 @@ struct FilterNumbersView: View {
         .padding(16)
         .padding(.bottom, 4.0)
         .scrollable(.horizontal, showIndicators: false)
+        .enableInjection()
     }
-
 }
 
 public struct SearchOperational: OperationalFlow {
