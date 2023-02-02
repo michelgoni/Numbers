@@ -11,7 +11,11 @@ import Swinject
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate  {
 
-    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+#if DEBUG
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+#endif
+    }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
        
