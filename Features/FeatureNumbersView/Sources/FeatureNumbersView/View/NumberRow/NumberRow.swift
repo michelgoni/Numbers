@@ -9,6 +9,7 @@ import NumbersEx
 import NumbersUI
 import SwiftUI
 import Shared
+import Inject
 
 private extension CGFloat {
     static let width = 30.0
@@ -22,6 +23,8 @@ private extension String {
 
 struct NumberRow: View {
     @State private var isLoading: Bool
+    @ObservedObject private var iO = Inject.observer
+
     @Environment(\.viewFactory) private var viewFactory: ViewFactory
     let number: NumberRowViewEntity
 
@@ -34,12 +37,15 @@ struct NumberRow: View {
 
         VStack {
             HStack {
+                
                 Text("\(number.numberValue)")
                     .modifier(NumberModifier())
                 Text(number.numberFact)
-                    .padding()
+                    .font(.body)
+
             }
             HStack {
+                Spacer(minLength: 10)
                 number.isPrime.primeImage
                 Spacer()
                 viewFactory.favoriteIconView(isLoading: $isLoading,
@@ -47,7 +53,9 @@ struct NumberRow: View {
             }
             .padding()
         }
+        .enableInjection()
     }
+
 
 }
 
@@ -66,17 +74,8 @@ private extension Bool {
 //struct NumberRow_Previews: PreviewProvider {
 //    static var previews: some View {
 //        NumberRow(
-//            number: NumberEntity(
-//                isFavorite: true,
-//                isPrime: true,
-//                numberValue: "1",
-//                numberFact: " is a favorite number wich was previously saved")
-//        )
-//        .environmentObject(
-//            AnyViewModel(
-//                FavoritesViewModel()
-//            )
+//            number: NumberRowViewEntity(numberValue: 1, numberFact: "is the number for this preview", isPrime: false)
 //        )
 //    }
 //}
-//
+
