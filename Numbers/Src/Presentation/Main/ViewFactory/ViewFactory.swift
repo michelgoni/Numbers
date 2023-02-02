@@ -12,42 +12,36 @@ import NumbersUI
 import SwiftUI
 
 
-private extension String {
-    static let numbersImage = "list.number"
-    static let favsImage = "number"
-}
-
-
 public extension ViewFactory {
-    func getTabs() -> some View {
 
+    func getMainView() -> some View {
         make {
-            TabView {
-                NumbersView(
-                    viewModel: AnyViewModel(
-                        NumbersViewModel(
-                            numbersUseCase: injector.get(FetchNumbersUseCaseType.self),
-                            numberUseCase: injector.get(FetchNumberUseCaseType.self))
-                    )
-                )
-                .tabItem {
-                    Label("Numbers",
-                          systemImage:. numbersImage)
-                }
-                FavoritesView(
-                    viewModel: AnyViewModel(
-                        FavoritesViewModel(
-                            favoritesUseCase: injector.get(FavoritesNumberUseCaseType.self),
-                            deleteFavoritesUseCase: injector.get(DeleteFavoriteNumberUseCaseType.self)
-                        )
-                    )
-                )
-                .tabItem {
-                    Label("Favorites",
-                          systemImage: .favsImage)
-                }
-            }
+            MainView()
+        }
+    }
 
+    func getNumbersMainView() -> some View {
+        make {
+            NumbersView(
+                viewModel: AnyViewModel(
+                    NumbersViewModel(
+                        numbersUseCase: injector.get(FetchNumbersUseCaseType.self),
+                        numberUseCase: injector.get(FetchNumberUseCaseType.self))
+                )
+            )
+        }
+    }
+
+    func getNumbersFavoritesView() -> some View {
+        make {
+            FavoritesView(
+                viewModel: AnyViewModel(
+                    FavoritesViewModel(
+                        favoritesUseCase: injector.get(FavoritesNumberUseCaseType.self),
+                        deleteFavoritesUseCase: injector.get(DeleteFavoriteNumberUseCaseType.self)
+                    )
+                )
+            )
         }
     }
 }
