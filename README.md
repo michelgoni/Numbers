@@ -22,6 +22,7 @@ Each layer has its own test implementation 🤟
 - [x] Modularization
 - [x] Use SPM as depdendency manager
 - [x] Use [Soucery](https://github.com/krzysztofzablocki/Sourcery) in order to generate automatically mocks. 
+- [x] Use [Inject](https://github.com/krzysztofzablocki/Inject) in order to see previews automatically since in SwiftUI previews are broken as soon as we handle some custom dependency injection. 
 
 
 Thanks for reading!
