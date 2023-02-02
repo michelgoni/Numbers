@@ -41,11 +41,21 @@ struct NumberRow: View {
                     .modifier(NumberModifier())
                 Text(number.numberFact)
                     .font(.body)
-
             }
             HStack {
                 Spacer()
-                number.isPrime.primeImage
+                PrimeIconView(
+                    number: number.numberValue,
+                    viewModel: AnyViewModel(
+                        PrimeIconViewModel(
+                            isPrimeUseCase: IsPrimeUseCase(
+                                repository: PrimeNumberRepositoryImplm(
+                                    remoteDS: IsPrimeRemoteDSImplm()
+                                )
+                            )
+                        )
+                    )
+                )
                 Spacer()
                 viewFactory.favoriteIconView(isLoading: $isLoading,
                                              number: number)
@@ -59,7 +69,7 @@ struct NumberRow: View {
 
 }
 
-private extension Bool {
+ extension Bool {
 
     var primeImage: Image {
         switch self {
