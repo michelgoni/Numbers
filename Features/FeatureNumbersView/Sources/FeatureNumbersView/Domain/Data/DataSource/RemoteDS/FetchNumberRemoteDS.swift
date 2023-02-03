@@ -40,7 +40,7 @@ final class FetchNumberRemoteDSImplm: FetchNumberRemoteDSType {
                 }
                 return data
             } catch {
-                throw NumberViewError.badResponse(error.localizedDescription)
+                throw NumberViewError.badResponse("Getting error fetching numbers")
             }
         }
     }
@@ -57,7 +57,7 @@ final class FetchNumberRemoteDSImplm: FetchNumberRemoteDSType {
             }
             return data
         } catch {
-            throw NumberViewError.badResponse(error.localizedDescription)
+            throw NumberViewError.badResponse("Getting error fetching number")
         }
     }
 
