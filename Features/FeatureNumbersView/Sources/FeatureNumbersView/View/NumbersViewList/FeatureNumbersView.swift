@@ -84,10 +84,8 @@ public struct NumbersView: View {
                 viewModel?.trigger(.numbersList)
             }
         }
-
         .searchable(text: $searchText)
         .onSubmit(of: .search, runSearch)
-
     }
 
     func runSearch() {

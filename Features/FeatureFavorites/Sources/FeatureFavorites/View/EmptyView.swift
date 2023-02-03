@@ -5,6 +5,7 @@
 //  Created by Michel Goñi on 4/1/23.
 //
 
+import Inject
 import SwiftUI
 
 private extension String {
@@ -13,17 +14,18 @@ private extension String {
 }
 
 struct EmptyView: View {
+    @ObservedObject private var iO = Inject.observer
     var body: some View {
 
         VStack {
             Image(systemName: .listNumber)
                 .imageScale(.large)
             Text(verbatim: .title)
-                .font(.title3)
+                .font(.headline)
                 .padding()
             Image(systemName: .listNumber)
                 .imageScale(.large)
-        }
+        }.enableInjection()
     }
 }
 

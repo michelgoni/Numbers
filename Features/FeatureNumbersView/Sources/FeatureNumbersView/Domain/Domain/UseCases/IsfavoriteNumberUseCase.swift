@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NumbersEx
 
 //sourcery: AutoMockable
 public protocol IsfavoriteNumberUseCaseType {
@@ -14,15 +15,19 @@ public protocol IsfavoriteNumberUseCaseType {
 }
 
 //sourcery: AutoMockable
-public final class IsfavoriteNumberUseCase: IsfavoriteNumberUseCaseType {
-    private  var repository: NumberRepositoryType
+public final class IsfavoriteNumberUseCase: IsfavoriteNumberUseCaseType, UnwrappedUseCase {
+    private var repository: NumberRepositoryType?
 
-    init(repository: NumberRepositoryType) {
+    init(repository: NumberRepositoryType?) {
         self.repository = repository
     }
 
     public func execute(_ number: Int) -> Bool {
-        repository.isFavorite(number)
+        do {
+            return try execute(repository?.isFavorite(number))
+        } catch {
+            return false
+        }
     }
 }
 
