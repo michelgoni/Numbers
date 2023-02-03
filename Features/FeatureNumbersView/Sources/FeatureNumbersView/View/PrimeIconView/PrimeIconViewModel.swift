@@ -25,18 +25,29 @@ extension PrimeIconViewModel {
         case checkNumber(Int)
     }
 
-    struct State {
-        var isPrime = false
+    struct State: ModifiableStateData {
+        var isPrime: Bool = false
+        var modifiableView = ModifiableViewState<ViewState>()
+    }
+
+    enum ViewState {
+        case loaded
+        case loading
     }
 
 }
-
+@MainActor
 extension PrimeIconViewModel {
 
     func trigger(_ input: Input) {
+        self.state.viewState.send(.loading)
         switch input {
         case .checkNumber(let number):
-            debugPrint("chcking")
+            Task {
+                guard let useCase = isPrimeUseCase else { return }
+                self.state.isPrime = try await useCase.execute(number)
+                self.state.viewState.send(.loaded)
+            }
         }
     }
 }

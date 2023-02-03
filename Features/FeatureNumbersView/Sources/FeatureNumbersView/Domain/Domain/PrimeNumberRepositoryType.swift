@@ -9,5 +9,5 @@ import Foundation
 
 protocol PrimeNumberRepositoryType {
 
-    func isPrime(_ number: Int) -> ResponsePublisher<Bool>
+    func isPrime(_ number: Int) async throws -> Bool
 }

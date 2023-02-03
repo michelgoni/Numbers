@@ -23,7 +23,6 @@ public final class DeleteFavoriteNumberUseCase: DeleteFavoriteNumberUseCaseType 
         self.repository = repository
     }
 
-
     public func execute(_ data: NumberRowViewEntity) throws -> [NumberRowViewEntity] {
         try repository.delete(data)
         

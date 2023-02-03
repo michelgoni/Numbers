@@ -43,13 +43,14 @@ public extension FavoriteIconViewModel {
                 self.state.viewState.send(.error)
             }
         case .isFavorite(let number):
-            switch favoritesUseCase!.execute(number) {
+            switch favoritesUseCase?.execute(number) {
             case true:
                 self.state.favoriteNumber = true
                 self.state.viewState.send(.favorite)
             case false:
                 self.state.favoriteNumber = false
                 self.state.viewState.send(.none)
+            default: break
             }
 
         case .modifyNumber where self.state.favoriteNumber == true:

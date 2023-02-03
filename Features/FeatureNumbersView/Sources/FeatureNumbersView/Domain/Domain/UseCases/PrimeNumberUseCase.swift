@@ -7,15 +7,16 @@
 
 import Combine
 import Foundation
+import NumbersEx
 
 //sourcery: AutoMockable
  protocol IsPrimeUseCaseType {
 
-    func execute(_ number: Int) -> ResponsePublisher<Bool>
+    func execute(_ number: Int) async throws -> Bool
 }
 
 //sourcery: AutoMockable
- final class IsPrimeUseCase: IsPrimeUseCaseType {
+final class IsPrimeUseCase: IsPrimeUseCaseType, UnwrappedUseCase {
 
     private var repository: PrimeNumberRepositoryType?
 
@@ -23,7 +24,7 @@ import Foundation
         self.repository = repository
     }
 
-     func execute(_ number: Int) -> ResponsePublisher<Bool> {
-         repository!.isPrime(number)
+     func execute(_ number: Int) async throws -> Bool {
+         try await execute(repository?.isPrime(number))
     }
 }
