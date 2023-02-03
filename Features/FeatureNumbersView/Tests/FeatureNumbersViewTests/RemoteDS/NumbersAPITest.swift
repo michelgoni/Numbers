@@ -16,6 +16,7 @@ final class NumbersAPITest: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        URLProtocol.registerClass(MockURLProtocol.self)
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [MockURLProtocol.self]
         let urlSession = URLSession.init(configuration: configuration)
