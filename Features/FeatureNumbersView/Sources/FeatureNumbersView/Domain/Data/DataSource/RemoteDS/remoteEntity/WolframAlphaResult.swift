@@ -11,7 +11,7 @@ struct WolframAlphaResult: Decodable {
   let queryresult: QueryResult
 
   struct QueryResult: Decodable {
-    let pods: [Pod]?
+    let pods: [Pod]
 
     struct Pod: Decodable {
         let id: String?

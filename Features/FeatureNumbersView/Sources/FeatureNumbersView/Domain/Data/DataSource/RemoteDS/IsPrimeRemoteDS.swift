@@ -37,11 +37,15 @@ final class IsPrimeRemoteDSImplm: IsPrimeRemoteDSType {
             URLQueryItem(name: "output", value: "JSON"),
             URLQueryItem(name: "appid", value: "INSERT_YOUR_WOLHFRAMALPHAAPIKEY"),
         ]
-
+        #warning("Get a wolframAlpha api key in order to check if this is a prime number")
         let (data, _) =  try await URLSession.shared.data(from: components.url!)
-        let value = try! JSONDecoder.init().decode(WolframAlphaResult.self, from: data)
+        do {
+            let value = try JSONDecoder.init().decode(WolframAlphaResult.self, from: data)
 
-        return value
+            return value
+        } catch {
+            throw NumberViewError.decodingPrimeNumberError
+        }
 
     }
 

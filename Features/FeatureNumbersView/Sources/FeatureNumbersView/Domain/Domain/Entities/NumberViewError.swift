@@ -10,6 +10,7 @@ import Foundation
 enum NumberViewError: Error {
     case badResponse(String)
     case decodingLocalNumberError
+    case decodingPrimeNumberError
     case wronDependency(String)
     case wrongStatusCode
 

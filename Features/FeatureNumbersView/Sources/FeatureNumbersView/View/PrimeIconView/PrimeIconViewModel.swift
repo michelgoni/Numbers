@@ -31,6 +31,7 @@ extension PrimeIconViewModel {
     }
 
     enum ViewState {
+        case error
         case loaded
         case loading
     }
@@ -44,9 +45,15 @@ extension PrimeIconViewModel {
         switch input {
         case .checkNumber(let number):
             Task {
-                guard let useCase = isPrimeUseCase else { return }
-                self.state.isPrime = try await useCase.execute(number)
-                self.state.viewState.send(.loaded)
+
+                do {
+                    guard let useCase = isPrimeUseCase else { return }
+                    self.state.isPrime = try await useCase.execute(number)
+                    self.state.viewState.send(.loaded)
+                } catch {
+                    self.state.viewState.send(.error)
+                }
+
             }
         }
     }

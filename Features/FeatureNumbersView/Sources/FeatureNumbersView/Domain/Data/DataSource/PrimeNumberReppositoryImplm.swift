@@ -25,7 +25,7 @@ final class PrimeNumberRepositoryImplm: PrimeNumberRepositoryType {
             return cache.first { $0.number == number }?.isPrime ?? false
         } else {
             let value = try await remoteDS?.isNumberPrime(number)
-            guard let value = value?.queryresult.pods?.filter({$0.id == "PrimeFactorization"}).first?.subpods.first?.plaintext.contains("prime") else { return false }
+            guard let value = value?.queryresult.pods.filter({$0.id == "PrimeFactorization"}).first?.subpods.first?.plaintext.contains("prime") else { return false }
             let entity = CacheEntity(number: number, isPrime: value)
             cache.insert(entity)
             return value
