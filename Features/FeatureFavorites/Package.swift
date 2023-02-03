@@ -16,6 +16,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/michelgoni/NumbersEx", branch: "main"),
         .package(url: "https://github.com/michelgoni/NumbersUI", branch: "main"),
+        .package(url: "https://github.com/krzysztofzablocki/Inject.git", branch: "1.2.2"),
         .package(name: "Shared", path: "../Shared")
     ],
     targets: [
@@ -25,7 +26,8 @@ let package = Package(
             name: "FeatureFavorites",
             dependencies: [.product(name: "Shared", package: "Shared"),
                            .product(name: "NumbersUI", package: "NumbersUI"),
-                           .product(name: "NumbersEx", package: "NumbersEx")]),
+                           .product(name: "NumbersEx", package: "NumbersEx"),
+                           .product(name: "Inject", package: "Inject")]),
         .testTarget(
             name: "FeatureFavoritesTests",
             dependencies: ["FeatureFavorites"]),
