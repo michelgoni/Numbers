@@ -16,13 +16,14 @@ final class NumbersAPITest: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        URLProtocol.registerClass(MockURLProtocol.self)
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [MockURLProtocol.self]
         let urlSession = URLSession.init(configuration: configuration)
         sut = FetchNumberRemoteDSImplm(urlSession: urlSession)
     }
 
-    func testResponseFromNumberApiSuccess() async throws {
+    func testResponseFromNumbersApiSuccess() async throws {
 
         let data = try? JSONEncoder().encode([1])
         let unwrappedData = try XCTUnwrap(data)
@@ -44,15 +45,19 @@ final class NumbersAPITest: XCTestCase {
         XCTAssertTrue(!value.isEmpty)
     }
 
-    func testResponseFromNumberApiFails() async throws {
+    func testResponseFromNumbersApiFails() async throws {
         MockURLProtocol.requestHandler = { request in
-
-            throw NumberViewError.wrongStatusCode
+            let response = HTTPURLResponse(url: self.apiURL,
+                                           statusCode: 401,
+                                           httpVersion: nil,
+                                           headerFields: nil)!
+            return (response, nil)
         }
         do {
             let _ = try await sut.fetchNumbers(["1"])
+            XCTFail("This test should not get any data")
         } catch {
-            XCTAssertTrue(error == NumberViewError.wrongStatusCode)
+            XCTAssertTrue(error == NumberViewError.badResponse("Getting error fetching numbers"))
         }
 
     }
