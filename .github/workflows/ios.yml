@@ -1,8 +1,6 @@
 name: iOS starter workflow
 
 on:
-  push:
-    branches: [ "develop" ]
   pull_request:
     branches: [ "develop" ]
 
@@ -12,6 +10,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Swift All-Stars
+        uses: indiedotkim/SwiftAllStars@v0.1.1
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
