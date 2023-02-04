@@ -11,7 +11,6 @@ import NumbersEx
 import NumbersUI
 import SwiftUI
 
-
 public extension ViewFactory {
 
     func getMainView() -> some View {

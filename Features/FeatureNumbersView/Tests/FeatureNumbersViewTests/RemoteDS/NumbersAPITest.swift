@@ -60,6 +60,27 @@ final class NumbersAPITest: XCTestCase {
             XCTAssertTrue(error == NumberViewError.badResponse("Getting error fetching numbers"))
         }
 
+
+    }
+
+    func testRequest() async throws {
+        let data = try? JSONEncoder().encode([1])
+        let unwrappedData = try XCTUnwrap(data)
+        MockURLProtocol.requestHandler = { request in
+            let response = HTTPURLResponse(url: self.apiURL,
+                                           statusCode: 200,
+                                           httpVersion: nil,
+                                           headerFields: nil)!
+
+            return (response, unwrappedData)
+        }
+
+
+        _ = try await sut.fetchNumbers(["1"])
+
+        let request = try XCTUnwrap(MockURLProtocol.lastRequest)
+        XCTAssertTrue(request.url?.absoluteString == "http://numbersapi.com/1/trivia")
+
     }
 
 }
@@ -67,6 +88,7 @@ final class NumbersAPITest: XCTestCase {
 private class MockURLProtocol: URLProtocol {
 
     static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data?))?
+    static var lastRequest: URLRequest?
 
     override class func canInit(with request: URLRequest) -> Bool {
 
@@ -93,10 +115,15 @@ private class MockURLProtocol: URLProtocol {
             if let data = data {
 
                 client?.urlProtocol(self, didLoad: data)
+
+                var request = request
+                request.httpBody = data
+                Self.lastRequest = request
             }
 
 
             client?.urlProtocolDidFinishLoading(self)
+
         } catch {
 
             client?.urlProtocol(self, didFailWithError: error)
@@ -119,4 +146,25 @@ extension Equatable where Self : Error {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs as Error == rhs as Error
     }
+}
+
+extension InputStream {
+  /// The avalable stream data.
+  var data: Data {
+    var data = Data()
+    open()
+
+    let maxLength = 1024
+    let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxLength)
+    while hasBytesAvailable {
+      let read = read(buffer, maxLength: maxLength)
+      guard read > 0 else { break }
+      data.append(buffer, count: read)
+    }
+
+    buffer.deallocate()
+    close()
+
+    return data
+  }
 }
