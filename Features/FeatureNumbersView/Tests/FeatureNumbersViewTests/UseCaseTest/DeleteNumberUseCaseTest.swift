@@ -9,7 +9,6 @@ import Shared
 import XCTest
 @testable import FeatureNumbersView
 
-
 final class DeleteNumberUseCaseTest: XCTestCase {
 
     var sut: DeleteFavoriteNumberUseCaseType!

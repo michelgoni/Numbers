@@ -15,7 +15,9 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     private let coordinator = AppCoordinator()
     private var injector: NumbersInjector { .shared }
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo
+               session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         injector.apply(assemblies)
         coordinator.start(with: UIWindow(windowScene: scene))

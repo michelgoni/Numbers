@@ -23,7 +23,7 @@ final class DeleteNumberUsecaseTest: XCTestCase {
         repositoryMock.deleteThrowableError = FavoritesError.badDecoding
 
         do {
-            let _ = try sut.execute(numberEntity())
+            _ = try sut.execute(numberEntity())
             XCTFail("Test should fail")
         } catch {
             XCTAssertTrue(true)
@@ -41,9 +41,9 @@ final class DeleteNumberUsecaseTest: XCTestCase {
         }
     }
 
-    func testExecuteIsOnlyOnceInvoked() async throws  {
+    func testExecuteIsOnlyOnceInvoked() async throws {
         repositoryMock.deleteReturnValue = [numberEntity()]
-        let _ = try! sut.execute(numberEntity())
+        _ = try! sut.execute(numberEntity())
         XCTAssertTrue(repositoryMock.deleteCallsCount == 1)
     }
 

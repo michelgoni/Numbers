@@ -8,7 +8,6 @@
 import NumbersUI
 import SwiftUI
 
-
 protocol AppCoordinatorType {
 
     func start(with window: UIWindow)
