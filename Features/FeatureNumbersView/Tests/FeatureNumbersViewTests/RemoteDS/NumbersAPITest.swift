@@ -25,7 +25,7 @@ final class NumbersAPITest: XCTestCase {
 
     func testResponseFromNumbersApiSuccess() async throws {
 
-        let data = try? JSONEncoder().encode([1])
+        let data = Data("1 is the first number".utf8)
         let unwrappedData = try XCTUnwrap(data)
         MockURLProtocol.requestHandler = { request in
             guard let url = request.url, url == self.apiURL else {
@@ -64,7 +64,7 @@ final class NumbersAPITest: XCTestCase {
     }
 
     func testRequest() async throws {
-        let data = try? JSONEncoder().encode([1])
+        let data = Data("1 is the first number".utf8)
         let unwrappedData = try XCTUnwrap(data)
         MockURLProtocol.requestHandler = { request in
             let response = HTTPURLResponse(url: self.apiURL,
@@ -79,10 +79,11 @@ final class NumbersAPITest: XCTestCase {
         _ = try await sut.fetchNumbers(["1"])
 
         let request = try XCTUnwrap(MockURLProtocol.lastRequest)
+        let httpBody = try XCTUnwrap(request.httpBody)
+        let numberFact = String(decoding: httpBody, as: UTF8.self)
         XCTAssertTrue(request.url?.absoluteString == "http://numbersapi.com/1/trivia")
-
+        XCTAssertTrue(numberFact == "1 is the first number")
     }
-
 }
 
 private class MockURLProtocol: URLProtocol {
