@@ -50,7 +50,6 @@ public struct InfiniteScrollView: View {
                     ZStack {
                         HStack(spacing: 6) {
                             if currentPage != lastPage {
-
                                 Button {
                                     currentPage -= 1
                                     withAnimation {
@@ -101,7 +100,9 @@ public struct InfiniteScrollView: View {
         if -value.translation.width > screenWidth / 2 && currentPage < lastPage {
             currentPage += 1
         } else {
-            if value.translation.width > screenWidth / 2 && currentPage > lastPage {
+            if currentPage == .zero {
+                currentPage = currentPage
+            } else if value.translation.width > screenWidth / 2 && currentPage < lastPage {
                 currentPage -= 1
             }
         }
@@ -111,7 +112,7 @@ public struct InfiniteScrollView: View {
     }
 }
 
-struct Item: Identifiable {
+struct Item: Identifiable, Equatable {
     let id = UUID().uuidString
     let subtitle: String
 }
