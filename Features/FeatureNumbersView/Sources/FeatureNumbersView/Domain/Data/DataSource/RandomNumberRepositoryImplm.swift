@@ -27,8 +27,7 @@ final class RandomNumberRepositoryImplm: RandomNumberRepositoryType {
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(
             numberValue: Int(number) ?? .zero,
-            numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
-            isPrime: Int(number)?.isPrime ?? false)
+            numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "))
     }
 
 }
@@ -51,8 +50,7 @@ final class NumberWithOperationRepositoryImplm: NumberWithOperationRepositoryTyp
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(
             numberValue: Int(number) ?? .zero,
-            numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
-            isPrime: Int(number)?.isPrime ?? false)
+            numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "))
     }
 
 }
