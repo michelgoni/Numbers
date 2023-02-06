@@ -30,7 +30,7 @@ public struct InfiniteScrollView: View {
                 GeometryReader { reader in
                     HStack(spacing: .zero) {
                         ForEach(data) { item in
-                            ItemView(item: item)
+                            NumberView(item: item)
                                 .frame(width: screenWidth)
                         }
                     }
@@ -51,7 +51,10 @@ public struct InfiniteScrollView: View {
                         HStack(spacing: 6) {
                             if currentPage != lastPage {
                                 Button {
-                                    currentPage -= 1
+                                    if currentPage != .zero {
+                                        currentPage -= 1
+                                    }
+
                                     withAnimation {
                                         xOffset = -screenWidth * CGFloat(currentPage)
                                     }
@@ -87,7 +90,6 @@ public struct InfiniteScrollView: View {
                     }
 
                 }
-
             }
         }.enableInjection()
     }
@@ -100,9 +102,7 @@ public struct InfiniteScrollView: View {
         if -value.translation.width > screenWidth / 2 && currentPage < lastPage {
             currentPage += 1
         } else {
-            if currentPage == .zero {
-                currentPage = currentPage
-            } else if value.translation.width > screenWidth / 2 && currentPage < lastPage {
+             if value.translation.width > screenWidth / 2 && currentPage < lastPage && currentPage != .zero  {
                 currentPage -= 1
             }
         }
@@ -113,6 +113,7 @@ public struct InfiniteScrollView: View {
 }
 
 struct Item: Identifiable, Equatable {
+    let number: String = "1"
     let id = UUID().uuidString
     let subtitle: String
 }
@@ -128,29 +129,4 @@ let data = [
     Item(subtitle: "Subtitle 8 with a long loong text with at least two lines")
 ]
 
-struct ItemView: View {
-    let item: Item
-    var body: some View {
-        VStack(spacing: 20) {
-            VStack(spacing: 15) {
 
-                Spacer()
-                Text(verbatim: item.subtitle)
-                    .font(.system(size: 25, weight: .regular))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .animation(.interpolatingSpring(stiffness: 40, damping: 5))
-                Image(systemName: "swift")
-                    .font(.system(size: 75, weight: .light))
-                    .padding(.top, 30)
-                    .foregroundColor(.white)
-                Spacer()
-            }
-            .padding(.horizontal)
-            .padding(.top, 50)
-            .background(Color.black)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .frame(maxWidth:.infinity, maxHeight: UIScreen.main.bounds.height / 1.6, alignment: .center)
-        }
-    }
-}
