@@ -43,4 +43,10 @@ public extension ViewFactory {
             )
         }
     }
+
+    func getInfiniteScroll() -> some View {
+        make {
+            InfiniteScrollView()
+        }
+    }
 }

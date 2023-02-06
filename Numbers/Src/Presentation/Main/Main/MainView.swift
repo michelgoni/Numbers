@@ -11,6 +11,7 @@ import SwiftUI
 private extension String {
     static let numbersImage = "list.number"
     static let favsImage = "number"
+    static let infinite = "infinity"
 }
 
 struct MainView: View {
@@ -27,8 +28,9 @@ private struct Container: View {
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
-                viewFactory.getNumbersMainView().tabItem(.numbers)
-                viewFactory.getNumbersFavoritesView().tabItem(.favorites)
+                viewFactory.getInfiniteScroll().tabItem(.infinite)
+//                viewFactory.getNumbersMainView().tabItem(.numbers)
+//                viewFactory.getNumbersFavoritesView().tabItem(.favorites)
             }
         }
     }
@@ -37,6 +39,7 @@ private struct Container: View {
 enum TagType: Int {
     case numbers
     case favorites
+    case infinite
 }
 
 private extension TagType {
@@ -46,6 +49,8 @@ private extension TagType {
             return "Numbers"
         case .favorites:
             return "Favorites"
+        case .infinite:
+            return "Scroll"
         }
     }
 
@@ -55,6 +60,8 @@ private extension TagType {
             return Image(systemName: .numbersImage)
         case .favorites:
             return Image(systemName: .favsImage)
+        case .infinite:
+            return Image(systemName: .infinite)
 
         }
     }
