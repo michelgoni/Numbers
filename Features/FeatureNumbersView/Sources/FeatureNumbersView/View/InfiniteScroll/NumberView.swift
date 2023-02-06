@@ -6,12 +6,22 @@
 //
 
 import Inject
+import NumbersEx
+import NumbersUI
 import Shared
 import SwiftUI
 
 struct NumberView: View {
     let item: NumberRowViewEntity
+    @State private var isLoading: Bool
+    @Environment(\.viewFactory) private var viewFactory: ViewFactory
     @ObservedObject private var iO = Inject.observer
+
+    init(item: NumberRowViewEntity) {
+        self._isLoading = State(initialValue: false)
+        self.item = item
+    }
+
     var body: some View {
         VStack(spacing: 20) {
             VStack(spacing: 15) {
@@ -25,7 +35,12 @@ struct NumberView: View {
                     .modifier(
                         NumberModifier()
                     )
-                    .frame(width: 150, height: 250)
+                    .frame(width: 150, height: 150)
+                HStack {
+                    viewFactory.isPrimeView(numberValue: item.numberValue)
+                    Spacer()
+                    viewFactory.favoriteIconView(isLoading: $isLoading, number: item)
+                }
                 Spacer()
             }
             .padding(.trailing, 20)

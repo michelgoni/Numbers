@@ -29,7 +29,10 @@ struct PrimeIconView: View {
             ZStack {
                 viewModel.isPrime.primeImage
                     .show(!isLoading && !showError)
+                    .foregroundColor(.white)
+                    .font(.system(size: 35, weight: .light))
                 ProgressView()
+                    .tint(.white)
                     .show(isLoading && !showError)
                 Image(systemName: "exclamationmark.triangle")
                     .foregroundColor(.red)

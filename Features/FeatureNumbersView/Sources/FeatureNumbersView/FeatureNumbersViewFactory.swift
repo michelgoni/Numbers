@@ -38,6 +38,23 @@ extension ViewFactory {
         }
     }
 
+    func isPrimeView(numberValue: Int) -> some View {
+        make {
+            PrimeIconView(
+                number: numberValue,
+                viewModel: AnyViewModel(
+                    PrimeIconViewModel(
+                        isPrimeUseCase: IsPrimeUseCase(
+                            repository: PrimeNumberRepositoryImplm(
+                                remoteDS: IsPrimeRemoteDSImplm()
+                            )
+                        )
+                    )
+                )
+            )
+        }
+    }
+
     func randomNumberView() -> some View {
         make {
             RandomNumberView(
