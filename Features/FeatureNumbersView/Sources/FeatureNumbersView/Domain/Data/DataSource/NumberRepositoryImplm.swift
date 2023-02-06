@@ -37,8 +37,7 @@ final class NumberRepositoryImplm: NumberRepositoryType {
                 let numberFact = String(decoding: $0, as: UTF8.self)
                 let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
                 return NumberRowViewEntity(numberValue: Int(number) ?? .zero,
-                                           numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
-                                           isPrime: Int(number)?.isPrime ?? false)
+                                           numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "))
             }
     }
 
@@ -49,8 +48,7 @@ final class NumberRepositoryImplm: NumberRepositoryType {
         let numberFact = String(decoding: value, as: UTF8.self)
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(numberValue: Int(number) ?? .zero,
-                                   numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "),
-                                   isPrime: Int(number)?.isPrime ?? false)
+                                   numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "))
 
     }
 
