@@ -23,7 +23,7 @@ final class RandomNumberRepositoryImplm: RandomNumberRepositoryType {
 
         let data = try await remoteDS?.fetchNumbersAsync(Int.random(in: 1 ... 99))
 
-        let numberFact = String(decoding: data!, as: UTF8.self)
+        let numberFact = String(decoding: data!, as: UTF8.self).capitalized
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(
             numberValue: Int(number) ?? .zero,
@@ -46,7 +46,7 @@ final class NumberWithOperationRepositoryImplm: NumberWithOperationRepositoryTyp
 
         let data = try await remoteDS?.fetchNumbersAsync(number)
 
-        let numberFact = String(decoding: data!, as: UTF8.self)
+        let numberFact = String(decoding: data!, as: UTF8.self).uppercased()
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(
             numberValue: Int(number) ?? .zero,

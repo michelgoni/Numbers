@@ -5,31 +5,39 @@
 //  Created by Michel Goñi on 6/2/23.
 //
 
-import Inject
 import Foundation
+import Inject
+import NumbersEx
+import Shared
 import SwiftUI
 
 public struct InfiniteScrollView: View {
+    public typealias ViewModel = AnyViewModel<RandomNumberViewModel.Input, RandomNumberViewModel.State>
+    @ObservedObject public var viewModel: ViewModel
     @ObservedObject private var iO = Inject.observer
     @Namespace private var namespace
     @State private var xOffset: CGFloat = 0
     @State private var currentPage: Int = .zero
+    @State var isLoading: Bool = true
+
     var lastPage = data.count - 1
     var firstPage: Int = .zero
 
-    public init () {}
+    public init (viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
 
     private var screenWidth = UIScreen.main.bounds.width
 
     public var body: some View {
-        VStack(spacing: 20) {
+       return  VStack(spacing: 20) {
             Text(verbatim: "Fun with numbers")
                 .font(.system(size: 30, weight: .bold))
                 .padding(.top, 50)
             ZStack {
                 GeometryReader { reader in
                     HStack(spacing: .zero) {
-                        ForEach(data) { item in
+                        ForEach(viewModel.numbers) { item in
                             NumberView(item: item)
                                 .frame(width: screenWidth)
                         }
@@ -71,6 +79,7 @@ public struct InfiniteScrollView: View {
 
                                 Button {
                                     currentPage += 1
+                                    viewModel.trigger(.randomNumber)
                                     withAnimation {
                                         xOffset = -screenWidth * CGFloat(currentPage)
                                     }
@@ -91,6 +100,9 @@ public struct InfiniteScrollView: View {
 
                 }
             }
+            .onAppear {[weak viewModel] in
+                viewModel?.trigger(.randomNumber)
+            }
         }.enableInjection()
     }
 
@@ -108,6 +120,19 @@ public struct InfiniteScrollView: View {
         }
         withAnimation {
             xOffset = -screenWidth * CGFloat(currentPage)
+        }
+    }
+}
+
+private extension InfiniteScrollView {
+
+    func viewState(_ state: RandomNumberViewModel.ViewState?) {
+        switch state {
+        case .loaded:
+            self.isLoading = false
+        case .loading:
+            self.isLoading = true
+        default: break
         }
     }
 }

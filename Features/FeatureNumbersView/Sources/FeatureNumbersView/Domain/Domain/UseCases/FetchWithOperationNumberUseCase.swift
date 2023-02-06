@@ -8,20 +8,20 @@
 import Foundation
 import Shared
 
-protocol FetchWithOperationNumberUseCaseType {
+public protocol FetchWithOperationNumberUseCaseType {
 
     func execute(_ number: Int) async throws -> NumberRowViewEntity
 }
 
-final class FetchWithOperationNumberUseCase: FetchWithOperationNumberUseCaseType {
+public final class FetchWithOperationNumberUseCase: FetchWithOperationNumberUseCaseType {
 
-    private var repository: NumberWithOperationRepositoryType?
+     var repository: NumberWithOperationRepositoryType?
 
-    init(repository: NumberWithOperationRepositoryType?) {
+    public init(repository: NumberWithOperationRepositoryType?) {
         self.repository = repository
     }
 
-    func execute(_ number: Int) async throws -> NumberRowViewEntity {
+    public func execute(_ number: Int) async throws -> NumberRowViewEntity {
         try await repository!.fetchNumber(number)
     }
 }
