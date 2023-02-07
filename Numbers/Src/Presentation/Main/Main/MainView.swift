@@ -30,7 +30,7 @@ private struct Container: View {
             TabView(selection: $selectedTab) {
                 viewFactory.getInfiniteScroll().tabItem(.infinite)
 //                viewFactory.getNumbersMainView().tabItem(.numbers)
-//                viewFactory.getNumbersFavoritesView().tabItem(.favorites)
+                viewFactory.getNumbersFavoritesView().tabItem(.favorites)
             }
         }
     }

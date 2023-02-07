@@ -21,7 +21,6 @@ public struct InfiniteScrollView: View {
     @State var isLoading: Bool = true
 
     var lastPage = data.count - 1
-    var firstPage: Int = .zero
 
     public init (viewModel: ViewModel) {
         self.viewModel = viewModel
