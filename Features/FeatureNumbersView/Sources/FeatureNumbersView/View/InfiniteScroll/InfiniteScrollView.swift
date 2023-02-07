@@ -20,8 +20,6 @@ public struct InfiniteScrollView: View {
     @State private var currentPage: Int = .zero
     @State var isLoading: Bool = true
 
-    var lastPage = data.count - 1
-
     public init (viewModel: ViewModel) {
         self.viewModel = viewModel
     }
@@ -56,7 +54,7 @@ public struct InfiniteScrollView: View {
                     Spacer()
                     ZStack {
                         HStack(spacing: 6) {
-                            if currentPage != lastPage {
+
                                 Button {
                                     if currentPage != .zero {
                                         currentPage -= 1
@@ -92,7 +90,7 @@ public struct InfiniteScrollView: View {
                                 }
                                 .frame(height: 60)
                                 .foregroundColor(.black)
-                            }
+
                         }
                         .padding(.horizontal)
                     }
@@ -110,10 +108,10 @@ public struct InfiniteScrollView: View {
     }
 
     private func onEnded(value: DragGesture.Value) {
-        if -value.translation.width > screenWidth / 2 && currentPage < lastPage {
+        if -value.translation.width > screenWidth / 2 && currentPage < viewModel.lastPage {
             currentPage += 1
         } else {
-             if value.translation.width > screenWidth / 2 && currentPage < lastPage && currentPage != .zero  {
+             if value.translation.width > screenWidth / 2 && currentPage < viewModel.lastPage && currentPage != .zero  {
                 currentPage -= 1
             }
         }
@@ -135,22 +133,3 @@ private extension InfiniteScrollView {
         }
     }
 }
-
-struct Item: Identifiable, Equatable {
-    let number: String = "1"
-    let id = UUID().uuidString
-    let subtitle: String
-}
-
-let data = [
-    Item(subtitle: "Subtitle 1 with a long loong text with at least two lines"),
-    Item(subtitle: "Subtitle 2 with a long loong text with at least two lines"),
-    Item(subtitle: "Subtitle 3 with a long loong text with at least two lines"),
-    Item(subtitle: "Subtitle 4 with a long loong text with at least two lines"),
-    Item(subtitle: "Subtitle 5 with a long loong text with at least two lines"),
-    Item(subtitle: "Subtitle 6 with a long loong text with at least two lines"),
-    Item(subtitle: "Subtitle 7 with a long loong text with at least two lines"),
-    Item(subtitle: "Subtitle 8 with a long loong text with at least two lines")
-]
-
-

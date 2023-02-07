@@ -36,6 +36,10 @@ public extension RandomNumberViewModel {
         var number: NumberRowViewEntity?
         var numbers = [NumberRowViewEntity]()
         public var modifiableView = ModifiableViewState<ViewState>()
+
+        var lastPage: Int {
+            numbers.count - 1
+        }
     }
 
     enum ViewState {
