@@ -24,77 +24,18 @@ public struct InfiniteScrollView: View {
         self.viewModel = viewModel
     }
 
-    private var screenWidth = UIScreen.main.bounds.width
+   private var screenWidth = UIScreen.main.bounds.width
 
     public var body: some View {
-       return  VStack(spacing: 20) {
+        return VStack(spacing: 20) {
             Text(verbatim: "Fun with numbers")
                 .font(.system(size: 30, weight: .bold))
                 .padding(.top, 50)
             ZStack {
-                GeometryReader { reader in
-                    HStack(spacing: .zero) {
-                        ForEach(viewModel.numbers) { item in
-                            NumberView(item: item)
-                                .frame(width: screenWidth)
-                        }
-                    }
-                    .offset(x: xOffset)
-                    .gesture(
-                        DragGesture()
-                            .onChanged({ value in
-                                onChanged(value: value)
-                            })
-                            .onEnded({ value in
-                                onEnded(value: value)
-                            })
-                    )
-                }
+                numbersView(viewModel.numbers)
                 VStack(spacing: 20) {
                     Spacer()
-                    ZStack {
-                        HStack(spacing: 6) {
-
-                                Button {
-                                    if currentPage != .zero {
-                                        currentPage -= 1
-                                    }
-
-                                    withAnimation {
-                                        xOffset = -screenWidth * CGFloat(currentPage)
-                                    }
-                                } label: {
-                                    HStack {
-                                        Image(systemName: "arrow.left")
-                                        Text("Previous")
-                                    }
-                                    .font(.system(size: 17, weight: .bold))
-                                    .frame(maxWidth: .infinity)
-                                }
-                                .frame(height: 60)
-                                .foregroundColor(.black)
-
-                                Button {
-                                    currentPage += 1
-                                    viewModel.trigger(.randomNumber)
-                                    withAnimation {
-                                        xOffset = -screenWidth * CGFloat(currentPage)
-                                    }
-                                } label: {
-                                    HStack {
-                                        Text("Next")
-                                        Image(systemName: "arrow.right")
-                                    }
-                                    .font(.system(size: 17, weight: .bold))
-                                    .frame(maxWidth: .infinity)
-                                }
-                                .frame(height: 60)
-                                .foregroundColor(.black)
-
-                        }
-                        .padding(.horizontal)
-                    }
-
+                 buttonsView()
                 }
             }
             .onAppear {[weak viewModel] in
@@ -102,6 +43,8 @@ public struct InfiniteScrollView: View {
             }
         }.enableInjection()
     }
+
+    // MARK: - Private
 
     private func onChanged(value: DragGesture.Value) {
         xOffset = value.translation.width - (screenWidth * CGFloat(currentPage))
@@ -111,12 +54,76 @@ public struct InfiniteScrollView: View {
         if -value.translation.width > screenWidth / 2 && currentPage < viewModel.lastPage {
             currentPage += 1
         } else {
-             if value.translation.width > screenWidth / 2 && currentPage < viewModel.lastPage && currentPage != .zero  {
+            if value.translation.width > screenWidth / 2 && currentPage < viewModel.lastPage && currentPage != .zero  {
                 currentPage -= 1
             }
         }
         withAnimation {
             xOffset = -screenWidth * CGFloat(currentPage)
+        }
+    }
+
+    private func numbersView(_ numbers: [NumberRowViewEntity]) -> some View {
+        GeometryReader { reader in
+            HStack(spacing: .zero) {
+                ForEach(viewModel.numbers) { item in
+                    NumberView(item: item)
+                        .frame(width: screenWidth)
+                }
+            }
+            .offset(x: xOffset)
+            .gesture(
+                DragGesture()
+                    .onChanged({ value in
+                        onChanged(value: value)
+                    })
+                    .onEnded({ value in
+                        onEnded(value: value)
+                    })
+            )
+        }
+    }
+
+    private func buttonsView() -> some View {
+        ZStack {
+            HStack(spacing: 6) {
+                Button {
+                    if currentPage != .zero {
+                        currentPage -= 1
+                    }
+
+                    withAnimation {
+                        xOffset = -screenWidth * CGFloat(currentPage)
+                    }
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.left")
+                        Text("Previous")
+                    }
+                    .font(.system(size: 17, weight: .bold))
+                    .frame(maxWidth: .infinity)
+                }
+                .frame(height: 60)
+                .foregroundColor(.black)
+
+                Button {
+                    currentPage += 1
+                    viewModel.trigger(.randomNumber)
+                    withAnimation {
+                        xOffset = -screenWidth * CGFloat(currentPage)
+                    }
+                } label: {
+                    HStack {
+                        Text("Next")
+                        Image(systemName: "arrow.right")
+                    }
+                    .font(.system(size: 17, weight: .bold))
+                    .frame(maxWidth: .infinity)
+                }
+                .frame(height: 60)
+                .foregroundColor(.black)
+            }
+            .padding(.horizontal)
         }
     }
 }

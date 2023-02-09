@@ -24,12 +24,12 @@ struct MainView: View {
 private struct Container: View {
 
     @Environment(\.viewFactory) private var viewFactory
-    @State private var selectedTab: Int = TagType.numbers.rawValue
+    @State private var selectedTab: Int = TagType.infinite.rawValue
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
                 viewFactory.getInfiniteScroll().tabItem(.infinite)
-//                viewFactory.getNumbersMainView().tabItem(.numbers)
+                viewFactory.getNumbersMainView().tabItem(.numbers)
                 viewFactory.getNumbersFavoritesView().tabItem(.favorites)
             }
         }
@@ -37,9 +37,9 @@ private struct Container: View {
 }
 
 enum TagType: Int {
+    case infinite
     case numbers
     case favorites
-    case infinite
 }
 
 private extension TagType {
