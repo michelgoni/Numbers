@@ -8,6 +8,6 @@
 import Foundation
 import Shared
 
-protocol RandomNumberRepositoryType {
+public protocol RandomNumberRepositoryType {
     func fetchRandomNumber()  async throws -> NumberRowViewEntity
 }

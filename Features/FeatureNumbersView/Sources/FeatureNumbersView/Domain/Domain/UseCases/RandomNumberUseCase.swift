@@ -9,20 +9,20 @@ import Combine
 import Foundation
 import Shared
 
-protocol FetchRandomNumberUseCaseType {
+public protocol FetchRandomNumberUseCaseType {
 
     func execute() async throws -> NumberRowViewEntity
 }
 
-final class FetchRandomNumberUseCaseImplm: FetchRandomNumberUseCaseType {
+public final class FetchRandomNumberUseCaseImplm: FetchRandomNumberUseCaseType {
 
-    private var repository: RandomNumberRepositoryType?
+    var repository: RandomNumberRepositoryType?
 
-    init(repository: RandomNumberRepositoryType?) {
+    public init(repository: RandomNumberRepositoryType?) {
         self.repository = repository
     }
 
-    func execute() async throws -> NumberRowViewEntity {
+    public func execute() async throws -> NumberRowViewEntity {
         try await repository!.fetchRandomNumber()
     }
 }

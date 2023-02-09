@@ -45,7 +45,7 @@ final class NumberRepositoryImplm: NumberRepositoryType {
         guard let remoteDS = remoteDS else {
             throw NumberViewError.wronDependency("Check your depedency: missing \(String(describing: remoteDS)) dependency") }
         let value = try await remoteDS.fetchNumber(number)
-        let numberFact = String(decoding: value, as: UTF8.self)
+        let numberFact = String(decoding: value, as: UTF8.self).uppercased()
         let number = numberFact.split(separator: Character(" ")).first?.description ?? ""
         return NumberRowViewEntity(numberValue: Int(number) ?? .zero,
                                    numberFact: numberFact.components(separatedBy: " ").dropFirst().joined(separator: " "))

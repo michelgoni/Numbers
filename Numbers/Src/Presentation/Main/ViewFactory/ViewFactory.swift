@@ -43,4 +43,16 @@ public extension ViewFactory {
             )
         }
     }
+
+    func getInfiniteScroll() -> some View {
+        make {
+            InfiniteScrollView(viewModel: AnyViewModel(
+                RandomNumberViewModel(
+                    randomNumberUsecase: injector.get(FetchRandomNumberUseCaseType.self),
+                    plusNumberUsecase: injector.get(FetchWithOperationNumberUseCaseType.self)
+                )
+            )
+            )
+        }
+    }
 }

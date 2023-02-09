@@ -10,21 +10,21 @@ import Foundation
 import NumbersEx
 import Shared
 
-final class RandomNumberViewModel: ViewModel {
+public final class RandomNumberViewModel: ViewModel {
 
     var randomNumberUsecase: FetchRandomNumberUseCaseType?
     var plusNumberUsecase: FetchWithOperationNumberUseCaseType?
 
     private lazy var cancellables = Set<AnyCancellable>()
-    @Published var state = State()
+    @Published public var state = State()
 
-    init(randomNumberUsecase: FetchRandomNumberUseCaseType?, plusNumberUsecase: FetchWithOperationNumberUseCaseType?) {
+   public init(randomNumberUsecase: FetchRandomNumberUseCaseType?, plusNumberUsecase: FetchWithOperationNumberUseCaseType?) {
         self.randomNumberUsecase = randomNumberUsecase
         self.plusNumberUsecase = plusNumberUsecase
     }
 }
 
-extension RandomNumberViewModel {
+public extension RandomNumberViewModel {
 
     enum Input {
         case minus
@@ -34,7 +34,12 @@ extension RandomNumberViewModel {
 
     struct State: ModifiableStateData {
         var number: NumberRowViewEntity?
-        var modifiableView = ModifiableViewState<ViewState>()
+        var numbers = [NumberRowViewEntity]()
+        public var modifiableView = ModifiableViewState<ViewState>()
+
+        var lastPage: Int {
+            numbers.count - 1
+        }
     }
 
     enum ViewState {
@@ -43,14 +48,15 @@ extension RandomNumberViewModel {
     }
 }
 
-extension RandomNumberViewModel {
+public extension RandomNumberViewModel {
 @MainActor
     func trigger(_ input: Input) {
         self.state.viewState.send(.loading)
         switch input {
         case .randomNumber:
             Task {
-                self.state.number = try await randomNumberUsecase?.execute()
+                guard let number = try await randomNumberUsecase?.execute() else { return }
+                self.state.numbers.append(number)
                 self.state.viewState.send(.loaded)
             }
         case .plus:

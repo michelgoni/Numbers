@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Inject
 import NumbersEx
 import SwiftUI
 import Shared
@@ -47,11 +48,13 @@ public struct FavoriteIconView: View {
                     favoriteIconViewModel.favoriteNumber ? favoriteIconViewModel.trigger(.save(number)) : favoriteIconViewModel.trigger(.delete(number))
                 } label: {
                     isFavorite.favoriteImage
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
+                        .font(.system(size: 35, weight: .light))
                 }
                 .buttonStyle(.plain)
                 .show(!isLoading)
                 ProgressView()
+                    .tint(.white)
                     .show(isLoading)
 
             }
@@ -62,7 +65,7 @@ public struct FavoriteIconView: View {
                     .isFavorite(number.numberValue)
                 )
             }
-        }
+        }.enableInjection()
     }
 
 }
