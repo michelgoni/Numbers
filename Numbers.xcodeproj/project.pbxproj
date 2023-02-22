@@ -14,6 +14,7 @@
 		B44783782954819E006FC0EC /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44783772954819E006FC0EC /* Appdelegate.swift */; };
 		B447837B295481EE006FC0EC /* Scenedelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837A295481EE006FC0EC /* Scenedelegate.swift */; };
 		B447837D295482EE006FC0EC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447837C295482EE006FC0EC /* AppCoordinator.swift */; };
+		B454BD1E29A69E8C00EAC61C /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = B454BD1D29A69E8C00EAC61C /* Shared */; };
 		B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = B491B863297990EB00A49CBB /* FeatureNumbersView */; };
 		B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = B491B8662979911C00A49CBB /* FeatureFavorites */; };
 		B49D8FC329784966008AF9E3 /* NumbersEx in Frameworks */ = {isa = PBXBuildFile; productRef = B49D8FC229784966008AF9E3 /* NumbersEx */; };
@@ -35,7 +36,6 @@
 		B491B862297990D300A49CBB /* FeatureNumbersView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureNumbersView; sourceTree = "<group>"; };
 		B491B8652979911200A49CBB /* FeatureFavorites */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FeatureFavorites; sourceTree = "<group>"; };
 		B495E48B29819C0B00C4CCA1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B4BAF071298068F300FF05A0 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = ../Shared; sourceTree = "<group>"; };
 		B4FF7F74298BA95500B5A7F7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +49,7 @@
 				B491B864297990EB00A49CBB /* FeatureNumbersView in Frameworks */,
 				B491B8672979911C00A49CBB /* FeatureFavorites in Frameworks */,
 				B4ABD3FA2971A6F100A781D9 /* Swinject in Frameworks */,
+				B454BD1E29A69E8C00EAC61C /* Shared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +67,6 @@
 		B44782E7295448C8006FC0EC = {
 			isa = PBXGroup;
 			children = (
-				B4BAF06A2980682E00FF05A0 /* Packages */,
 				B491B85F29798DF900A49CBB /* Features */,
 				B44782F2295448C8006FC0EC /* Numbers */,
 				B44782F1295448C8006FC0EC /* Products */,
@@ -155,14 +155,6 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
-		B4BAF06A2980682E00FF05A0 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				B4BAF071298068F300FF05A0 /* Shared */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +178,7 @@
 				B491B863297990EB00A49CBB /* FeatureNumbersView */,
 				B491B8662979911C00A49CBB /* FeatureFavorites */,
 				B4FF7F77298BCE2900B5A7F7 /* Inject */,
+				B454BD1D29A69E8C00EAC61C /* Shared */,
 			);
 			productName = Numbers;
 			productReference = B44782F0295448C8006FC0EC /* Numbers.app */;
@@ -219,6 +212,7 @@
 				B4ABD3F82971A6F100A781D9 /* XCRemoteSwiftPackageReference "Swinject" */,
 				B49D8FC129784966008AF9E3 /* XCRemoteSwiftPackageReference "NumbersEx" */,
 				B4FF7F76298BCE2900B5A7F7 /* XCRemoteSwiftPackageReference "Inject" */,
+				B454BD1C29A69DC600EAC61C /* XCRemoteSwiftPackageReference "numbersShared" */,
 			);
 			productRefGroup = B44782F1295448C8006FC0EC /* Products */;
 			projectDirPath = "";
@@ -498,6 +492,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B454BD1C29A69DC600EAC61C /* XCRemoteSwiftPackageReference "numbersShared" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/michelgoni/numbersShared";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		B49D8FC129784966008AF9E3 /* XCRemoteSwiftPackageReference "NumbersEx" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/michelgoni/NumbersEx";
@@ -525,6 +527,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B454BD1D29A69E8C00EAC61C /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B454BD1C29A69DC600EAC61C /* XCRemoteSwiftPackageReference "numbersShared" */;
+			productName = Shared;
+		};
 		B491B863297990EB00A49CBB /* FeatureNumbersView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FeatureNumbersView;

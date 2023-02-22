@@ -17,14 +17,14 @@ let package = Package(
         .package(url: "https://github.com/michelgoni/NumbersEx", branch: "main"),
         .package(url: "https://github.com/michelgoni/NumbersUI", branch: "main"),
         .package(url: "https://github.com/krzysztofzablocki/Inject.git", branch: "1.2.2"),
-        .package(name: "Shared", path: "../Shared")
+        .package(url: "https://github.com/michelgoni/numbersShared", branch: "develop"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FeatureFavorites",
-            dependencies: [.product(name: "Shared", package: "Shared"),
+            dependencies: [
                            .product(name: "NumbersUI", package: "NumbersUI"),
                            .product(name: "NumbersEx", package: "NumbersEx"),
                            .product(name: "Inject", package: "Inject")]),

@@ -18,7 +18,7 @@ let package = Package(
          .package(url: "https://github.com/michelgoni/NumbersInjector", branch: "main"),
          .package(url: "https://github.com/michelgoni/NumbersUI", branch: "main"),
          .package(url: "https://github.com/krzysztofzablocki/Inject.git", branch: "1.2.2"),
-         .package(name: "Shared", path: "../Shared")
+         .package(url: "https://github.com/michelgoni/numbersShared", branch: "develop")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -28,7 +28,6 @@ let package = Package(
             dependencies: [ .product(name: "NumbersInjector", package: "NumbersInjector"),
                             .product(name: "NumbersUI", package: "NumbersUI"),
                             .product(name: "NumbersEx", package: "NumbersEx"),
-                            .product(name: "Shared", package: "Shared"),
                             .product(name: "Inject", package: "Inject")]),
         .testTarget(
             name: "FeatureNumbersViewTests",
