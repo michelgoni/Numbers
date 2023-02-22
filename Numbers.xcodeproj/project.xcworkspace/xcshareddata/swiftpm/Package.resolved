@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "numbersshared",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michelgoni/numbersShared",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "8374c83ef70bd4fb855f661c95a3e44cb9124ac0"
+      }
+    },
+    {
       "identity" : "numbersui",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/michelgoni/NumbersUI",
