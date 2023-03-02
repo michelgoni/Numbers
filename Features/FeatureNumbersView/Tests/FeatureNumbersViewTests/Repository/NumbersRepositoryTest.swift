@@ -48,15 +48,14 @@ final class NumbersRepositoryTest: XCTestCase {
     func testSaveIsInvoked()  {
         localMock.fetchSavedNumbersReturnValue = []
         try! sut.saveNumber(NumberRowViewEntity(numberValue: 1,
-                                                numberFact: "",
-                                                isPrime: true))
+                                                numberFact: ""))
 
         XCTAssertTrue(localMock.saveNumberCalled)
     }
 
     func testSaveIsOnlyOnceInvoked()  {
         localMock.fetchSavedNumbersReturnValue = []
-        try! sut.saveNumber(NumberRowViewEntity(numberValue: 1, numberFact: "", isPrime: true))
+        try! sut.saveNumber(NumberRowViewEntity(numberValue: 1, numberFact: ""))
 
         XCTAssertTrue(localMock.saveNumberCallsCount == 1)
     }

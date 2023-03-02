@@ -50,7 +50,6 @@ final class FavoritesNumbersUseCaseTest: XCTestCase {
     private func numberEntity() -> NumberRowViewEntity {
         NumberRowViewEntity(
             numberValue: 1,
-            numberFact: "1 is the value for this test",
-            isPrime: true)
+            numberFact: "1 is the value for this test")
     }
 }

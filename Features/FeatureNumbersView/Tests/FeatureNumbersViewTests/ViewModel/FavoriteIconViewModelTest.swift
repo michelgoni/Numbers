@@ -67,8 +67,7 @@ final class FavoriteIconViewModelTest: XCTestCase {
 
 
         sut.trigger(.delete(NumberRowViewEntity(numberValue: 1,
-                                                numberFact: "",
-                                                isPrime: false)))
+                                                numberFact: "")))
         waitForExpectations(timeout: 1)
 
         switch result {
