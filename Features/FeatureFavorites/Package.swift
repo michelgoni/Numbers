@@ -27,7 +27,8 @@ let package = Package(
             dependencies: [
                            .product(name: "NumbersUI", package: "NumbersUI"),
                            .product(name: "NumbersEx", package: "NumbersEx"),
-                           .product(name: "Inject", package: "Inject")]),
+                           .product(name: "Inject", package: "Inject"),
+                           .product(name: "Shared", package: "numbersShared")]),
         .testTarget(
             name: "FeatureFavoritesTests",
             dependencies: ["FeatureFavorites"]),
