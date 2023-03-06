@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
