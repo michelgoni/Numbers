@@ -30,7 +30,7 @@ final class FetchNumberRemoteDSImplm: FetchNumberRemoteDSType {
     func fetchNumbers(_ numbers: [String]) async throws -> [Data] {
         try await numbers.asyncMap {
             do {
-                let (data, response) = try await URLSession.shared
+                let (data, response) = try await urlSession
                     .data(from: URL(string: "http://numbersapi.com/\($0)/trivia")!)
                 guard
                     let httpResponse = response as? HTTPURLResponse,
@@ -47,7 +47,7 @@ final class FetchNumberRemoteDSImplm: FetchNumberRemoteDSType {
 
     func fetchNumber(_ number: String) async throws -> Data {
         do {
-            let (data, response) = try await URLSession.shared
+            let (data, response) = try await urlSession
                 .data(from: URL(string: "http://numbersapi.com/\(number)/trivia")!)
             guard
                 let httpResponse = response as? HTTPURLResponse,
