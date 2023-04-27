@@ -48,7 +48,7 @@ extension NumberRowViewModel {
             Task {
                 do {
                     let value = try await favoritesUseCase?.execute()
-                    self.handle(total: value!)
+                    self.handle(total: value)
                 } catch {
                     self.state.viewState.send(.error)
                 }
@@ -66,7 +66,8 @@ extension NumberRowViewModel {
         }
     }
 
-    private func handle(total: [NumberRowViewEntity] ) {
+    private func handle(total: [NumberRowViewEntity]? ) {
+        guard let total = total else { return }
         switch total.isEmpty {
         case true:
             self.state.favoriteNumbers = []
