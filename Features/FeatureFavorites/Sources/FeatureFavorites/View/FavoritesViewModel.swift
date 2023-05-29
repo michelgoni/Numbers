@@ -36,7 +36,8 @@ extension FavoritesViewModel {
                     handle(total: value)
                 }
             } catch {
-                self.state.viewState.send(.error)
+                
+                self.state.viewState.send(.error("Error deleting favorites"))
             }
 
         case .favoritesList :
@@ -48,7 +49,15 @@ extension FavoritesViewModel {
                 }
 
             } catch {
-                self.state.viewState.send(.error)
+                if let error = error as? FavoritesError {
+                    switch error {
+                    case .badDecoding:
+                        self.state.viewState.send(.error("Bad decoding issue"))
+                    case .emptyValue:
+                        self.state.viewState.send(.emptyFavorites)
+                    }
+                }
+               
             }
         }
     }
@@ -83,6 +92,7 @@ public extension FavoritesViewModel {
     enum ViewState {
         case emptyFavorites
         case favorites
-        case error
+        case error(String)
     }
+    
 }

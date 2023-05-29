@@ -125,17 +125,3 @@ private extension NumbersView {
         }
     }
 }
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NumbersView()
-//            .environmentObject(
-//                AnyViewModel(
-//                    NumbersViewModel(numbersUseCase: FetchNumbersUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())), numberUseCase: FetchNumberUseCase(repository: NumberRepositoryImplm(localDS: FetchNumberLocalDSImplm(userDefaults: UserDefaults.standard), remoteDS: FetchNumberRemoteDSImplm())))
-//                )
-//            )
-//    }
-//}
-
-
-

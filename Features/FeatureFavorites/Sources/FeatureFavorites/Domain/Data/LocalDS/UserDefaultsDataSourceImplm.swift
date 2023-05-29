@@ -21,7 +21,7 @@ final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
 
     private let userDefaults: UserDefaults
     private var numbers = [NumberRowViewEntity]()
-    @AppStorage("") private var savedNumbers = Data()
+    @AppStorage("data") private var savedNumbers = Data([])
 
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
@@ -49,7 +49,7 @@ final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
         guard let numbers = try? JSONDecoder()
             .decode([NumberRowViewEntity].self,
                     from: self.savedNumbers) else {
-            throw FavoritesError.badDecoding
+            throw FavoritesError.emptyValue
         }
         self.numbers = numbers
         return numbers

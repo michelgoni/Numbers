@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum FavoritesError: Error {
+public enum FavoritesError: Error {
     case badDecoding
+    case emptyValue
 }

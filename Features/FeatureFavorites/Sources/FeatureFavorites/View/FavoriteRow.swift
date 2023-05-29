@@ -56,20 +56,3 @@ public struct FavoriteRow: View {
         .buttonStyle(PlainButtonStyle())
     }
 }
-
-//struct FavoriteRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavoriteRow(
-//            number: NumberEntity(
-//                isFavorite: true,
-//                isPrime: true,
-//                numberValue: "1",
-//                numberFact: " is the number of timesthat this test is going to pass")
-//        )
-//        .environmentObject(
-//            AnyViewModel(
-//                FavoritesViewModel()
-//            )
-//        )
-//    }
-//}

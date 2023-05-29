@@ -22,7 +22,7 @@ final class FetchNumberLocalDSImplm: FetchNumberLocalDSType {
 
     private let userDefaults: UserDefaults
     private var numbers = [NumberRowViewEntity]()
-    @AppStorage("") private  var savedNumbers = Data()
+    @AppStorage("data") private var savedNumbers = Data([])
 
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
